@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "database_shop_simnatur",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
