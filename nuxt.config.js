@@ -74,7 +74,7 @@ export default {
             compact: true,
         },
     },
-    serverMiddleware: [
-        { path: '/api', handler: '~/api/index.js' }
-      ],
+    //serverMiddleware: [
+    //    { path: '/api', handler: '~/api/index.js' }
+    //],
 }
