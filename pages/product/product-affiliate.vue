@@ -1,6 +1,5 @@
 <template>
     <div class="product-details-page-wrapper">
-        <TheHeader />
         <Breadcrumb pageTitle="product affiliate" />
         
         <div class="shop-area pt-100 pb-100">
@@ -225,7 +224,6 @@
         return {
             title: "Product Affiliate"
         };
-    },
-    components: { TheHeader }
+    }
 };
 </script>
