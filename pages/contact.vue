@@ -1,7 +1,6 @@
 <template>
     <div class="shop-page-wrapper">
         <TheHeader />
-        <Breadcrumb pageTitle="contact us" />
         <ContactInfo />
         <TheFooter />
     </div>

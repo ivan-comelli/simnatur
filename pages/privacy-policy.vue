@@ -1,7 +1,6 @@
 <template>
     <div class="privacy-policy-wrapper">
         <TheHeader />
-        <Breadcrumb pageTitle="privacy policy" />
 
         <!-- privacy policy content start -->
         <section class="policy-section">

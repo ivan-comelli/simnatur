@@ -32,6 +32,7 @@ export default {
         '~/plugins/vuejs-pagiante.js',
         '~/plugins/observe-visibility.js',
         '~/plugins/persistedState.client.js',
+        '~/plugins/axios.js',
         { 
             src: '~/plugins/bootstrap.js', 
             mode: 'client'
@@ -74,7 +75,10 @@ export default {
             compact: true,
         },
     },
-    //serverMiddleware: [
-    //    { path: '/api', handler: '~/api/index.js' }
-    //],
+    serverMiddleware: [
+        '~/api/index.js'
+    ],
+    axios: {
+        baseURL: 'http://localhost:3001', // Cambia esto a la URL de tu backend
+    },
 }

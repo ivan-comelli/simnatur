@@ -10,9 +10,9 @@
                 <span class="product-label purple" v-if="product.discount">-{{ product.discount }}%</span>
             </div>
             <div class="product-action-2">
-                <button class="btn" title="Compare" @click="addToCompare(product)"> 
+                <!--<button class="btn" title="Compare" @click="addToCompare(product)"> 
                     <i class="pe-7s-shuffle"></i>
-                </button>
+                </button>-->
                 <button class="btn" title="Add To Cart" @click="addToCart(product)">
                     <i class="pe-7s-cart"></i>
                 </button>

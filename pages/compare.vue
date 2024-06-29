@@ -1,7 +1,6 @@
 <template>
     <div class="compare-page-wrapper">
         <TheHeader />
-        <Breadcrumb pageTitle="compare" />
         
         <!-- Compare section start -->
         <div class="compare-page-wrapper pt-100 pb-100">

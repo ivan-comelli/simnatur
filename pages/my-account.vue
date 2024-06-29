@@ -1,7 +1,6 @@
 <template>
     <div class="shop-page-wrapper">
         <TheHeader />
-        <Breadcrumb pageTitle="my-account" />
         
         <div class="my-account-area pb-80 pt-100">
             <div class="container">

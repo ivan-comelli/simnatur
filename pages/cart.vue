@@ -1,7 +1,6 @@
 <template>
     <div class="cart-page-wrapper">
         <TheHeader />
-        <Breadcrumb pageTitle="cart" />
 
         <div class="cart-main-area pt-90 pb-100">
             <div class="container">

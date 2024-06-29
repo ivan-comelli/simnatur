@@ -1,7 +1,6 @@
 <template>
     <div class="shop-page-wrapper">
         <TheHeader />
-        <Breadcrumb pageTitle="shop list standard" />
         
         <!-- product items wrapper -->
         <div class="shop-area pt-100 pb-100">

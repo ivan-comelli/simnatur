@@ -1,16 +1,41 @@
 <template>
     <div class="login-form">
-        <form>
-            <input type="text" name="user-name" placeholder="Username">
-            <input type="password" name="user-password" placeholder="Password">
+        <form @submit.prevent="loginUser">
+            <input type="email" v-model="email" name="user-email" placeholder="Correo Electronico" required>
+            <input type="password" v-model="password" name="user-password" placeholder="Contraseña" required>
             <div class="button-box">
                 <div class="login-toggle-btn">
-                    <input type="checkbox">
-                    <label>Remember me</label>
-                    <a href="#">Forgot Password?</a>
+                    <input type="checkbox" v-model="rememberMe">
+                    <label>Recordame</label>
+                    <a href="#">Olvidaste tu contraseña?</a>
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit">Entrar</button>
             </div>
         </form>
     </div>
 </template>
+
+<script>
+import { mapActions } from 'vuex';
+
+export default {
+    data() {
+        return {
+            email: '',
+            password: '',
+            rememberMe: false
+        };
+    },
+    methods: {
+        ...mapActions(['login']),
+        async loginUser() {
+            try {
+                await this.login({ email: this.email, password: this.password });
+                this.$router.push('/');
+            } catch (error) {
+                console.error('Error during login:', error);
+            }
+        }
+    }
+};
+</script>

@@ -1,7 +1,6 @@
 <template>
     <div class="terms-conditions-wrapper">
         <TheHeader />
-        <Breadcrumb pageTitle="terms & conditions" />
 
         <!-- privacy policy content start -->
         <section class="terms-conditions-inner">

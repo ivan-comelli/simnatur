@@ -1,16 +1,13 @@
 <template>
-    <div class="shop-page-wrapper">
-        <TheHeader />
-        <Breadcrumb pageTitle="login-register" />
-        
+    <div class="shop-page-wrapper">        
         <div class="login-register-area pt-100 pb-100">
             <div class="container">
                 <div class="login-register-tab-list nav">
                     <button @click="comA('Login')" :class="{ active: isActive === 'Login' }" >
-                        Login
+                        Entrar
                     </button>
                     <button @click="comA('Register')" :class="{ active: isActive === 'Register' }" >
-                        Register
+                        Registrar
                     </button>
                 </div>
                 <div class="row">

@@ -2,7 +2,10 @@
 .header-area {
     position: relative;
 }
-
+.header-left {
+    display: flex;
+    align-items: center;
+}
 .sticky-bar.is-sticky {
 	animation: 700ms ease-in-out 0s normal none 1 running fadeInDown;
 	background-color: $white;
@@ -43,12 +46,11 @@
     }
 }
 .logo {
-	margin-top: 14px;
     @media #{$md-layout, $xs-layout}{
         margin-top: 0px;
     }
     &.logo-hm5 {
-        margin-top: 41px;
+        margin-top: 40px;
         a.sticky-block {
             display: none;
         }
@@ -301,7 +303,6 @@
 
 .is-sticky .logo ,
 .is-sticky .header-right-wrap {
-	margin-top: 22px;
     @media #{$md-layout, $xs-layout, $md-layout}{
         margin-top: 0px;
     }
@@ -318,18 +319,31 @@
 .header-right-wrap {
     display: flex;
     justify-content: flex-end;
-    margin-top: 32px;
+    height: 100%;
+    align-items: center;
     @media #{$md-layout}{
         margin-top: 0px;
     }
     @media #{$xs-layout}{
         margin-top: 2px;
     }
+    .session-entry {
+        margin-left: 1em;
+        font-size: 13px;
+        color: #ffffff;
+        font-weight: 500;
+        letter-spacing: 0.8px;
+        display: inline-block;
+        background: #a749ff;
+        padding: 0.3em 1em;
+        border-radius: 1em;
+    }
     .same-style {
         margin-left: 15px;
         position: relative;
-        > a,
-        button {
+        margin-top: .3em;
+        
+        >a, button {
             color: $black;
             font-size: 23px;
         }

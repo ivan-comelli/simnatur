@@ -1,7 +1,6 @@
 <template>
     <div class="cart-page-wrapper">
         <TheHeader />
-        <Breadcrumb pageTitle="checkout" />
         
         <!-- checkout section start -->
         <div class="checkout-area pt-95 pb-100">

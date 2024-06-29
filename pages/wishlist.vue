@@ -1,7 +1,6 @@
 <template>
     <div class="cart-page-wrapper">
         <TheHeader />
-        <Breadcrumb pageTitle="wishlist" />
         
         <!-- wishlist section start -->
         <div class="cart-main-area pt-90 pb-100">

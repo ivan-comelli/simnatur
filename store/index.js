@@ -1,15 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import products from "../data/product.json";
 
 Vue.use(Vuex)
 
 export const state = () => ({
-    products: products,
+    products: [],
+    blogs: [],
     cart: [],
     wishlist: [],
-    compare: []
+    compare: [],
+    user: null
 })
 
 
@@ -17,6 +18,10 @@ export const state = () => ({
 export const getters = {
     getProducts(state) {
         return state.products
+    },
+
+    getBlogs(state) {
+        return state.blogs
     },
 
     getCart: state => {
@@ -81,6 +86,9 @@ export const getters = {
     colorList: state => {
         return ["all colors",...new Set(state.products.map((list) => list.variation?.color).flat())].filter(Boolean)
     },
+    getUser: state => {
+        return state.user;
+    }
 }
 
 
@@ -88,6 +96,10 @@ export const getters = {
 export const mutations = {
     SET_PRODUCT(state, product) {
         state.products = product
+    },
+
+    SET_BLOG(state, blog) {
+        state.blogs = blog
     },
 
     UPDATE_CART(state, payload) {
@@ -148,6 +160,13 @@ export const mutations = {
             return product.id !== item.id
         });
     },
+    SET_USER(state, user) {
+        console.log("state ",user)
+        state.user = user;
+    },
+    CLEAR_USER(state) {
+        state.user = null;
+    }
 }
 
 
@@ -180,5 +199,61 @@ export const actions = {
     removeFromCompare({commit}, product) {
         commit('REMOVE_FROM_COMPARE', product)
     },
+    async login({ commit }, { email, password }) {
+        try {
+          const response = await this.$axios.$post('/api/login', { email, password });
+          localStorage.setItem('token', response.token);
+          commit('SET_USER', response.user);
+        } catch (error) {
+          console.error('Error during login:', error);
+        }
+      },
+    
+      async nuxtServerInit({ commit }) {
+        if (process.client) {
+            try {
+                const response = await this.$axios.$get('/api/auth/me');
+                commit('SET_USER', response);
+            } catch (error) {
+                console.error('Error during nuxtServerInit:', error);
+            }
+        }
+      },
+      async register({ commit }, userData) {
+        try {
+          const response = await this.$axios.$post('/api/signup', userData);
+          commit('SET_USER', response);
+        } catch (error) {
+          console.error('Error registering user:', error);
+          throw error;
+        }
+      },
+      async fetchProducts({ commit }) {
+        try {
+            const response = await this.$axios.$get('/api/products'); // Ruta correcta de tu API
+            commit('SET_PRODUCT', response); // Asumiendo que tu API devuelve un objeto con una propiedad 'products'
+          } catch (error) {
+            console.error('Error fetching products:', error);
+            // Puedes manejar errores aquí, por ejemplo, mostrar un mensaje de error al usuario
+          }
+      },
+      async fetchBlogs({ commit }) {
+        try {
+            const response = await this.$axios.$get('/api/blogs'); // Ruta correcta de tu API
+            commit('SET_BLOG', response); // Asumiendo que tu API devuelve un objeto con una propiedad 'products'
+          } catch (error) {
+            console.error('Error fetching blogs:', error);
+            // Puedes manejar errores aquí, por ejemplo, mostrar un mensaje de error al usuario
+          }
+      },
+      async logout({ commit }) {
+        try {
+            const response = await this.$axios.$post('/api/logout');
+            commit('CLEAR_USER');
+            localStorage.removeItem('token');
+        } catch {
+            console.error('Error al cerrar sesion: ', error);
+        }
+      }
 }
 
