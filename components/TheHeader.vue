@@ -78,16 +78,16 @@
 
         computed: {
             cartItemCount() {
-                return this.$store.getters.cartItemCount
+                return this.$store.getters['cartItemCount']
             },
             wishlistItemCount() {
-                return this.$store.getters.wishlistItemCount
+                return this.$store.getters['wishlistItemCount']
             },
             compareItemCount() {
-                return this.$store.getters.compareItemCount
+                return this.$store.getters['compareItemCount']
             },
             userStatus() {
-                return this.$store.getters.getUser
+                return this.$store.getters['auth/getUser']
             }
         },
 
@@ -103,8 +103,7 @@
 
         methods: {
             logout() {
-                console.log("hola")
-                this.$store.dispatch('logout');
+                this.$store.dispatch('auth/logout');
                 this.$router.push('/');
             }
         },

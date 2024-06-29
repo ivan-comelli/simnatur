@@ -62,6 +62,7 @@
 </template>
 
 <script>
+    import {mapGetters, mapActions} from 'vuex'
     export default {
         components: {
             TheHeader: () => import('@/components/TheHeader'),
@@ -86,10 +87,10 @@
         },
 
         computed: {
+            ...mapGetters('products', ['getProducts']),
             products() {
-                return this.$store.getters.getProducts
+                return this.getProducts;
             },
-
             getItems() {
                 let start = (this.currentPage - 1) * this.perPage;
                 let end = this.currentPage * this.perPage;

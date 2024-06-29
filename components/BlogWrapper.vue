@@ -12,18 +12,22 @@
 </template>
 
 <script>
-
+    import {mapGetters, mapActions} from 'vuex';
     export default {
         components: {
             BlogItem: () => import('@/components/BlogItem')
         },
         computed: {
+            ...mapGetters('blogs', ['getBlogs']),
             blogData() {
-                return this.$store.getters.getBlogs
+                return this.getBlogs
             }
         },
         created() {
-            this.$store.dispatch('fetchBlogs');
+            this.fetchBlogs();
         },
+        methods: {
+            ...mapActions('blogs', ['fetchBlogs'])
+        }
     };
 </script>

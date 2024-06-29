@@ -45,14 +45,15 @@
         methods: {
             addToCart(product) {
                 const prod = {...product, cartQuantity: 1}
-                // for notification
-                if (this.$store.state.cart.find(el => product.id === el.id)) {
-                    this.$notify({ title: 'Already added to cart update with one' })
-                } else {
-                    this.$notify({ title: 'Add to cart successfully!'})
-                }
-
-                this.$store.dispatch('addToCartItem', prod)
+                this.$store.dispatch('addToCartItem', prod).then(() => {
+                    if (this.$store.state.cart.find(el => product.id === el.id)) {
+                        this.$notify({ title: 'Already added to cart update with one' })
+                    } else {
+                        this.$notify({ title: 'Add to cart successfully!'})
+                    }
+                }).catch(error => {
+                    this.$notify({ title: error})
+                });               
             },
 
             discountedPrice(product) {
@@ -61,13 +62,15 @@
 
             addToWishlist(product) {
                 // for notification
-                if (this.$store.state.wishlist.find(el => product.id === el.id)) {
-                    this.$notify({ title: 'Already added to wishlist!' })
-                } else {
-                    this.$notify({ title: 'Add to wishlist successfully!'})
-                }
-
-                this.$store.dispatch('addToWishlist', product)
+                this.$store.dispatch('addToWishlist', product).then(() => {
+                    if (this.$store.state.wishlist.find(el => product.id === el.id)) {
+                        this.$notify({ title: 'Already added to wishlist!' })
+                    } else {
+                        this.$notify({ title: 'Add to wishlist successfully!'})
+                    }
+                }).catch(error => {
+                    this.$notify({ title: error})
+                });
             },
 
             addToCompare(product) {

@@ -1,7 +1,6 @@
 <template>
     <div class="product-details-page-wrapper">
         <TheHeader />
-        <Breadcrumb :pageTitle="product.title" />
         <ProductDetailsWrapper :product="product" />
         <ProductDetailsDescriptionReview />
         <TheFooter />
