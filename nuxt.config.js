@@ -1,26 +1,17 @@
+require('dotenv').config()
+
 export default {
     generate: {
         fallback: true
     },
 
-    target: 'static', // default is 'server'
-    generate: {
-        fallback: true, // Genera una página 404 (o fallback) para rutas no pre-generadas
-        routes: [
-          '/about',
-          '/cart',
-          '/checkout',
-          '/compare',
-          '/contact',
-          '/',
-          '/login-register',
-          '/my-account',
-          '/privacy-policy',
-          '/shop',
-          '/terms-conditions',
-          '/wishlist',
-          // Otras rutas estáticas fijas
-        ]
+    target: 'server', // default is 'server'
+    server: {
+        port: process.env.PORT || 3000, // Usar variable de entorno PORT, si está definida
+        host: process.env.HOST || '0.0.0.0' // Usar variable de entorno HOST, si está definida
+    },
+    env: {
+        apiUrl: process.env.API_URL
     },
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
