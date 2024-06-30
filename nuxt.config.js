@@ -4,7 +4,24 @@ export default {
     },
 
     target: 'static', // default is 'server'
-    
+    generate: {
+        fallback: true, // Genera una página 404 (o fallback) para rutas no pre-generadas
+        routes: [
+          '/about',
+          '/cart',
+          '/checkout',
+          '/compare',
+          '/contact',
+          '/',
+          '/login-register',
+          '/my-account',
+          '/privacy-policy',
+          '/shop',
+          '/terms-conditions',
+          '/wishlist',
+          // Otras rutas estáticas fijas
+        ]
+    },
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
         title: 'Flone - VueJS eCommerce Template',
