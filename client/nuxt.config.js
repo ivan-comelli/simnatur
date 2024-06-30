@@ -1,12 +1,13 @@
 require('dotenv').config()
 
-export default {
+module.exports = {
     generate: {
         fallback: true
     },
 
     target: 'static', // default is 'server'
-
+    srcDir: 'client/',
+    
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
         title: 'Flone - VueJS eCommerce Template',
@@ -24,8 +25,8 @@ export default {
 
     // Global CSS (https://go.nuxtjs.dev/config-css)
     css: [
-        '~/assets/scss/style.scss',
         '~/assets/css/animation.css',
+        '~/assets/scss/style.scss',
     ],
 
     // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -77,7 +78,7 @@ export default {
             compact: true,
         },
     },
-    serverMiddleware: [
-        '~/api/index.js'
-    ]
+    axios: {
+        baseURL: "http://localhost:3010/api"
+    }
 }

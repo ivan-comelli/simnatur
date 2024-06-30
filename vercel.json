@@ -1,24 +1,11 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build"
-    },
-    {
-      "src": "server.js",
-      "use": "@vercel/node"
-    }
+    { "src": "client/nuxt.config.js", "use": "@nuxtjs/vercel-builder" },
+    { "src": "server/index.js", "use": "@vercel/node" }
   ],
-  "outputDirectory": "dist",
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/"
-    }
+    { "src": "/api/(.*)", "dest": "server/index.js" },
+    { "src": "/(.*)", "dest": "client/$1" }
   ]
 }

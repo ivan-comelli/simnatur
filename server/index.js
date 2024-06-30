@@ -1,7 +1,7 @@
 const express = require('express');
 const { Nuxt, Builder } = require('nuxt');
 const cors = require('cors');
-const config = require('../nuxt.config.js');
+const config = require('./nuxt.config.js');
 const nuxt = new Nuxt(config);
 const cron = require('node-cron');
 const { BlacklistedToken, sequelizeDB } = require('./models');
