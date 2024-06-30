@@ -39,7 +39,7 @@
                         
                     },
                     {
-                        url: '/blog',
+                        url: '/',
                         title: 'Articulos',
                     },
                     {

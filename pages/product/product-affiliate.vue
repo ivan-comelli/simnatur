@@ -1,9 +1,7 @@
 <template>
-    <div class="product-details-page-wrapper">
-        <Breadcrumb pageTitle="product affiliate" />
-        
+    <div class="product-details-page-wrapper">       
         <div class="shop-area pt-100 pb-100">
-            <div class="container">
+            <div class="container" v-if="product">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="product-details-slider">
@@ -137,6 +135,7 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex'
     export default {
     data() {
         return {
@@ -164,8 +163,9 @@
         };
     },
     computed: {
+        ...mapGetters('products', ['getProducts']),
         product() {
-            return this.$store.getters.getProducts[1];
+            return this.getProducts[1];
         },
     },
     mounted() {

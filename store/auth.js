@@ -18,7 +18,7 @@ export const mutations = {
 export const actions = {
     async login({ commit }, { email, password }) {
       try {
-        const response = await this.$axios.$post('/api/auth/login', { email, password });
+        const response = await this.$axios.$post('/auth/login', { email, password });
         localStorage.setItem('token', response.token);
         commit('SET_USER', response.user);
       } catch (error) {
@@ -28,7 +28,7 @@ export const actions = {
   
     async register({ commit }, userData) {
       try {
-        const response = await this.$axios.$post('/api/auth/signup', userData);
+        const response = await this.$axios.$post('/auth/signup', userData);
         commit('SET_USER', response);
       } catch (error) {
         console.error('Error registering user:', error);
@@ -38,7 +38,7 @@ export const actions = {
   
     async fetchUser({ commit }) {
       try {
-        const response = await this.$axios.$get('/api/auth/me');
+        const response = await this.$axios.$get('/auth/me');
         commit('SET_USER', response.user);
       } catch (error) {
         console.error('Error fetching user:', error);
@@ -47,7 +47,7 @@ export const actions = {
   
     async logout({ commit }) {
       try {
-        const response = await this.$axios.$post('/api/auth/logout');
+        const response = await this.$axios.$post('/auth/logout');
         commit('CLEAR_USER');
         localStorage.removeItem('token');
       } catch (error) {

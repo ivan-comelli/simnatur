@@ -5,14 +5,8 @@ export default {
         fallback: true
     },
 
-    target: 'server', // default is 'server'
-    server: {
-        port: process.env.PORT || 3000, // Usar variable de entorno PORT, si está definida
-        host: process.env.HOST || '0.0.0.0' // Usar variable de entorno HOST, si está definida
-    },
-    env: {
-        apiUrl: process.env.API_URL
-    },
+    target: 'static', // default is 'server'
+
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
         title: 'Flone - VueJS eCommerce Template',
@@ -85,8 +79,5 @@ export default {
     },
     serverMiddleware: [
         '~/api/index.js'
-    ],
-    axios: {
-        baseURL: 'http://localhost:3001', // Cambia esto a la URL de tu backend
-    },
+    ]
 }

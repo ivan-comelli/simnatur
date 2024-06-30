@@ -10,7 +10,7 @@
       "use": "@vercel/node"
     }
   ],
-  "outputDirectory": ".nuxt",
+  "outputDirectory": "dist",
   "routes": [
     {
       "src": "/api/(.*)",

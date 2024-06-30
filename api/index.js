@@ -10,12 +10,8 @@ const { Op } = require('sequelize');
 const app = express();
 const isDev = true;
 
-const corsOptions = {
-  origin: 'http://localhost:3000',
-  optionsSuccessStatus: 200
-};
-app.use(cors(corsOptions));
 app.use(express.json());
+app.use(cors());
 
 sequelizeDB.authenticate()
   .then(() => {
@@ -45,7 +41,7 @@ if (isDev) {
 }
 app.use(nuxt.render);
 
-const PORT = process.env.PORT || 3001;
+const PORT = 3010;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

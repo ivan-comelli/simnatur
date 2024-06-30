@@ -15,7 +15,7 @@ export const mutations = {
 export const actions = {
     async fetchBlogs({ commit }) {
         try {
-            const response = await this.$axios.$get('/api/blogs');
+            const response = await this.$axios.$get('/blogs');
             commit('SET_BLOG', response);
         } catch (error) {
             console.error('Error fetching blogs:', error);

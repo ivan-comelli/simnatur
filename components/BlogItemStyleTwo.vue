@@ -1,7 +1,7 @@
 <template>
     <div class="blog-wrap-2 mb-30">
         <div class="blog-img-2">
-            <n-link :to="`/blog/${slugify(blog.title)}`">
+            <n-link to="">
                 <img :src="blog.imgSrc" :alt="blog.title">
             </n-link>
         </div>
@@ -15,12 +15,12 @@
                 </ul>
             </div>
             <h4>
-                <n-link :to="`/blog/${slugify(blog.title)}`">{{ blog.title }}</n-link>
+                <n-link to="">{{ blog.title }}</n-link>
             </h4>
             <p>{{ blog.desc }}</p>
             <div class="blog-share-comment">
                 <div class="blog-btn-2">
-                    <n-link :to="`/blog/${slugify(blog.title)}`">Read More</n-link>
+                    <n-link to="">Read More</n-link>
                 </div>
                 <div class="blog-share">
                     <span>share:</span>

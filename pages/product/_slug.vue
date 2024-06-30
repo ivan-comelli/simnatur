@@ -9,7 +9,7 @@
 
 <script>
 import TheHeader from '../../components/TheHeader.vue';
-
+    import { mapGetters, mapActions } from 'vuex';
     export default {
     data() {
         return {
@@ -17,8 +17,9 @@ import TheHeader from '../../components/TheHeader.vue';
         };
     },
     computed: {
+        ...mapGetters('products', ['getProducts']),
         product() {
-            return this.$store.getters.getProducts.find(product => this.slugify(product.title) == this.slug);
+            return this.getProducts.find(product => this.slugify(product.title) == this.slug);
         },
     },
     head() {
