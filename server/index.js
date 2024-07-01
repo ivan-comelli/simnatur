@@ -42,10 +42,6 @@ if (env == "development") {
   app.use(nuxt.render);
 }
 
-const PORT = process.env.PORT || 3010;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
 
 cron.schedule('0 0 * * *', async () => {
   const now = new Date();
