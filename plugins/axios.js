@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const createInstance = () => {
   const baseURL = process.env.API_URL; // Obtén la URL base desde la variable de entorno API_URL
+  console.log(baseURL)
 
   const instance = axios.create({
     baseURL

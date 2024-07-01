@@ -22,7 +22,7 @@ export const mutations = {
 export const actions = {
     async fetchProducts({ commit }) {
         try {
-            const response = await this.$axios.$get('/products');
+            const response = await this.$axios.$get('/api/products');
             commit('SET_PRODUCT', response);
         } catch (error) {
             console.error('Error fetching products:', error);
