@@ -42,7 +42,7 @@ if (env == "development") {
   app.use(nuxt.render);
 }
 
-const PORT = 3010;
+const PORT = process.env.PORT || 3010;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
@@ -59,7 +59,4 @@ cron.schedule('0 0 * * *', async () => {
   console.log('Tokens caducados eliminados.');
 });
 
-module.exports = {
-  path: '/api',
-  handle: app
-};
+module.exports = app;
