@@ -17,7 +17,7 @@ module.exports = {
     dialectOptions: {
       ssl: {
         require: true,
-        rejectUnauthorized: false // Ajusta esto según tu configuración de SSL
+        rejectUnauthorized: true // Ajusta esto según tu configuración de SSL
       }
     },
     host: "ep-patient-wind-a5pxrj6x.us-east-2.aws.neon.tech",
