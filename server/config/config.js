@@ -1,3 +1,5 @@
+import pg from "pg"
+
 module.exports = {
   development: {
     username: "root",
@@ -23,6 +25,6 @@ module.exports = {
     username: "neondb_owner",
     password: "2Uq4vtcoLeYx",
     database: "neondb",
-   
+    dialectModule: pg,
   }
 };
