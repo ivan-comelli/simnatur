@@ -1,11 +1,14 @@
 require('dotenv').config()
 const fs = require('fs-extra');
 const path = require('path');
+require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV || 'development'}`
+});
 
 module.exports = {
     target: 'static', // default is 'server'
     serverMiddleware: [
-        '~/server'
+        { path: '/api', handler: '~/server/index.js' }
     ],
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
@@ -96,8 +99,5 @@ module.exports = {
               console.error("Error al copiar el archivo:", err);
             });
         }
-    },
-    axios: {
-        baseURL: "http://localhost:3010/api"
     }
 }

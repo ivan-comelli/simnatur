@@ -3,9 +3,8 @@ const cors = require('cors');
 const cron = require('node-cron');
 const { BlacklistedToken, sequelizeDB } = require('./models');
 const { Op } = require('sequelize');
-
+const env = process.env.NODE_ENV || 'development';
 const app = express();
-const isDev = false;
 
 app.use(express.json());
 app.use(cors());
@@ -32,7 +31,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Error interno del servidor.' });
 });
 
-if (isDev) {
+if (env == "development") {
   const { Nuxt, Builder } = require('nuxt');
   const config = require('../nuxt.config.js');
   const nuxt = new Nuxt(config);
