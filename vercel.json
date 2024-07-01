@@ -2,11 +2,8 @@
     "version": 2,
     "builds": [
       {
-        "src": "package.json",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "dist"
-        }
+        "src": "nuxt.config.js",
+        "use": "@nuxtjs/vercel-builder"
       },
       {
         "src": "server/index.js",
