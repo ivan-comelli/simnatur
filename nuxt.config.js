@@ -1,13 +1,12 @@
 require('dotenv').config()
+const fs = require('fs-extra');
+const path = require('path');
 
 module.exports = {
-    generate: {
-        fallback: true
-    },
-
     target: 'static', // default is 'server'
-    srcDir: 'client/',
-    
+    serverMiddleware: [
+        '~/server'
+    ],
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
         title: 'Flone - VueJS eCommerce Template',
@@ -75,8 +74,28 @@ module.exports = {
         extend (config, ctx) {
         },
         babel: {
-            compact: true,
+            compact: true
         },
+    },
+    hooks: {
+        // Hook build:done para ejecutar al final del proceso de construcción
+        'generate:done'(builder) {
+          console.log("Ejecutando acciones al final del build...");
+    
+          // Ruta del archivo que deseas copiar (por ejemplo, un archivo 'archivo-a-copiar.txt')
+          const sourceDir = path.resolve(__dirname, 'server');
+    
+          // Ruta de destino dentro del directorio de salida de Nuxt.js
+          const targetDir = path.resolve(builder.nuxt.options.generate.dir, 'server');
+          // Copiar el archivo al directorio de salida
+          fs.copy(sourceDir, targetDir)
+            .then(() => {
+              console.log("¡Archivo copiado exitosamente al final del build!");
+            })
+            .catch(err => {
+              console.error("Error al copiar el archivo:", err);
+            });
+        }
     },
     axios: {
         baseURL: "http://localhost:3010/api"

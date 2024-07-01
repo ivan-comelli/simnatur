@@ -1,14 +1,11 @@
 const express = require('express');
-const { Nuxt, Builder } = require('nuxt');
 const cors = require('cors');
-const config = require('./nuxt.config.js');
-const nuxt = new Nuxt(config);
 const cron = require('node-cron');
 const { BlacklistedToken, sequelizeDB } = require('./models');
 const { Op } = require('sequelize');
 
 const app = express();
-const isDev = true;
+const isDev = false;
 
 app.use(express.json());
 app.use(cors());
@@ -36,10 +33,15 @@ app.use((err, req, res, next) => {
 });
 
 if (isDev) {
+  const { Nuxt, Builder } = require('nuxt');
+  const config = require('../nuxt.config.js');
+  const nuxt = new Nuxt(config);
+
   const builder = new Builder(nuxt);
   builder.build();
+
+  app.use(nuxt.render);
 }
-app.use(nuxt.render);
 
 const PORT = 3010;
 app.listen(PORT, () => {

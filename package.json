@@ -4,9 +4,9 @@
     "author": "Uzzal",
     "private": true,
     "scripts": {
-        "dev": "concurrently \"nuxt dev --config-file server/nuxt.config.js\" \"nuxt dev --config-file client/nuxt.config.js\"",
-        "build": "concurrently \"nuxt build --config-file server/nuxt.config.js && node server/index.js\" \"nuxt generate --config-file client/nuxt.config.js\"",
-        "start": "concurrently \"node server/index.js\" \"nuxt start --config-file client/nuxt.config.js\""
+        "dev": "nuxt dev",
+        "build": "nuxt generate",
+        "start": "concurrently \"node dist/server/index.js\" \"nuxt start\""
     },
     "dependencies": {
         "@nuxtjs/axios": "^5.13.6",
