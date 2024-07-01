@@ -29,12 +29,6 @@ const config = {
     password: "2Uq4vtcoLeYx",
     database: "neondb",
     dialectModule: pg,
-  },
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000, // Tiempo máximo en milisegundos que el pool intentará adquirir una conexión antes de lanzar un error
-    idle: 10000
   }
 }['production']
 console.log(config)
