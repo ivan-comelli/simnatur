@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const pg = require("pg")
+require("pg")
 
 
 const env = process.env.NODE_ENV || 'development';
@@ -27,8 +27,7 @@ const config = {
     port: "5432",
     username: "neondb_owner",
     password: "2Uq4vtcoLeYx",
-    database: "neondb",
-    dialectModule: pg,
+    database: "neondb"
   }
 }['production']
 console.log(config)
