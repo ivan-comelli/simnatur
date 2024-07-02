@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const cron = require('node-cron');
+const path = require('path');
+console.log("Current Directory:", __dirname);
+console.log("Models Path:", path.resolve(__dirname, './models'));
 const { BlacklistedToken, sequelizeDB } = require('./models/index.js');
 const { Op } = require('sequelize');
 const env = process.env.NODE_ENV || 'development';
