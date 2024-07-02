@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const cron = require('node-cron');
-const { BlacklistedToken, sequelizeDB } = require('./models');
+const { BlacklistedToken, sequelizeDB } = require('./models/index.js');
 const { Op } = require('sequelize');
 const env = process.env.NODE_ENV || 'development';
 const app = express();
