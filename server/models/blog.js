@@ -20,7 +20,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.JSON,
       allowNull: true,
       get() {
-        return JSON.parse(this.getDataValue('category'));
+        const value = this.getDataValue('category');
+        try {
+          return JSON.parse(value); 
+        } catch (error) {
+          return value;
+        }
       }
     },
     author: DataTypes.STRING,

@@ -32,7 +32,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.JSON,
       allowNull: true,
       get() {
-        return JSON.parse(this.getDataValue('images'));
+        const value = this.getDataValue('images');
+        try {
+          return JSON.parse(value); 
+        } catch (error) {
+          return value;
+        }
       }
     },
     title: {
@@ -61,21 +66,36 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.JSON,
       allowNull: false,
       get() {
-        return JSON.parse(this.getDataValue('category'));
+        const value = this.getDataValue('category');
+        try {
+          return JSON.parse(value); 
+        } catch (error) {
+          return value;
+        }
       }
     },
     tag: {
       type: DataTypes.JSON,
       allowNull: false,
       get() {
-        return JSON.parse(this.getDataValue("tag"));
+        const value = this.getDataValue('tag');
+        try {
+          return JSON.parse(value); 
+        } catch (error) {
+          return value;
+        }
       }
     },
     variation: {
       type: DataTypes.JSON,
       allowNull: true,
       get() {
-        return JSON.parse(this.getDataValue('variation'));
+        const value = this.getDataValue('variation');
+        try {
+          return JSON.parse(value); 
+        } catch (error) {
+          return value;
+        }
       }
     },
     createdAt: {
