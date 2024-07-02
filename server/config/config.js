@@ -1,5 +1,7 @@
 const pg = require("pg");
-export default {
+require('dotenv').config();
+
+const config = {
   development: {
     username: "root",
     password: null,
@@ -12,24 +14,26 @@ export default {
     storage: process.env.DATABASE_URL || ':memory:'
   },
   production: {
-    dialect: 'postgres', // Cambiar a PostgreSQL en producción
+    dialect: 'postgres',
     dialectOptions: {
       ssl: {
         require: true,
         rejectUnauthorized: false // Ajusta esto según tu configuración de SSL
       }
     },
-    host: "ep-patient-wind-a5pxrj6x.us-east-2.aws.neon.tech",
-    port: "5432",
-    username: "neondb_owner",
-    password: "2Uq4vtcoLeYx",
-    database: "neondb",
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
     dialectModule: pg,
   },
   pool: {
     max: 5,
     min: 0,
-    acquire: 30000, // Tiempo máximo en milisegundos que el pool intentará adquirir una conexión antes de lanzar un error
+    acquire: 30000,
     idle: 10000
   }
-}
+};
+
+module.exports = config;

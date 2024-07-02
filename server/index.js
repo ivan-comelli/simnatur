@@ -3,7 +3,7 @@ const cors = require('cors');
 const cron = require('node-cron');
 const { BlacklistedToken, sequelizeDB } = require('./models');
 const { Op } = require('sequelize');
-const env = 'production' //process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || 'development';
 const app = express();
 
 app.use(express.json());
@@ -17,10 +17,10 @@ sequelizeDB.authenticate()
     console.error('Unable to connect to the database:', err);
   });
 
-app.use('/api/auth', require('./routes/authRoutes'));
-app.use('/api/blogs', require('./routes/blogRoutes'));
-app.use('/api/products', require('./routes/productRoutes'));
-app.use('/api/users', require('./routes/userRoutes'));
+app.use('/auth', require('./routes/authRoutes'));
+app.use('/blogs', require('./routes/blogRoutes'));
+app.use('/products', require('./routes/productRoutes'));
+app.use('/users', require('./routes/userRoutes'));
 
 app.use((req, res) => {
   res.status(404).json({ error: 'Ruta no encontrada.' });
@@ -41,7 +41,6 @@ if (env == "development") {
 
   app.use(nuxt.render);
 }
-
 
 cron.schedule('0 0 * * *', async () => {
   const now = new Date();
