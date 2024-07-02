@@ -83,7 +83,7 @@ module.exports = {
     },
     hooks: {
         // Hook build:done para ejecutar al final del proceso de construcción
-        'generate:done'(builder) {
+        'build:done'(builder) {
           console.log("Ejecutando acciones al final del build...");
     
           // Ruta del archivo que deseas copiar (por ejemplo, un archivo 'archivo-a-copiar.txt')
