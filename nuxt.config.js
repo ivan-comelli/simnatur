@@ -6,7 +6,10 @@ require('dotenv').config({
 });
 
 module.exports = {
-    target: 'static', // default is 'server'
+    target: 'static',
+    generate: {
+        dir: 'dist' // Directorio de salida para los archivos generados
+    },
     serverMiddleware: [
         { path: '/api', handler: '~/server/index.js' }
     ],
