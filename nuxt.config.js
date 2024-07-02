@@ -7,9 +7,7 @@ require('dotenv').config({
 
 module.exports = {
     target: 'server',
-    generate: {
-        dir: 'dist' // Directorio de salida para los archivos generados
-    },
+    ssr:'false',
     serverMiddleware: [
         { path: '/api', handler: '~/server/index.js' }
     ],
@@ -82,6 +80,26 @@ module.exports = {
         babel: {
             compact: true
         },
+    },
+    hooks: {
+        // Hook build:done para ejecutar al final del proceso de construcción
+        'generate:done'(builder) {
+          console.log("Ejecutando acciones al final del build...");
+    
+          // Ruta del archivo que deseas copiar (por ejemplo, un archivo 'archivo-a-copiar.txt')
+          const sourceDir = path.resolve(__dirname, 'server');
+    
+          // Ruta de destino dentro del directorio de salida de Nuxt.js
+          const targetDir = path.resolve(builder.nuxt.options.generate.dir, 'server');
+          // Copiar el archivo al directorio de salida
+          fs.copy(sourceDir, targetDir)
+            .then(() => {
+              console.log("¡Archivo copiado exitosamente al final del build!");
+            })
+            .catch(err => {
+              console.error("Error al copiar el archivo:", err);
+            });
+        }
     },
     env: {
         API_URL: process.env.API_URL
