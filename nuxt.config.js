@@ -90,7 +90,7 @@ module.exports = {
           const sourceDir = path.resolve(__dirname, 'server');
     
           // Ruta de destino dentro del directorio de salida de Nuxt.js
-          const targetDir = path.resolve(builder.nuxt.options.generate.dir, 'server');
+          const targetDir = path.resolve(builder.nuxt.options.build.dir, 'server');
           // Copiar el archivo al directorio de salida
           fs.copy(sourceDir, targetDir)
             .then(() => {
