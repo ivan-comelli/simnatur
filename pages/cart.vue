@@ -125,7 +125,7 @@
                                     </div>
                                     <h5>Total products <span>${{ total.toFixed(2) }}</span></h5>
                                     <h4 class="grand-total-title">Grand Total  <span>${{ total.toFixed(2) }}</span></h4>
-                                    <n-link to="/checkout">Proceed to Checkout</n-link>
+                                    <n-link to="/checkout">Proceder con el Pago</n-link>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +136,7 @@
                                 <i class="pe-7s-cart"></i>
                             </div>
                             <h4>No items found in cart</h4>
-                            <n-link to="/shop" class="empty-cart__button">Shop Now</n-link>
+                            <n-link to="/shop" class="empty-cart__button">Comprar Ahora</n-link>
                         </div>
                     </div>
                 </div>

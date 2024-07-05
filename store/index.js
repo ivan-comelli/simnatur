@@ -7,6 +7,7 @@ export const state = () => ({
     cart: [],
     wishlist: [],
     compare: [],
+    preference: null
 })
 
 export const getters = {
@@ -24,6 +25,7 @@ export const getters = {
       });
       return total;
     },
+    getPreference: state => state.preference
 }
 
 export const mutations =  {
@@ -66,6 +68,9 @@ export const mutations =  {
     REMOVE_FROM_COMPARE(state, product) {
       state.compare = state.compare.filter(item => product.id !== item.id);
     },
+    UPDATE_PREFERENCE(state, id) {
+      state.preference = id;
+    }
 }
 
 export const actions = {
@@ -109,11 +114,19 @@ export const actions = {
     async nuxtServerInit({ commit }) {
       if (process.client) {
         try {
-          const response = await this.$axios.$get('/api/auth/me');
+          const response = await this.$axios.$get('/auth/me');
           commit('SET_USER', response);
         } catch (error) {
           console.error('Error during nuxtServerInit:', error);
         }
       }
     },
+    async paymentCart({ commit, state }) {
+      try {
+        const response = await this.$axios.$post('/checkout/create-order', state.cart);
+        commit('UPDATE_PREFERENCE', response);
+      } catch (error) {
+        console.error('Error during nuxtServerInit:', error);
+      }
+    }
 }

@@ -1,9 +1,25 @@
-require('dotenv').config()
 const fs = require('fs-extra');
-const path = require('path');
-require('dotenv').config({
-    path: `.env.${process.env.NODE_ENV || 'development'}`
-});
+const dotenv = require('dotenv');
+
+// Define los posibles entornos y sus archivos .env correspondientes
+const envFiles = {
+    development: '.env.development',
+    production: '.env.production',
+    test: '.env.test'
+  };
+  
+  // Obtén el entorno actual, o usa 'development' por defecto
+  const env = process.env.NODE_ENV || 'development';
+  
+  // Obtén el archivo .env correspondiente
+  const envFile = envFiles[env];
+  
+  // Verifica si el archivo .env existe y cárgalo
+  if (fs.existsSync(envFile)) {
+    dotenv.config({ path: envFile });
+  } else {
+    console.warn(`Archivo de configuración ${envFile} no encontrado, asegurate de que el archivo exista.`);
+  }
 
 module.exports = {
     target: 'server',
@@ -23,6 +39,12 @@ module.exports = {
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         ],
+        script: [
+            {
+              src: 'https://sdk.mercadopago.com/js/v2',
+              body: false  // Cargar el script al final del body
+            }
+          ]
         
     },
 
@@ -82,6 +104,7 @@ module.exports = {
         },
     },
     env: {
-        API_URL: process.env.API_URL
+        API_URL: process.env.API_URL,
+
     }
 }

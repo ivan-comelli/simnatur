@@ -8,24 +8,24 @@
                 <div class="row" v-if="products.length > 0">
                     <div class="col-lg-7">
                         <div class="billing-info-wrap">
-                            <h3>Billing Details</h3>
+                            <h3>Detalles de Compra</h3>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="billing-info mb-20">
-                                        <label>First Name</label>
+                                        <label>Nombre</label>
                                         <input type="text">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="billing-info mb-20">
-                                        <label>Last Name</label>
+                                        <label>Apellido</label>
                                         <input type="text">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="billing-info mb-20">
-                                        <label>Company Name</label>
-                                        <input type="text">
+                                        <label>Compania</label>
+                                        <input type="text" placeholder="Opcional">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
@@ -95,7 +95,7 @@
                                 <div class="your-order-product-info">
                                     <div class="your-order-top">
                                         <ul>
-                                            <li>Product</li>
+                                            <li>Producto</li>
                                             <li>Total</li>
                                         </ul>
                                     </div>
@@ -108,8 +108,8 @@
                                     </div>
                                     <div class="your-order-bottom">
                                         <ul>
-                                            <li class="your-order-shipping">Shipping</li>
-                                            <li>Free shipping</li>
+                                            <li class="your-order-shipping">Envio</li>
+                                            <li>Envio Gratis</li>
                                         </ul>
                                     </div>
                                     <div class="your-order-total">
@@ -121,7 +121,7 @@
                                 </div>
                             </div>
                             <div class="place-order mt-25">
-                                <button class="btn-hover">Place Order</button>
+                                <button @click="goPayment" class="btn-hover">Pagar Orden</button>
                             </div>
                         </div>
                     </div>
@@ -132,8 +132,8 @@
                             <div class="icon">
                                 <i class="pe-7s-cash"></i>
                             </div>
-                            <h4>No items found in cart to checkout</h4>
-                            <n-link to="/shop" class="empty-cart__button">Shop Now</n-link>
+                            <h4>No productos en el carrito para pagar.</h4>
+                            <n-link to="/shop" class="empty-cart__button">Comprar Ahora</n-link>
                         </div>
                     </div>
                 </div>
@@ -144,7 +144,8 @@
     </div>
 </template>
 
-<script>
+<script> 
+    import { mapActions } from 'vuex'
     export default {
         components: {
             TheHeader: () => import('@/components/TheHeader'),
@@ -152,6 +153,9 @@
             TheFooter: () => import("@/components/TheFooter"),
         },
         computed: {
+            preference() {
+                return this.$store.getters.getPreference
+            },
             products() {
                 return this.$store.getters.getCart
             },
@@ -160,7 +164,25 @@
                 return this.$store.getters.getTotal
             },
         },
+        methods: {
+            ...mapActions(['paymentCart']),
+            goPayment() {
+                window.location.href = this.preference.init_point;
+            }  
+        },
+        mounted() {
+            const mp = new MercadoPago('APP_USR-f43919a5-4ac6-499e-a6a3-8f1f555975c5');
+            const bricksBuilder = mp.bricks();
+            this.paymentCart().then(()=> {
+                bricksBuilder.create("wallet", "wallet_container", {
+                    initialization: {
+                        preferenceId: this.preference.id,
+                        redirectMode: "blank"
 
+                    }
+                });
+            });
+        },
         head() {
             return {
                 title: "Checkout"
