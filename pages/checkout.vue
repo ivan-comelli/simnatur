@@ -21,76 +21,56 @@
                                         <label>Apellido</label>
                                         <input type="text">
                                     </div>
-                                </div>
+                                </div>               
                                 <div class="col-lg-12">
                                     <div class="billing-info mb-20">
-                                        <label>Compania</label>
-                                        <input type="text" placeholder="Opcional">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="billing-select mb-20">
-                                        <label>Country</label>
-                                        <select>
-                                            <option>Select a country</option>
-                                            <option>Azerbaijan</option>
-                                            <option>Bahamas</option>
-                                            <option>Bahrain</option>
-                                            <option>Bangladesh</option>
-                                            <option>Barbados</option>
-                                        </select>
+                                        <label>Direccion</label>
+                                        <input class="billing-address" placeholder="Nombre de calle y numero" type="text">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="billing-info mb-20">
-                                        <label>Street Address</label>
-                                        <input class="billing-address" placeholder="House number and street name" type="text">
-                                        <input placeholder="Apartment, suite, unit etc." type="text">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="billing-info mb-20">
-                                        <label>Town / City</label>
+                                        <label>Ciudad</label>
                                         <input type="text">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="billing-info mb-20">
-                                        <label>State / County</label>
+                                        <label>Provincia</label>
                                         <input type="text">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="billing-info mb-20">
-                                        <label>Postcode / ZIP</label>
+                                        <label>Codigo Postal</label>
                                         <input type="text">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="billing-info mb-20">
-                                        <label>Phone</label>
+                                        <label>Telefono</label>
                                         <input type="text">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="billing-info mb-20">
-                                        <label>Email Address</label>
+                                        <label>Correo Electronico</label>
                                         <input type="text">
                                     </div>
                                 </div>
                             </div>
                             <div class="additional-info-wrap">
-                                <h4>Additional information</h4>
+                                <h4>Informacion Adicional</h4>
                                 <div class="additional-info">
-                                    <label>Order notes</label>
-                                    <textarea placeholder="Notes about your order, e.g. special notes for delivery. " name="message"></textarea>
+                                    <label>Nota</label>
+                                    <textarea placeholder="Notas sobre tu orden, EJ. Nota importante para el delivery. " name="message"></textarea>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-5">
                         <div class="your-order-area">
-                            <h3>Your order</h3>
+                            <h3>Tu Orden</h3>
                             <div class="your-order-wrap gray-bg-4">
                                 <div class="your-order-product-info">
                                     <div class="your-order-top">
@@ -165,10 +145,7 @@
             },
         },
         methods: {
-            ...mapActions(['paymentCart']),
-            goPayment() {
-                window.location.href = this.preference.init_point;
-            }  
+            ...mapActions(['paymentCart'])
         },
         mounted() {
             const mp = new MercadoPago('APP_USR-f43919a5-4ac6-499e-a6a3-8f1f555975c5');
@@ -230,7 +207,10 @@
                     settings
                 );
             };
-            renderPaymentBrick(bricksBuilder);
+            this.paymentCart().then(() => {
+                console.log("aquie")
+                renderPaymentBrick(bricksBuilder);
+            })
         },
         head() {
             return {
