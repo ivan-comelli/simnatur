@@ -23,7 +23,8 @@ export const actions = {
         commit('SET_USER', response.user);
       } catch (error) {
         console.error('Error during login:', error);
-        return Promise.reject(error);
+        throw error;
+
       }
     },
   
@@ -53,6 +54,7 @@ export const actions = {
         localStorage.removeItem('token');
       } catch (error) {
         console.error('Error during logout:', error);
+        throw error;
       }
     },
 
