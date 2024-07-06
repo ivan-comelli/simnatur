@@ -23,6 +23,7 @@ export const actions = {
         commit('SET_USER', response.user);
       } catch (error) {
         console.error('Error during login:', error);
+        return Promise.reject(error);
       }
     },
   
@@ -52,6 +53,18 @@ export const actions = {
         localStorage.removeItem('token');
       } catch (error) {
         console.error('Error during logout:', error);
+      }
+    },
+
+    async nuxtServerInit({ commit }) {
+      if (process.client) {
+        console.log("nuxtServer")
+        try {
+          const response = await this.$axios.$get('/auth/me');
+          commit('SET_USER', response);
+        } catch (error) {
+          console.error('Error during nuxtServerInit:', error);
+        }
       }
     },
 };

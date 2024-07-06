@@ -1,7 +1,15 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-
 Vue.use(Vuex);
+
+const myMiddleware = store => {
+  store.subscribeAction((action, state) => {
+    // Aquí puedes ejecutar código antes de que cada acción se ejecute
+    console.log(`Action ${action.type} dispatched`);
+  });
+};
+
+export const plugins = [myMiddleware];
 
 export const state = () => ({
     cart: [],
@@ -91,16 +99,13 @@ export const actions = {
     decreaseProduct({ commit }, product) {
       commit('DECREASE_PRODUCT', product);
     },
-    addToWishlist({ state, commit }, payload) {
-      return new Promise((resolve, reject) => {
-        if (state.auth.user) {
+    async addToWishlist({ state, commit }, payload) {
+      try {
+          await this.$axios.$post('/wishlist', payload.id);
           commit('ADD_TO_WISHLIST', payload);
-          resolve(); // Resolver la promesa si se agrega a la lista de deseos correctamente
-        } else {
-          const error = new Error("Usuario no autenticado");
-          reject(error); // Rechazar la promesa con un error si el usuario no está autenticado
-        }
-      });
+      } catch {
+        console.log("error")
+      }
     },
     addToCompare({ commit }, payload) {
       commit('ADD_TO_COMPARE', payload);
@@ -110,16 +115,6 @@ export const actions = {
     },
     removeFromCompare({ commit }, product) {
       commit('REMOVE_FROM_COMPARE', product);
-    },
-    async nuxtServerInit({ commit }) {
-      if (process.client) {
-        try {
-          const response = await this.$axios.$get('/auth/me');
-          commit('SET_USER', response);
-        } catch (error) {
-          console.error('Error during nuxtServerInit:', error);
-        }
-      }
     },
     async paymentCart({ commit, state }) {
       try {

@@ -1,37 +1,29 @@
 // plugins/axios.js
+export default function ({ $axios, redirect }) {
+  // Configura la URL base (opcional)
+  $axios.defaults.baseURL = process.env.API_URL || 'http://localhost:3000';
 
-import axios from 'axios';
-
-const createInstance = () => {
-  const baseURL = process.env.API_URL; // Obtén la URL base desde la variable de entorno API_URL
-  const instance = axios.create({
-    baseURL
-  });
-
-  instance.interceptors.request.use(
-    config => {
-      if (process.client) {
+  // Intercepta la solicitud y añade el token de autorización
+  $axios.onRequest(async (config) => {
+    try {
+      if(process.client) {
         const token = localStorage.getItem('token');
         if (token) {
           config.headers.common['Authorization'] = `Bearer ${token}`;
         }
       }
-      return config;
-    },
-    error => {
-      return Promise.reject(error);
+    } catch (error) {
+      console.error('Error retrieving token:', error);
     }
-  );
+    return config;
+  });
 
-  return instance;
-};
+  // Manejo global de errores (opcional)
+  $axios.onError(error => {
+    const code = parseInt(error.response && error.response.status);
+    if (code === 401) {
 
-export default function ({ $axios }) {
-  $axios.setBaseURL(process.env.API_URL); // Configura la base URL globalmente
-
-  const instance = createInstance();
-
-  // Configura interceptores u otras configuraciones de Axios aquí si es necesario
-
-  return instance;
+    }
+    return Promise.reject(error);
+  });
 }

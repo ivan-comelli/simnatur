@@ -8,7 +8,6 @@ export const createOrder = async (req, res) => {
       quantity: item.cartQuantity, 
       unit_price: item.price 
     }));
-    console.log(itemsCart)
     const result = await preferenceMP.create({
       body: {
         items: itemsCart

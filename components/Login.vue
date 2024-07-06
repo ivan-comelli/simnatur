@@ -29,12 +29,12 @@ export default {
     methods: {
         ...mapActions('auth',['login']),
         async loginUser() {
-            try {
-                await this.login({ email: this.email, password: this.password });
+            this.login({ email: this.email, password: this.password }).then(() => {
+                console.log("BIEN")
                 this.$router.push('/');
-            } catch (error) {
+            }).catch ((error) => {
                 console.error('Error during login:', error);
-            }
+            });
         }
     }
 };

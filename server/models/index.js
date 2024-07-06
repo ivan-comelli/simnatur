@@ -6,6 +6,7 @@ const User = require('./user')(sequelizeDB, Sequelize.DataTypes);
 const Product = require('./product')(sequelizeDB, Sequelize.DataTypes);
 const BlacklistedToken = require('./blacklistedtoken')(sequelizeDB, Sequelize.DataTypes);
 const Blog = require('./blog')(sequelizeDB, Sequelize.DataTypes);
+const Favorite = require('./favorite')(sequelizeDB, Sequelize.DataTypes);
 const { MercadoPagoConfig, Preference } = require('mercadopago');
 
 console.log(process.env.ACCESS_TOKEN_MP)
@@ -18,6 +19,7 @@ const db = {
   Product,
   BlacklistedToken,
   Blog,
+  Favorite,
   preferenceMP
 };
 

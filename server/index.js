@@ -22,6 +22,8 @@ app.use('/blogs', require('./routes/blogRoutes'));
 app.use('/products', require('./routes/productRoutes'));
 app.use('/users', require('./routes/userRoutes'));
 app.use('/checkout', require('./routes/paymentRoutes'));
+app.use('/wishlist', require('./routes/wishlistRoutes'));
+
 
 app.use((req, res) => {
   res.status(404).json({ error: 'Ruta no encontrada.' });

@@ -208,7 +208,6 @@
                 );
             };
             this.paymentCart().then(() => {
-                console.log("aquie")
                 renderPaymentBrick(bricksBuilder);
             })
         },
