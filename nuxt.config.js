@@ -27,6 +27,14 @@ module.exports = {
     serverMiddleware: [
         { path: '/api', handler: '~/server/index.js' }
     ],
+    render: {
+        http: {
+          cache: {
+            maxAge: 0,
+            immutable: false
+          }
+        }
+      },
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
         title: 'Simnatur - Primera Calidad de Productos Naturales',
