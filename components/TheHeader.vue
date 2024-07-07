@@ -110,6 +110,35 @@
         logout: 'auth/logout',
         fetchWishList: 'fetchWishList'
       }),
+
+      async listarContenidosCache() {
+        console.log('Iniciando función para listar contenidos de la caché...');
+
+        if ('caches' in window) {
+          try {
+            const cacheNames = await caches.keys();
+            console.log('Nombres de cachés disponibles:', cacheNames);
+
+            for (const cacheName of cacheNames) {
+              const cache = await caches.open(cacheName);
+              const requests = await cache.keys();
+
+              console.log(`Contenido de la caché '${cacheName}':`);
+              for (const request of requests) {
+                console.log(request.url);
+              }
+            }
+          } catch (error) {
+            console.error('Error al listar contenidos de la caché:', error);
+          }
+        } else {
+          console.log('La API de Cache no está disponible en este navegador.');
+        }
+
+        console.log('Finalizando función para listar contenidos de la caché.');
+      },
+
+      
       handleScroll() {
         this.isSticky = window.scrollY >= 200;
       },
@@ -128,15 +157,7 @@
     mounted() {
       this.fetchWishList();
       window.addEventListener('scroll', this.handleScroll);
-      caches.keys().then((cacheNames) => {
-        console.log('Cachés disponibles:', cacheNames);
-      });
-      // Imprimir todos los elementos almacenados en localStorage
-      for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        const value = localStorage.getItem(key);
-        console.log(`Clave: ${key}, Valor: ${value}`);
-      }
+      this.listarContenidosCache();
 
     },
     beforeDestroy() {
