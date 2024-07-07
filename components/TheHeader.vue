@@ -128,6 +128,9 @@
     mounted() {
       this.fetchWishList();
       window.addEventListener('scroll', this.handleScroll);
+      caches.keys().then((cacheNames) => {
+        console.log('Cachés disponibles:', cacheNames);
+      });
     },
     beforeDestroy() {
       window.removeEventListener('scroll', this.handleScroll);
