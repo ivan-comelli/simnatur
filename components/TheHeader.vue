@@ -131,6 +131,13 @@
       caches.keys().then((cacheNames) => {
         console.log('Cachés disponibles:', cacheNames);
       });
+      // Imprimir todos los elementos almacenados en localStorage
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        const value = localStorage.getItem(key);
+        console.log(`Clave: ${key}, Valor: ${value}`);
+      }
+
     },
     beforeDestroy() {
       window.removeEventListener('scroll', this.handleScroll);
