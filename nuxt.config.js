@@ -73,6 +73,10 @@ module.exports = {
             src: '~/plugins/notifications-client.js', 
             mode: 'client' 
         },
+        { 
+            src: '~/plugins/register-sw.js',
+            mode: 'client' 
+        }
     ],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -101,18 +105,7 @@ module.exports = {
         },
         babel: {
             compact: true
-        },
-        filenames: {
-            app: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
-            chunk: ({ isDev }) => isDev ? '[name].js' : '[contenthash].js',
-            css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
-            img: ({ isDev }) => isDev ? '[path][name].[ext]' : '[path][name].[contenthash].[ext]',
-            font: ({ isDev }) => isDev ? '[path][name].[ext]' : '[path][name].[contenthash].[ext]',
-            video: ({ isDev }) => isDev ? '[path][name].[ext]' : '[path][name].[contenthash].[ext]'
         }
-    },
-    generate: {
-        fallback: true // If you are generating static pages, ensures fallback for 404 errors
     },
     env: {
         API_URL: process.env.API_URL,
