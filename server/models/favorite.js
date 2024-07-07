@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       Favorite.belongsTo(models.Product, { foreignKey: 'productId' });
     }
   }
+
   Favorite.init({
     id: {
       type: DataTypes.INTEGER,

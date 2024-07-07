@@ -78,6 +78,9 @@ export const mutations =  {
     },
     UPDATE_PREFERENCE(state, id) {
       state.preference = id;
+    },
+    UPDATE_WISHLIST(state, products) {
+      state.wishlist = products;
     }
 }
 
@@ -101,10 +104,20 @@ export const actions = {
     },
     async addToWishlist({ state, commit }, payload) {
       try {
-          await this.$axios.$post('/wishlist', payload.id);
+          console.log(payload.id)
+          await this.$axios.$post('/wishlist', {id: payload.id});
           commit('ADD_TO_WISHLIST', payload);
       } catch {
         console.log("error")
+      }
+    },
+    async fetchWishList({ commit }) {
+      try {
+        const response = await this.$axios.$get('/wishlist');
+        console.log(response.data)
+        commit('UPDATE_WISHLIST', response.data)
+      } catch (error) {
+
       }
     },
     addToCompare({ commit }, payload) {

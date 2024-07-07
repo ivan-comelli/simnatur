@@ -105,7 +105,11 @@
       }),
     },
     methods: {
-      ...mapActions('auth', ['fetchUser', 'logout']),
+      ...mapActions({
+        fetchUser: 'auth/fetchUser',
+        logout: 'auth/logout',
+        fetchWishList: 'fetchWishList'
+      }),
       handleScroll() {
         this.isSticky = window.scrollY >= 200;
       },
@@ -122,6 +126,7 @@
       await this.fetchUser();
     },
     mounted() {
+      this.fetchWishList();
       window.addEventListener('scroll', this.handleScroll);
     },
     beforeDestroy() {

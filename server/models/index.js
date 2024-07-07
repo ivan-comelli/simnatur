@@ -12,6 +12,8 @@ const { MercadoPagoConfig, Preference } = require('mercadopago');
 console.log(process.env.ACCESS_TOKEN_MP)
 const clientMP = new MercadoPagoConfig({ accessToken: process.env.ACCESS_TOKEN_MP, options: { timeout: 5000, idempotencyKey: 'abc' } });
 const preferenceMP = new Preference(clientMP);
+Product.hasMany(Favorite, { foreignKey: 'productId' });
+Favorite.belongsTo(Product, { foreignKey: 'productId' });
 const db = {
   sequelizeDB,
   Sequelize,
