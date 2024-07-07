@@ -11,6 +11,7 @@ self.addEventListener('install', (event) => {
       caches.keys().then((cacheNames) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
+            console.log(cacheName)
             return caches.delete(cacheName);
           })
         );
