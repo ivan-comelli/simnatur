@@ -1,4 +1,4 @@
-const STATIC_CACHE = "v1"
+const STATIC_CACHE = "v2"
 
 self.addEventListener('install', (event) => {
   console.log('Service Worker instalado');
