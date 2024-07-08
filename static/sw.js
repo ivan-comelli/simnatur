@@ -44,15 +44,15 @@ self.addEventListener('fetch', (event) => {
           if (event.request.url.includes('/api/')) {
             return networkResponse;
           }
-          //const responseToCache = networkResponse.clone();
-          //const varyHeader = networkResponse.headers.get('Vary');
-          //if (varyHeader && varyHeader.includes('*')) {
-          //  // No almacenar en caché una respuesta con Vary: *
-          //  return networkResponse;
-          //}
-          //caches.open(STATIC_CACHE).then((cache) => {
-          //  cache.put(event.request, responseToCache);
-          //});
+          const responseToCache = networkResponse.clone();
+          const varyHeader = networkResponse.headers.get('Vary');
+          if (varyHeader && varyHeader.includes('*')) {
+            // No almacenar en caché una respuesta con Vary: *
+            return networkResponse;
+          }
+          caches.open(STATIC_CACHE).then((cache) => {
+            cache.put(event.request, responseToCache);
+          });
           return networkResponse;
         });
       })
