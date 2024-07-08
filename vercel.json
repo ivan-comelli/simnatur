@@ -10,11 +10,9 @@
     ],
     "routes": [
       {
-        "src": "/sw.js",
-        "continue": true,
+        "src": "https://www.simnatur.com/img/*",
         "headers": {
-          "Cache-Control": "public, max-age=0, must-revalidate",
-          "Service-Worker-Allowed": "/"
+          "Cache-Control": "public, max-age=86400" 
         }
       }
     ]
