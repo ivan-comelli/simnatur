@@ -30,12 +30,11 @@ module.exports = {
     render: {
         static: {
           setHeaders(res, path) {
-            console.log(`Configurando headers para la URL: ${path}`);
+            //console.log(`Configurando headers para la URL: ${path}`);
             res.setHeader('Cache-Control', 'no-cache');
           }
         }
     },
-
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
         title: 'Simnatur - Primera Calidad de Productos Naturales',
