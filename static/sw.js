@@ -5,7 +5,17 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
   console.log('Service Worker activado');
-  event.waitUntil(clients.claim()); // Opcional: Tomar control inmediato de la página
+  event.waitUntil(
+    caches.keys().then((keyList) => {
+      return Promise.all(keyList.map((key) => {
+        if (key !== STATIC_CACHE) {
+          console.log('Eliminando caché antigua:', key);
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+  self.clients.claim();
 });
 
 self.addEventListener('fetch', (event) => {
@@ -17,7 +27,7 @@ self.addEventListener('fetch', (event) => {
         return response;
       } else {
         console.log('Recurso no encontrado en la caché, haciendo fetch:', event.request.url);
-        return fetch(event.request).then((networkResponse) => {
+        return fetch(event.request, { cache: 'no-store' }).then((networkResponse) => {
           return caches.open('static-v1').then((cache) => {
             cache.put(event.request, networkResponse.clone());
             console.log("Recurso clonado");
