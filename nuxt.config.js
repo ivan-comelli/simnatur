@@ -30,7 +30,7 @@ module.exports = {
     render: {
         static: {
           setHeaders(res) {
-            res.setHeader('Cache-Control', 'no-cache, no-store');
+            res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0');
           }
         }
     },
