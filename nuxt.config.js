@@ -27,6 +27,13 @@ module.exports = {
     serverMiddleware: [
         { path: '/api', handler: '~/server/index.js' }
     ],
+    render: {
+        static: {
+          setHeaders(res) {
+            res.setHeader('Cache-Control', 'no-cache');
+          }
+        }
+    },
 
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {

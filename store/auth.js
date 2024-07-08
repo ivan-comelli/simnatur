@@ -43,6 +43,7 @@ export const actions = {
         const response = await this.$axios.$get('/auth/me');
         commit('SET_USER', response.user);
       } catch (error) {
+        commit('SET_USER', null);
         console.error('Error fetching user:', error);
       }
     },

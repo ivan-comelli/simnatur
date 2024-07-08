@@ -1,6 +1,8 @@
+const STATIC_CACHE = "v1"
+
 self.addEventListener('install', (event) => {
   console.log('Service Worker instalado');
-  self.skipWaiting(); // Opcional: Forzar la activación inmediata del nuevo Service Worker
+  self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
@@ -19,22 +21,43 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  console.log('Fetch event para:', event.request.url);
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      if (response) {
-        console.log('Recurso encontrado en la caché:', event.request.url);
-        return response;
-      } else {
-        console.log('Recurso no encontrado en la caché, haciendo fetch:', event.request.url);
-        return fetch(event.request, { cache: 'no-store' }).then((networkResponse) => {
-          return caches.open('static-v1').then((cache) => {
-            cache.put(event.request, networkResponse.clone());
-            console.log("Recurso clonado");
+  const requestUrl = new URL(event.request.url);
+
+  // Ignorar solicitudes de esquemas no soportados
+  if (requestUrl.protocol !== 'http:' && requestUrl.protocol !== 'https:') {
+    console.log('Ignorando esquema no soportado:', requestUrl.protocol);
+    return;
+  }
+
+  // Estrategia de caché para recursos estáticos
+  if (requestUrl.origin === location.origin) {
+    event.respondWith(
+      caches.match(event.request).then((response) => {
+        if (response) {
+          return response;
+        }
+        return fetch(event.request).then((networkResponse) => {
+          if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
             return networkResponse;
+          }
+          if (event.request.url.includes('/api/')) {
+            return networkResponse;
+          }
+          const responseToCache = networkResponse.clone();
+          const varyHeader = networkResponse.headers.get('Vary');
+          if (varyHeader && varyHeader.includes('*')) {
+            // No almacenar en caché una respuesta con Vary: *
+            return networkResponse;
+          }
+          caches.open(STATIC_CACHE).then((cache) => {
+            cache.put(event.request, responseToCache);
           });
+          return networkResponse;
         });
-      }
-    })
-  );
+      })
+    );
+  }
+  else {
+    return;
+  }
 });
