@@ -29,8 +29,9 @@ module.exports = {
     ],
     render: {
         static: {
-          setHeaders(res) {
-            res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0');
+          setHeaders(res, path) {
+            console.log(`Configurando headers para la URL: ${path}`);
+            res.setHeader('Cache-Control', 'no-cache');
           }
         }
     },
@@ -81,11 +82,11 @@ module.exports = {
             src: '~/plugins/notifications-client.js', 
             mode: 'client' 
         },
-        { 
-            src: '~/plugins/register-sw.js',
-            mode: 'client' 
-        }
-    ],
+        //{ 
+        //    src: '~/plugins/register-sw.js',
+        //    mode: 'client' 
+        //}
+    ],//
 
     // Auto import components (https://go.nuxtjs.dev/config-components)
     components: true,
