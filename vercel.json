@@ -11,5 +11,15 @@
         "src": ".nuxt/middleware.js",
         "use": "@vercel/node"
       }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",  // Rutas que no deben ser manejadas por el middleware
+        "dest": "/api/$1"
+      },
+      {
+        "src": "/(.*)",  // Rutas restantes manejadas por el middleware
+        "dest": ".nuxt/middleware.js"
+      }
     ]
 }
