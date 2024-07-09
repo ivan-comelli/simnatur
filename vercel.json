@@ -14,11 +14,11 @@
     ],
     "routes": [
       {
-        "src": "/api/(.*)",  // Rutas que no deben ser manejadas por el middleware
+        "src": "/api/(.*)",  
         "dest": "/api/$1"
       },
       {
-        "src": "/(.*)",  // Rutas restantes manejadas por el middleware
+        "src": "/(.*)",  
         "dest": ".nuxt/middleware.js"
       }
     ]
