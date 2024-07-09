@@ -8,14 +8,8 @@
         }
       },
       {
-        "src": "dist/middleware.js",
+        "src": ".nuxt/middleware.js",
         "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "dist/middleware.js"
       }
     ]
 }
