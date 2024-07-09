@@ -8,12 +8,15 @@
         }
       }
     ],
-    "routes": [
+    "rewrites": [
       {
-        "src": "https://www.simnatur.com/img/*",
-        "headers": {
-          "Cache-Control": "public, max-age=86400" 
-        }
+        "source": "/(.*)",
+        "destination": "/_nuxt/$1"
       }
-    ]
-  }
+    ],
+    "functions": {
+      "middleware.ts": {
+        "runtime": "nodejs16.x"
+      }
+    }
+}
