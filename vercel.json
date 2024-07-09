@@ -6,17 +6,16 @@
         "config": {
           "serverFiles": ["server/**"]
         }
-      }
-    ],
-    "rewrites": [
+      },
       {
-        "source": "/(.*)",
-        "destination": "/_nuxt/$1"
+        "src": "dist/middleware.js",
+        "use": "@vercel/node"
       }
     ],
-    "functions": {
-      "middleware.ts": {
-        "runtime": "nodejs16.x"
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "dist/middleware.js"
       }
-    }
+    ]
 }

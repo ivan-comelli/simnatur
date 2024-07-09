@@ -1,17 +1,13 @@
-// middleware.ts (Ejemplo en TypeScript para Vercel)
-import { NowRequest, NowResponse } from '@vercel/node';
+import { VercelRequest, VercelResponse } from '@vercel/node';
 
+export default function middleware(req: VercelRequest, res: VercelResponse) {
+  console.log('Middleware ejecutado');
+  console.log('Método de la solicitud:', req.method);
+  console.log('URL de la solicitud:', req.url);
 
-export default async function handler(req: NowRequest, res: NowResponse) {
-  console.log('Request received:', req.url);
-  
-  // Aplicar headers para controlar la caché
-  res.setHeader('Cache-Control', 'public, max-age=3600');
-  
-  // Manejar la respuesta según la lógica del middleware
-  res.end('Hello from middleware!');
+  // Lógica del middleware
+  res.setHeader('X-Custom-Header', 'my-custom-header-value');
 
-  console.log('Response sent:', res.statusCode);
-  console.log("HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-  
+  // Continuar con la solicitud
+  res.status(200).json({ message: 'Middleware en funcionamiento' });
 }
