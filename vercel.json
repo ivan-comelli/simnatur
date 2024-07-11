@@ -6,20 +6,6 @@
         "config": {
           "serverFiles": ["server/**"]
         }
-      },
-      {
-        "src": ".nuxt/middleware.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",  
-        "dest": "/api/$1"
-      },
-      {
-        "src": "/(.*)",  
-        "dest": ".nuxt/middleware.js"
       }
     ]
 }
