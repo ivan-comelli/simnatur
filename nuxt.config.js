@@ -27,6 +27,10 @@ module.exports = {
     serverMiddleware: [
         { path: '/api', handler: '~/server/index.js' }
     ],
+    components: [
+        '~/components/GlobalImage.vue',
+        // Aquí puedes agregar otros componentes globales si es necesario
+    ],
     render: {
         static: {
           setHeaders(res, path) {
@@ -45,7 +49,7 @@ module.exports = {
             { hid: 'description', name: 'description', content: '' }
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.80c53808.ico' },
         ],
         script: [
             {
@@ -68,6 +72,7 @@ module.exports = {
         '~/plugins/vuejs-pagiante.js',
         '~/plugins/observe-visibility.js',
         '~/plugins/persistedState.client.js',
+        '~/plugins/hashMap.js',
         '~/plugins/axios.js',
         { 
             src: '~/plugins/bootstrap.js', 
@@ -109,7 +114,14 @@ module.exports = {
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {
         extractCSS: true,
-        extend (config, ctx) {
+        extend (config, { isDev, isClient }) {
+            config.module.rules.push({
+                test: /\.(png|jpe?g|gif|svg|webp)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[hash:8].[ext]'
+                }
+            });
         },
         babel: {
             compact: true

@@ -2,7 +2,7 @@
     <div class="blog-wrap mb-25">
         <div class="blog-img">
             <n-link to="">
-                <img :src="blog.imgSrc" :alt="blog.title">
+                <GlobalImage :src="blog.imgSrc" :alt="blog.title" />
             </n-link>
             <span>{{ blog.category[0]}}</span>
         </div>

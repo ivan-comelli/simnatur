@@ -2,7 +2,7 @@
     <div class="product-wrap-3 mb-20">
         <div class="product-img">
             <n-link :to="`/product/${slugify(product.title)}`">
-                <img class="default-img" :src="product.images[0]" :alt="product.title">
+                <GlobalImage class="default-img" :src="product.images[0]" :alt="product.title" />
             </n-link>
             <div class="product-badges">
                 <span class="product-label pink" v-if="product.new">New</span>

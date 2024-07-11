@@ -17,10 +17,10 @@
                         <div class="col-lg-5 col-sm-6">
                             <div class="single-slider-img4">
                                 <div class="single-slider-img4-inner slider-img-animation">
-                                    <img :src="hero.imgSrc" :alt="hero.title">
+                                    <GlobalImage :src="hero.imgSrc" :alt="hero.title" />
                                 </div>
                                 <div class="single-price-wrap">
-                                    <img src="/img/icon-img/slider-shape.png" alt="icon">
+                                    <GlobalImage src="/img/icon-img/slider-shape.png" alt="icon" />
                                     <div class="single-price">
                                         <span>Sale</span>
                                         <span class="dollar">${{ hero.salePrice }}</span>

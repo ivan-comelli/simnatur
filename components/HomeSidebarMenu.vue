@@ -3,7 +3,7 @@
         <div class="home-sidebar-left">
             <div class="logo">
                 <n-link to="/">
-                    <img src="/img/logo/logo.png" alt="logo">
+                    <GlobalImage src="/img/logo/logo.png" alt="logo" />
                 </n-link>
             </div>
             <div class="header-right-wrap">

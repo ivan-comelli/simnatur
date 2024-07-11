@@ -7,13 +7,5 @@
           "serverFiles": ["server/**"]
         }
       }
-    ],
-    "headers": [
-      {
-        "source": "/img/(.*)",
-        "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=36000, immutable" }
-        ]
-      }
     ]
 }

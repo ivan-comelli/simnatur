@@ -15,7 +15,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="slider-single-img ml-40 mr-40 slider-img-animation">
-                                <img src="/img/slider/silimarina.webp" alt="image">
+                                <GlobalImage src="/img/slider/silimarina.webp" alt="image" />
                             </div>
                         </div>
                     </div>

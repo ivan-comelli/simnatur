@@ -11,7 +11,7 @@
                             </div>
                             <swiper :options="swiperOptionTop">
                                 <div class="large-img swiper-slide" v-for="(image, index) in product.images" :key="index">
-                                    <img class="img-fluid" :src="image" :alt="product.title">
+                                    <GlobalImage class="img-fluid" :src="image" :alt="product.title" />
                                 </div>
                                 <div class="quickview-nav swiper-button-prev">
                                     <i class="pe-7s-angle-left"></i>

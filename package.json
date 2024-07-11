@@ -38,12 +38,9 @@
         "vuex-persistedstate": "^2.7.1"
     },
     "devDependencies": {
-        "@types/node": "^20.14.10",
-        "@vercel/node": "^3.2.1",
         "concurrently": "^8.2.2",
         "sass": "^1.49.9",
         "sass-loader": "^10.1.1",
-        "typescript": "^5.5.3",
         "webpack": "^4.46.0"
     }
 }

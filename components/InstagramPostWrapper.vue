@@ -3,7 +3,7 @@
         <swiper :options="instagramOptions">
             <div class="swiper-slide single-instagram" v-for="(instagram, index) in instagramData" :key="index">
                 <n-link to="/shop">
-                    <img :src="instagram.imgSrc" alt="instagram image">
+                    <GlobalImage :src="instagram.imgSrc" alt="instagram image" />
                 </n-link>
             </div>
         </swiper>

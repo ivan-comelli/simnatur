@@ -4,19 +4,19 @@
             <div class="brand-logo-active">
                 <swiper :options="brandLogoCarousel">
                     <div class="single-brand-logo swiper-slide">
-                        <img src="/img/brand-logo/barnd-logo-1.png" alt="">
+                        <GlobalImage src="/img/brand-logo/barnd-logo-1.png" alt="" />
                     </div>
                     <div class="single-brand-logo swiper-slide">
-                        <img src="/img/brand-logo/barnd-logo-2.png" alt="">
+                        <GlobalImage src="/img/brand-logo/barnd-logo-2.png" alt="" />
                     </div>
                     <div class="single-brand-logo swiper-slide">
-                        <img src="/img/brand-logo/barnd-logo-3.png" alt="">
+                        <GlobalImage src="/img/brand-logo/barnd-logo-3.png" alt="" />
                     </div>
                     <div class="single-brand-logo swiper-slide">
-                        <img src="/img/brand-logo/barnd-logo-4.png" alt="">
+                        <GlobalImage src="/img/brand-logo/barnd-logo-4.png" alt="" />
                     </div>
                     <div class="single-brand-logo swiper-slide">
-                        <img src="/img/brand-logo/barnd-logo-5.png" alt="">
+                        <GlobalImage src="/img/brand-logo/barnd-logo-5.png" alt="" />
                     </div>
                 </swiper>
             </div>

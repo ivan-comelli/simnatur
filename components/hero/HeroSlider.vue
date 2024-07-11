@@ -15,7 +15,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="slider-single-img slider-img-animation">
-                                <img src="/img/slider/single-slide-1.png" alt="image">
+                                <GlobalImage src="/img/slider/single-slide-1.png" alt="image" />
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="slider-single-img slider-img-animation">
-                                <img src="/img/slider/single-slide-2.png " alt="image">
+                                <GlobalImage src="/img/slider/single-slide-2.png " alt="image" />
                             </div>
                         </div>
                     </div>

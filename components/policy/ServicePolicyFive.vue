@@ -5,10 +5,10 @@
                 <div class="col-lg-4 col-sm-6" v-for="(policy, index) in policyData" :key="index">
                     <div class="support-wrap-3 text-center mb-10" :class="policy.bgColorClass">
                         <div class="support-icon-2">
-                            <img :src="policy.icon" :alt="policy.text">
+                            <GlobalImage :src="policy.icon" :alt="policy.text" />
                         </div>
                         <div class="support-content-3">
-                            <img :src="policy.textImg" :alt="policy.text">
+                            <GlobalImage :src="policy.textImg" :alt="policy.text" />
                             <p>{{ policy.text }}</p>
                         </div>
                     </div>

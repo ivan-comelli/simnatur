@@ -6,7 +6,7 @@
                     <div class="copyright mb-30">
                         <div class="footer-logo">
                             <n-link to="/">
-                                <img src="/img/logo/logo.png" alt="logo">
+                                <GlobalImage src="/img/logo/logo.png" alt="logo" />
                             </n-link>
                         </div>
                         <p>© 2022 <a href="#" target="_blank">Flone</a>.<br> All Rights Reserved</p>

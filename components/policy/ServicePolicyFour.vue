@@ -6,7 +6,7 @@
                     <div class="support-wrap-2 support-padding-2 support-shape-3 mb-30 text-center">
                         <div class="support-content-2">
                             <div class="support-icon">
-                                <img class="animated" :src="policy.icon" :alt="policy.title">
+                                <GlobalImage class="animated" :src="policy.icon" :alt="policy.title" />
                             </div>
                             <div class="support-content">
                                 <h5>{{ policy.title }}</h5>

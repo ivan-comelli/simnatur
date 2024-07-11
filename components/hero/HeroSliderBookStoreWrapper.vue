@@ -10,7 +10,7 @@
                         <div class="col-lg-12 col-md-6 col-sm-6">
                             <div class="single-banner mb-30">
                                 <n-link to="/shop">
-                                    <img src="/img/banner/banner-38.png" alt="banner image">
+                                    <GlobalImage src="/img/banner/banner-38.png" alt="banner image" />
                                 </n-link>
                                 <div class="banner-content banner-pink">
                                     <h3>Book</h3>
@@ -24,7 +24,7 @@
                         <div class="col-lg-12 col-md-6 col-sm-6">
                             <div class="single-banner mb-30">
                                 <n-link to="/shop">
-                                    <img src="/img/banner/banner-39.png" alt="banner image">
+                                    <GlobalImage src="/img/banner/banner-39.png" alt="banner image" />
                                 </n-link>
                                 <div class="banner-content banner-pink">
                                     <h3>Book</h3>

@@ -5,14 +5,14 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="single-banner mb-30">
                         <n-link to="/shop">
-                            <img src="/img/banner/banner-10.png" alt="image">
+                            <GlobalImage src="/img/banner/banner-10.png" alt="image" />
                         </n-link>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="single-banner mb-30">
                         <n-link to="/shop">
-                            <img src="/img/banner/banner-11.png" alt="image">
+                            <GlobalImage src="/img/banner/banner-11.png" alt="image" />
                         </n-link>
                     </div>
                 </div>

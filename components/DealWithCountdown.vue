@@ -5,7 +5,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="fashion-deal-img">
                         <n-link to="/shop">
-                            <img class="wow fadeInLeft" src="/img/banner/deal-2.png" alt="">
+                            <GlobalImage class="wow fadeInLeft" src="/img/banner/deal-2.png" alt="" />
                         </n-link>
                     </div>
                 </div>

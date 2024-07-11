@@ -6,7 +6,7 @@
                     <li class="single-shopping-cart" v-for="(product, index) in products" :key="index">
                         <div class="shopping-cart-img">
                             <n-link :to="`/product/${slugify(product.title)}`">
-                                <img :src="product.images[0]" :alt="product.title">
+                                <GlobalImage :src="product.images[0]" :alt="product.title" />
                             </n-link>
                         </div>
                         <div class="shopping-cart-title">

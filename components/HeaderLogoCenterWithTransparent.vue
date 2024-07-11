@@ -13,10 +13,10 @@
                     <div class="col-xl-2 col-lg-2 col-md-6 col-4">
                         <div class="logo text-center logo-hm5">
                             <n-link to="/" class="sticky-none">
-                                <img src="/img/logo/logo-2.png" alt="brand logo">
+                                <GlobalImage src="/img/logo/logo-2.png" alt="brand logo" />
                             </n-link>
                             <n-link to="/" class="sticky-block">
-                                <img src="/img/logo/logo.png" alt="brand logo">
+                                <GlobalImage src="/img/logo/logo.png" alt="brand logo" />
                             </n-link>
                         </div>
                     </div>

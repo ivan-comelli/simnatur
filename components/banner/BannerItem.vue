@@ -1,7 +1,7 @@
 <template>
     <div class="single-banner">
         <n-link to="/shop">
-            <img :src="banner.imgSrc" :alt="banner.title">
+            <GlobalImage :src="banner.imgSrc" :alt="banner.title" />
         </n-link>
         <div class="banner-content">
             <h3>{{ banner.title }}</h3>

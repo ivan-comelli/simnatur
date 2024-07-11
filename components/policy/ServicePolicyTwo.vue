@@ -5,7 +5,7 @@
                 <div class="col-md-4 col-sm-6 mt-30" v-for="(policy, index) in policies" :key="index">
                     <div class="support-wrap-2 support-shape text-center">
                         <div class="support-content-2">
-                            <img :src="policy.icon" :alt="policy.title">
+                            <GlobalImage :src="policy.icon" :alt="policy.title" />
                             <h5>{{ policy.title }}</h5>
                             <p>{{ policy.subTitle }}</p>
                         </div>

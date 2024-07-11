@@ -5,7 +5,7 @@
                 <div class="col-md-6 mt-10">
                     <div class="single-banner">
                         <n-link to="/shop">
-                            <img src="/img/banner/banner-40.png" alt="">
+                            <GlobalImage src="/img/banner/banner-40.png" alt="" />
                         </n-link>
                         <div class="banner-content banner-content1-modify-position1 banner-content1-modify">
                             <h3>Men Fashion Shop</h3>
@@ -19,7 +19,7 @@
                 <div class="col-md-6 mt-10">
                     <div class="single-banner">
                         <n-link to="/shop">
-                            <img src="/img/banner/banner-41.png" alt="">
+                            <GlobalImage src="/img/banner/banner-41.png" alt="" />
                         </n-link>
                         <div class="banner-content banner-content1-modify-position2 banner-content1-modify">
                             <h3>Women Fashion</h3>

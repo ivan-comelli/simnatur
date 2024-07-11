@@ -2,7 +2,7 @@
     <div class="error404">
         <div class="container text-center">
             <div class="error-image">
-                <img class="img-fluid" src="/img/page-404-image.png" alt="Not Found Image">
+                <GlobalImage class="img-fluid" src="/img/page-404-image.png" alt="Not Found Image" />
             </div>
             <h1 class="error-404-title text-white" v-if="error.statusCode === 404">Oops! Page not found!</h1>
             <h1 class="error-404-title text-white" v-else>An error occurred</h1>

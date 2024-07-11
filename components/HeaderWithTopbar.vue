@@ -35,7 +35,7 @@
                         <div class="col-lg-2 col-md-6 col-4">
                             <div class="logo">
                                 <n-link to="/">
-                                    <img src="/img/logo/logo.png" alt="flone logo">
+                                    <GlobalImage src="/img/logo/logo.png" alt="flone logo" />
                                 </n-link>
                             </div>
                         </div>

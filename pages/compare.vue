@@ -16,7 +16,7 @@
                                             <td class="first-column">Product</td>
                                             <td class="product-image-title" v-for="(product, index) in products" :key="index">
                                                 <n-link :to="`/product/${slugify(product.title)}`" class="image">
-                                                    <img class="img-fluid" :src="product.images[0]" :alt="product.title">
+                                                    <GlobalImage class="img-fluid" :src="product.images[0]" :alt="product.title" />
                                                 </n-link>
                                                 <h4 class="title">
                                                     <n-link :to="`/product/${slugify(product.title)}`">{{ product.title }}</n-link>

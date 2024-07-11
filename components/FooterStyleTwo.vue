@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="footer-logo">
                     <n-link to="/">
-                        <img src="/img/logo/logo-2.png" alt="logo">
+                        <GlobalImage src="/img/logo/logo-2.png" alt="logo" />
                     </n-link>
                 </div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
