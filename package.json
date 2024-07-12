@@ -4,9 +4,9 @@
     "author": "Uzzal",
     "private": true,
     "scripts": {
-        "dev": "nuxt dev",
-        "generate": "nuxt generate",
-        "build": "nuxt build && tsc",
+        "dev": "node ./utils/generateHashes.js && nuxt dev",
+        "generate": "node ./utils/generateHashes.js && nuxt generate",
+        "build": "node ./utils/generateHashes.js && nuxt build",
         "start": "nuxt start"
     },
     "dependencies": {
