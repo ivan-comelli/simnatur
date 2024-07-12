@@ -37,6 +37,9 @@ export const getters = {
 }
 
 export const mutations =  {
+    SET_CART(state, payload) {
+      state.cart = payload;
+    },
     UPDATE_CART(state, payload) {
       const item = state.cart.find(el => payload.id === el.id);
       if (item) {
@@ -86,45 +89,83 @@ export const mutations =  {
 
 export const actions = {
     addToCartItem({ state, commit }, payload) {
-      return new Promise((resolve, reject) => {
-        if(state.auth.user) {
-          commit('UPDATE_CART', payload);
-          resolve();
-        } else {
-          const error = new Error("Usuario no autenticado");
-          reject(error);
+      return new Promise(async (resolve, reject) => {
+        try {
+            if (state.auth.user) {
+                await this.$axios.$post('/cart', { id: payload.id });
+                commit('UPDATE_CART', payload);
+                resolve();
+            } else {
+                const error = new Error("Usuario no autenticado");
+                reject(error);
+            }
+        } catch (error) {
+            console.error("Error adding to cart:", error);
+            reject(error);
         }
       });
     },
-    removeProductFromCart({ commit }, product) {
-      commit('REMOVE_PRODUCT_FROM_CART', product);
+    async removeProductFromCart({ commit }, product) {
+      try {
+        const response = await this.$axios.$delete('/cart/' + product.id);
+        commit('REMOVE_PRODUCT_FROM_CART', product);
+      }catch (error) {
+        console.error('Error deleting cart:', error.message);
+      }
     },
     decreaseProduct({ commit }, product) {
       commit('DECREASE_PRODUCT', product);
     },
     async addToWishlist({ state, commit }, payload) {
-      try {
-          console.log(payload.id)
-          await this.$axios.$post('/wishlist', {id: payload.id});
-          commit('ADD_TO_WISHLIST', payload);
-      } catch {
-        console.log("error")
-      }
+      return new Promise(async (resolve, reject) => {
+          try {
+              if (state.auth.user) {
+                  await this.$axios.$post('/wishlist', { id: payload.id });
+                  commit('ADD_TO_WISHLIST', payload);
+                  resolve();
+              } else {
+                  const error = new Error("Usuario no autenticado");
+                  reject(error);
+              }
+          } catch (error) {
+              console.error("Error adding to wishlist:", error);
+              reject(error);
+          }
+      });
     },
-    async fetchWishList({ commit }) {
+    async fetchWishList({ commit, state }) {
       try {
+        if (!state.auth.user) {
+          throw new Error('No user found');
+        }
         const response = await this.$axios.$get('/wishlist');
-        console.log(response.data)
         commit('UPDATE_WISHLIST', response.data)
       } catch (error) {
-
+        console.error('Error fetching wishlist:', error.message);
+      }
+    },
+    async fetchCart({ commit, state }) {
+      try {
+        if (!state.auth.user) {
+          throw new Error('No user found');
+        }
+        const response = await this.$axios.$get('/cart');
+        commit('SET_CART', response.data)
+      } catch (error) {
+        console.error('Error fetching cart:', error.message);
+        commit('SET_CART', [])
       }
     },
     addToCompare({ commit }, payload) {
       commit('ADD_TO_COMPARE', payload);
     },
-    removeProductFromWishlist({ commit }, product) {
-      commit('REMOVE_PRODUCT_FROM_WISHLIST', product);
+    async removeProductFromWishlist({ commit }, product) {
+      try {
+        const response = await this.$axios.$delete('/wishlist/' + product.id);
+        commit('REMOVE_PRODUCT_FROM_WISHLIST', product);
+      }catch (error) {
+        console.error('Error deleting wishlist:', error.message);
+      }
     },
     removeFromCompare({ commit }, product) {
       commit('REMOVE_FROM_COMPARE', product);

@@ -15,12 +15,12 @@ const authenticateToken = async (req, res, next) => {
 
   jwt.verify(token, JWT_SECRET, (err, decoded) => {
     if (err) {
+      // Verificar si el error es debido a que el token ha expirado
+      if (err.name === 'TokenExpiredError') {
+        return res.status(401).json({ error: 'Token has expired.' });
+      }
+      // Otros errores de autenticación del token
       return res.status(500).json({ error: 'Failed to authenticate token.' });
-    }
-
-    const currentTime = Math.floor(Date.now() / 1000);
-    if (decoded.exp < currentTime) {
-      return res.status(401).json({ error: 'Token has expired.' });
     }
 
     req.userId = decoded.id;

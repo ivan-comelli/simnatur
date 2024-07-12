@@ -23,6 +23,7 @@ app.use('/products', require('./routes/productRoutes'));
 app.use('/users', require('./routes/userRoutes'));
 app.use('/checkout', require('./routes/paymentRoutes'));
 app.use('/wishlist', require('./routes/wishlistRoutes'));
+app.use('/cart', require('./routes/cartRoutes'));
 
 
 app.use((req, res) => {
