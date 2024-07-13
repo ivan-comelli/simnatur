@@ -24,7 +24,7 @@
             }
         },
         methods: {
-            ...mapActions(['register']),
+            ...mapActions('auth', ['register']),
             formatUserName() {
                 this.userName = this.userName.trim().toUpperCase();
             },
@@ -38,7 +38,6 @@
                     password: this.userPassword,
                     email: this.userEmail
                 };
-
                 try {
                     await this.register(userData);
                     this.$router.push('/');

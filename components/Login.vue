@@ -30,7 +30,6 @@ export default {
         ...mapActions('auth',['login']),
         async loginUser() {
             this.login({ email: this.email, password: this.password }).then(() => {
-                console.log("BIEN")
                 this.$router.push('/');
             }).catch ((error) => {
                 console.error('Error during login:', error);

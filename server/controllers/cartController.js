@@ -71,9 +71,11 @@ const getCartItems = async (req, res) => {
                 success: true,
                 message: 'Cart items found',
                 data: cartItems.map(item => {
-                    let { ...rest } = item.Product.dataValues;
+                    let { price, ...rest } = item.Product.dataValues;
                     return {
                         cartQuantity: 1,
+                        total: price,
+                        price,
                         ...rest,
                     };
                   })

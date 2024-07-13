@@ -6,17 +6,17 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12" v-if="products.length > 0">
-                        <h3 class="cart-page-title">Your cart items</h3>
+                        <h3 class="cart-page-title">Tu Carrito</h3>
                         <div class="table-content table-responsive cart-table-content">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Image</th>
-                                        <th>Product Name</th>
-                                        <th>Until Price</th>
-                                        <th>Qty</th>
+                                        <th></th>
+                                        <th>Nombre Producto</th>
+                                        <th>Precio unitario</th>
+                                        <th>Cantidad</th>
                                         <th>Subtotal</th>
-                                        <th>action</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,73 +52,16 @@
                             <div class="col-lg-12">
                                 <div class="cart-shiping-update-wrapper">
                                     <div class="cart-shiping-update">
-                                        <n-link to="/shop">Continue Shopping</n-link>
+                                        <n-link to="/shop">Continuar en la tienda</n-link>
                                     </div>
                                     <div class="cart-clear">
-                                        <button @click="clearCart()">Clear Shopping Cart</button>
+                                        <button @click="clearCart()">Quitar todo del carrito</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="cart-tax">
-                                    <div class="title-wrap">
-                                        <h4 class="cart-bottom-title section-bg-gray">Estimate Shipping And Tax</h4>
-                                    </div>
-                                    <div class="tax-wrapper">
-                                        <p>Enter your destination to get a shipping estimate.</p>
-                                        <div class="tax-select-wrapper">
-                                            <div class="tax-select">
-                                                <label>
-                                                    * Country
-                                                </label>
-                                                <select class="email s-email s-wid">
-                                                    <option>Bangladesh</option>
-                                                    <option>Albania</option>
-                                                    <option>Aland Islands</option>
-                                                    <option>Afghanistan</option>
-                                                    <option>Belgium</option>
-                                                </select>
-                                            </div>
-                                            <div class="tax-select">
-                                                <label>
-                                                    * Region / State
-                                                </label>
-                                                <select class="email s-email s-wid">
-                                                    <option>Bangladesh</option>
-                                                    <option>Albania</option>
-                                                    <option>Aland Islands</option>
-                                                    <option>Afghanistan</option>
-                                                    <option>Belgium</option>
-                                                </select>
-                                            </div>
-                                            <div class="tax-select">
-                                                <label>
-                                                    * Zip/Postal Code
-                                                </label>
-                                                <input type="text">
-                                            </div>
-                                            <button class="cart-btn-2" type="submit">Get A Quote</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="discount-code-wrapper">
-                                    <div class="title-wrap">
-                                    <h4 class="cart-bottom-title section-bg-gray">Use Coupon Code</h4> 
-                                    </div>
-                                    <div class="discount-code">
-                                        <p>Enter your coupon code if you have one.</p>
-                                        <form>
-                                            <input type="text" required="" name="name">
-                                            <button class="cart-btn-2" type="submit">Apply Coupon</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12">
+                            <div class="col-lg-8 col-md-12">
                                 <div class="grand-total">
                                     <div class="title-wrap">
                                         <h4 class="cart-bottom-title section-bg-gary-cart">Cart Total</h4>

@@ -7,16 +7,16 @@
             <div class="container">
                 <div class="row" v-if="products.length > 0">
                     <div class="col-12">
-                        <h3 class="cart-page-title">Your wishlist items</h3>
+                        <h3 class="cart-page-title">Mis Favoritos</h3>
                         <div class="table-content table-responsive cart-table-content">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Image</th>
-                                        <th>Product Name</th>
-                                        <th>Until Price</th>
-                                        <th>Add To Cart</th>
-                                        <th>Action</th>
+                                        <th></th>
+                                        <th>Nombre Producto</th>
+                                        <th>Precio Unitario</th>
+                                        <th></th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -34,7 +34,7 @@
                                             <del class="old" v-if="product.discount > 0">${{ product.price.toFixed(2) }}</del>
                                         </td>
                                         <td class="product-wishlist-cart">
-                                            <button @click="addToCart(product)">add to cart</button>
+                                            <button @click="addToCart(product)">Agregar al Carrito</button>
                                         </td>
                                         <td class="product-remove">
                                             <button @click="removeProductFromWishlist(product)"><i class="fa fa-times"></i></button>

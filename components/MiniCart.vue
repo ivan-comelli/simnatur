@@ -13,7 +13,7 @@
                             <h4>
                                 <n-link :to="`/product/${slugify(product.title)}`">{{ product.title }}</n-link>
                             </h4>
-                            <h6>Qty: {{ product.cartQuantity }}</h6>
+                            <h6>Cnt: {{ product.cartQuantity }}</h6>
                             <span>${{ discountedPrice(product).toFixed(2) }}</span>
                         </div>
                         <div class="shopping-cart-delete">
@@ -27,8 +27,8 @@
                     <h4>Total : <span class="shop-total">${{ total.toFixed(2) }}</span></h4>
                 </div>
                 <div class="shopping-cart-btn btn-hover text-center" @click="$emit('minicartClose')">
-                    <n-link to="/cart" class="default-btn">view cart</n-link>
-                    <n-link to="/checkout" class="default-btn">checkout</n-link>
+                    <n-link to="/cart" class="default-btn">Ir a Carrito</n-link>
+                    <n-link to="/checkout" class="default-btn">Comprar</n-link>
                 </div>
             </div>
             <div class="shopping-cart-content text-center" v-else>

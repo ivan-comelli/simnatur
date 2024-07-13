@@ -10,53 +10,53 @@
                             <div id="faq" class="panel-group">
                                 <div class="panel panel-default single-my-account">
                                     <div class="panel-heading my-account-title">
-                                        <h3 class="panel-title"><span>1 .</span> <a data-bs-toggle="collapse" href="#my-account-1">Edit your account information </a></h3>
+                                        <h3 class="panel-title"><span>1 .</span> <a data-bs-toggle="collapse" href="#my-account-1">Tu Informacion Personal</a></h3>
                                     </div>
                                     <div id="my-account-1" class="panel-collapse collapse show" data-bs-parent="#faq">
                                         <div class="panel-body">
                                             <div class="myaccount-info-wrapper">
                                                 <div class="account-info-wrapper">
-                                                    <h4>My Account Information</h4>
-                                                    <h5>Your Personal Details</h5>
+                                                    <h4>Mi Informacion de Cuenta</h4>
+                                                    <h5>Tus Detalles Personales</h5>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
-                                                            <label>First Name</label>
+                                                            <label>Nombre</label>
                                                             <input type="text">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
-                                                            <label>Last Name</label>
+                                                            <label>Apellido</label>
                                                             <input type="text">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12 col-md-12">
                                                         <div class="billing-info">
-                                                            <label>Email Address</label>
+                                                            <label>Correo Electronico</label>
                                                             <input type="email">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
-                                                            <label>Telephone</label>
+                                                            <label>Telefono</label>
                                                             <input type="text">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
-                                                            <label>Fax</label>
+                                                            <label>Codigo Postal</label>
                                                             <input type="text">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="billing-back-btn">
                                                     <div class="billing-back">
-                                                        <a href="#"><i class="fa fa-arrow-up"></i> back</a>
+                                                        <a href="#"><i class="fa fa-arrow-up"></i> Atras</a>
                                                     </div>
                                                     <div class="billing-btn">
-                                                        <button type="submit">Continue</button>
+                                                        <button type="submit">Continuar</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="panel panel-default single-my-account">
                                     <div class="panel-heading my-account-title">
-                                        <h3 class="panel-title"><span>2 .</span> <a data-bs-toggle="collapse" href="#my-account-2">Change your password </a></h3>
+                                        <h3 class="panel-title"><span>2 .</span> <a data-bs-toggle="collapse" href="#my-account-2">Cambiar la Contraseña</a></h3>
                                     </div>
                                     <div id="my-account-2" class="panel-collapse collapse" data-bs-parent="#faq">
                                         <div class="panel-body">
