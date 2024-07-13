@@ -39,10 +39,14 @@
 </template>
 
 <script>
+    import { mapActions } from 'vuex';
     export default {
         props: ["product"],
 
         methods: {
+            ...mapActions({
+                openModal: 'openModal'
+            }),
             addToCart(product) {
                 const prod = {...product, cartQuantity: 1}
                 this.$store.dispatch('addToCartItem', prod).then(() => {
@@ -52,7 +56,8 @@
                         this.$notify({ title: 'Add to cart successfully!'})
                     }
                 }).catch(error => {
-                    this.$notify({ title: error})
+                    this.openModal();
+                    this.$notify({ title: error })
                 });               
             },
 
@@ -69,6 +74,7 @@
                         this.$notify({ title: 'Add to wishlist successfully!'})
                     }
                 }).catch(error => {
+                    this.openModal();
                     this.$notify({ title: error})
                 });
             },

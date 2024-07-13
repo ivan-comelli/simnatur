@@ -15,7 +15,8 @@ export const state = () => ({
     cart: [],
     wishlist: [],
     compare: [],
-    preference: null
+    preference: null,
+    statusModal: false
 })
 
 export const getters = {
@@ -33,7 +34,8 @@ export const getters = {
       });
       return total;
     },
-    getPreference: state => state.preference
+    getPreference: state => state.preference,
+    getStatusModal: state => state.statusModal
 }
 
 export const mutations =  {
@@ -84,6 +86,9 @@ export const mutations =  {
     },
     UPDATE_WISHLIST(state, products) {
       state.wishlist = products;
+    },
+    UPDATE_STATUS_MODAL(state, status) {
+      state.statusModal = status;
     }
 }
 
@@ -177,5 +182,11 @@ export const actions = {
       } catch (error) {
         console.error('Error during nuxtServerInit:', error);
       }
+    },
+    openModal({ commit }) {
+      commit('UPDATE_STATUS_MODAL', true);
+    },
+    closeModal({ commit }) {
+      commit('UPDATE_STATUS_MODAL', false);
     }
 }

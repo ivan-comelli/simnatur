@@ -46,6 +46,9 @@
     }
 }
 .logo {
+    img {
+        width: 17em;
+    }
     @media #{$md-layout, $xs-layout}{
         margin-top: 0px;
     }

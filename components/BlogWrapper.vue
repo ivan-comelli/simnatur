@@ -3,7 +3,7 @@
         <div class="container">
             <SectionTitleWithSubTitle title="NUESTROS ARTICULOS" classes="section-title mb-55" />
             <div class="row">
-                <div class="col-lg-4 col-sm-6" v-for="(blog, index) in blogData.slice(0, 3)" :key="index">
+                <div class="col-lg-3 col-sm-5 col-10" v-for="(blog, index) in blogData.slice(0, 3)" :key="index">
                     <BlogItem :blog="blog" />
                 </div>
             </div>

@@ -3,6 +3,7 @@
         <TheHeader />
         <HeroSlider />
         <ServicePolicy />
+        <Modal />
         <ProductWrapper :isSectionTitle=true />
         <BlogWrapper />
         <TheFooter />
@@ -18,6 +19,7 @@
             ProductWrapper: () => import('@/components/product/ProductWrapperThree'),
             BlogWrapper: () => import('@/components/BlogWrapper'),
             TheFooter: () => import('@/components/TheFooter'),
+            Modal: () => import('@/components/ModalCTA'),
         },
         head() {
             return {

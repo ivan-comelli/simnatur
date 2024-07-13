@@ -11,7 +11,7 @@
 .row {
 	margin-right: -15px;
 	margin-left: -15px;
-    
+    justify-content: center;
 }
 .row > * {
 	padding-right: 15px;
@@ -1385,6 +1385,7 @@ textarea:focus {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    column-gap: 2em;
     margin-right: -15px;
     margin-left: -15px;
     @media #{$xl-layout} {
@@ -1486,23 +1487,23 @@ textarea:focus {
     @media #{$lg-layout} {
         padding-right: 15px;
         padding-left: 15px;
-        flex: 0 0 33.333%;
+        flex: 0 0 25%;
         max-width: 33.333%;
     }
     @media #{$md-layout} {
         padding-right: 15px;
         padding-left: 15px;
-        flex: 0 0 50%;
+        flex: 0 0 35%;
         max-width: 50%;
     }
     @media #{$xs-layout} {
         padding-right: 15px;
         padding-left: 15px;
-        flex: 0 0 100%;
+        flex: 0 0 45%;
         max-width: 100%;
     }
     @media #{$sm-layout} {
-        flex: 0 0 50%;
+        flex: 0 0 40%;
         max-width: 50%;
     }
 }
