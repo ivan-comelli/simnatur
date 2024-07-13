@@ -5,11 +5,6 @@ const {
 
 module.exports = (sequelize, DataTypes) => {
   class Product extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
       Product.hasMany(models.Cart, { foreignKey: 'productId' });
       Product.hasMany(models.OrderItem, { foreignKey: 'productId' });
@@ -31,15 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     images: {
       type: DataTypes.JSON,
-      allowNull: true,
-      get() {
-        const value = this.getDataValue('images');
-        try {
-          return JSON.parse(value); 
-        } catch (error) {
-          return value;
-        }
-      }
+      allowNull: true
     },
     title: {
       type: DataTypes.STRING,
@@ -65,39 +52,15 @@ module.exports = (sequelize, DataTypes) => {
     },
     category: {
       type: DataTypes.JSON,
-      allowNull: false,
-      get() {
-        const value = this.getDataValue('category');
-        try {
-          return JSON.parse(value); 
-        } catch (error) {
-          return value;
-        }
-      }
+      allowNull: false
     },
     tag: {
       type: DataTypes.JSON,
-      allowNull: false,
-      get() {
-        const value = this.getDataValue('tag');
-        try {
-          return JSON.parse(value); 
-        } catch (error) {
-          return value;
-        }
-      }
+      allowNull: false
     },
     variation: {
       type: DataTypes.JSON,
-      allowNull: true,
-      get() {
-        const value = this.getDataValue('variation');
-        try {
-          return JSON.parse(value); 
-        } catch (error) {
-          return value;
-        }
-      }
+      allowNull: true
     },
     createdAt: {
       allowNull: false,

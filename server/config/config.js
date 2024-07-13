@@ -3,7 +3,7 @@ const pg = require("pg");
 const config = {
   development: {
     username: "root",
-    password: null,
+    password: "root",
     database: "database_shop_simnatur",
     host: "127.0.0.1",
     dialect: "mysql"

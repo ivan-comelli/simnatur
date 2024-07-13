@@ -58,11 +58,9 @@ const getWishlistItems = async (req, res) => {
                 success: true,
                 message: 'Wishlist items found',
                 data: wishlistItems.map(item => {
-                    const {images, ...rest} = item.Product.dataValues
-                    const Img = JSON.parse(images);
+                    const { ...rest } = item.Product.dataValues
                     return {
-                        ...rest,
-                        images: Img
+                        ...rest
                     }
                   })
             });

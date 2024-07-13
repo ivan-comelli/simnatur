@@ -18,15 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     imgSrc: DataTypes.STRING,
     category: {
       type: DataTypes.JSON,
-      allowNull: true,
-      get() {
-        const value = this.getDataValue('category');
-        try {
-          return JSON.parse(value); 
-        } catch (error) {
-          return value;
-        }
-      }
+      allowNull: true
     },
     author: DataTypes.STRING,
     date: DataTypes.STRING,

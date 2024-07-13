@@ -71,28 +71,10 @@ const getCartItems = async (req, res) => {
                 success: true,
                 message: 'Cart items found',
                 data: cartItems.map(item => {
-                    let { images, tag, category, ...rest } = item.Product.dataValues;
-                    try {
-                        images = JSON.parse(images);
-                    } catch (e) {
-                        console.error('Error parsing images:', e);
-                    }
-                    try {
-                        tag = JSON.parse(tag);
-                    } catch (e) {
-                        console.error('Error parsing tag:', e);
-                    }
-                    try {
-                        category = JSON.parse(category);
-                    } catch (e) {
-                        console.error('Error parsing category:', e);
-                    }
+                    let { ...rest } = item.Product.dataValues;
                     return {
                         cartQuantity: 1,
-                        tag,
-                        category,
                         ...rest,
-                        images
                     };
                   })
             });
