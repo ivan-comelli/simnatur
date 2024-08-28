@@ -973,15 +973,15 @@
 
 /* product hm5 */
 .hm5-section-padding .container-fluid {
-	padding: 0 70px;
+	padding: 0 20em;
     @media #{$xx-layout}{
-		padding: 0 60px;
+		padding: 0 30em;
 	}
     @media #{$xl-layout, $md-layout}{
-		padding: 0 30px;
+		padding: 0 10em;
 	}
     @media #{$lg-layout, $xs-layout}{
-		padding: 0 15px;
+		padding: 0 5em;
 	}
 }
 .view-more {
