@@ -23,31 +23,31 @@
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>Nombre</label>
-                                                            <input type="text">
+                                                            <input v-model="name" type="text">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>Apellido</label>
-                                                            <input type="text">
+                                                            <input v-model="lastName" type="text">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12 col-md-12">
                                                         <div class="billing-info">
                                                             <label>Correo Electronico</label>
-                                                            <input type="email">
+                                                            <input v-model="email" type="email">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
                                                             <label>Telefono</label>
-                                                            <input type="text">
+                                                            <input v-model="telefone" type="text">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
-                                                            <label>Codigo Postal</label>
-                                                            <input type="text">
+                                                            <label>DNI</label>
+                                                            <input v-model="document" type="text">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -158,7 +158,22 @@
         },
         head() {
             return {
-                title: "My Account"
+                title: "Mi Cuenta"
+            }
+        },
+        data() {
+            return {
+                name: "",
+                lastName: "",
+                email: "",
+                phone: "",
+                document: "",
+                birthday: "",
+                addressBook: {
+                    detail: "",
+                    street: "",
+                    city: ""
+                }
             }
         }
     }

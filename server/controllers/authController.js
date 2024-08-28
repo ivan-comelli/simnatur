@@ -43,6 +43,7 @@ const logout = async (req, res) => {
 };
 
 const me = async (req, res) => {
+  //ME GUSTARIA LIMITAR SOLO A DATOS PERTINENTES A INICIO DE SESION Y CUENTA
   try {
     const user = await User.findByPk(req.userId);
     if (!user) return res.sendStatus(404);
