@@ -20,11 +20,11 @@ const config = {
         rejectUnauthorized: false // Ajusta esto según tu configuración de SSL
       }
     },
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    username: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
+    host: "ep-patient-wind-a5pxrj6x.us-east-2.aws.neon.tech",
+    port: "5432",
+    username: "neondb_owner",
+    password: "2Uq4vtcoLeYx",
+    database: "neondb",
     dialectModule: pg,
   },
   pool: {

@@ -5,27 +5,27 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.addColumn('Users', 'document', {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('Users', 'birthdate', {
       type: Sequelize.DATE,
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('Users', 'firstName', {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('Users', 'lastName', {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('Users', 'phone', {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.addColumn('Users', 'address', {
       type: Sequelize.JSON,
-      allowNull: false,
+      allowNull: true,
     });
     await queryInterface.renameColumn('Users', 'name', 'username');
   },
