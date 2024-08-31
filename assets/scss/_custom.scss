@@ -1,1 +1,18 @@
 // write your custom scss/css here
+.policy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    justify-items: start;
+    width: 22em;
+}
+.policy-grid:nth-child(1) {
+    grid-area: 1 / 2 / 2 / 4;
+}
+.policy-grid:nth-child(2) {
+    text-align: left;
+    width: 100%;
+    grid-area: 2 / 1 / 3 / 4;
+}
