@@ -18,8 +18,8 @@
 	padding-left: 15px;
 }
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-	padding-right: 3em;
-	padding-left: 3em;
+	padding-right: 5em;
+	padding-left: 5em;
 }
 .g-0 {
     &.row > * {
@@ -1385,7 +1385,6 @@ textarea:focus {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: 2em;
     margin-right: -15px;
     margin-left: -15px;
     @media #{$xl-layout} {

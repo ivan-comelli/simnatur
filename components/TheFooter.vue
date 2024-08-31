@@ -4,11 +4,6 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="copyright mb-50">
-                        <div class="footer-logo">
-                            <n-link to="/">
-                                <GlobalImage src="/img/logo/logo.png" alt="logo" />
-                            </n-link>
-                        </div>
                         <p>© 2022 <a href="#" target="_blank">Flone</a>.<br> All Rights Reserved</p>
                     </div>
                 </div>
