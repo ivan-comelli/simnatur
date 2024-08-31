@@ -1,6 +1,6 @@
 <template>
     <div class="product-area pb-90 section-padding-1">
-      <div class="container-fluid">
+      <div class="container">
         <SectionTitleWithSubTitle 
           classes="section-title-2 mb-60" 
           title="Nuevos Productos" 
