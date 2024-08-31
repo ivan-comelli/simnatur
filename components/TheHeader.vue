@@ -14,26 +14,11 @@
             </div>
             <div class="col-lg-8 d-none d-lg-block">
               <div class="main-menu">
-                <nav>
-                  <Navigation />
-                </nav>
+                
               </div>
             </div>
             <div class="col-lg-2 col-md-6 col-8">
                 <div class="header-right-wrap">
-                    <div class="same-style header-search d-none d-lg-block">
-                    <button class="search-active" @click="isOpenSearch = !isOpenSearch">
-                        <i class="pe-7s-search"></i>
-                    </button>
-                    <div class="search-content" :class="{ active:isOpenSearch }">
-                        <form>
-                        <input type="text" placeholder="Search" />
-                        <button class="button-search">
-                            <i class="pe-7s-search"></i>
-                        </button>
-                        </form>
-                    </div>
-                    </div>
                     <client-only>
                         <div v-if="userStatus" class="same-style account-setting d-none d-lg-block">
                             <button class="account-setting-active" @click="isOpenAccountSettings = !isOpenAccountSettings">
@@ -63,12 +48,6 @@
                             <MiniCart :miniCart="{ visible:openCart }" @minicartClose="openCart = !openCart" />
                         </div>
                     </client-only>
-                    
-                    <div class="same-style mobile-menu-toggler d-block d-lg-none">
-                    <button class="mobile-aside-button" @click="navOpen = !navOpen">
-                        <i class="pe-7s-menu"></i>
-                    </button>
-                    </div>
                 
                 </div>
             </div>
