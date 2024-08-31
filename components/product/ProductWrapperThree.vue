@@ -6,7 +6,7 @@
           title="Nuevos Productos" 
           subTitle="Tenemos en cuenta las necesidades de tu mascota y las tratamos con la mejor calidad y naturalidad" 
         />
-        <div class="custom-row" v-if="products && products.length">
+        <div class="custom-row adjust-row" v-if="products && products.length">
           <div class="custom-col-5" v-for="(product, index) in products.slice(0, 10)" :key="product.id">
             <ProductGridItemTwo :product="product" />
           </div>

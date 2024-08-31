@@ -26,4 +26,11 @@
             grid-area: 2 / 1 / 3 / 4;
         }
     }
+    .adjust-row {
+        padding: 0 !important;
+    }
+}
+
+.adjust-row {
+    padding: 0 16vw;
 }
