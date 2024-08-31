@@ -1,5 +1,8 @@
 // write your custom scss/css here
 @media #{$xs-layout} {
+    .custom-policy { 
+        box-shadow: -8px 0px 8px -8px rgb(0 0 0 / 18%);
+    }
     .policy-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);

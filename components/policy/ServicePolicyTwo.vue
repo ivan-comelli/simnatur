@@ -2,7 +2,7 @@
     <div class="support-area pt-100 pb-90">
         <div class="container">
             <div class="row mtn-30">
-                <div class="col-md-4 col-sm-6 mt-30" v-for="(policy, index) in policies" :key="index">
+                <div class="col-md-4 col-sm-6 mt-30 custom-policy" v-for="(policy, index) in policies" :key="index">
                     <div class="support-wrap-2 support-shape text-center">
                         <div class="support-content-2 policy-grid">
                             <GlobalImage :src="policy.icon" :alt="policy.title" />
