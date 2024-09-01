@@ -6,6 +6,7 @@
 @media only screen and (min-width: 1200px) {
     .container {
         max-width: 1200px;
+        padding: 0 clamp(80px, 231.5789px + -26.3158vw, 100px);
     }
 }
 .row {
@@ -17,8 +18,8 @@
 	padding-right: 15px;
 	padding-left: 15px;
 }
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-	padding: 0 clamp(80px, 231.5789px + -26.3158vw, 100px);
+.container-fluid {
+	padding: 0.5rem;
 }
 .g-0 {
     &.row > * {
@@ -126,6 +127,7 @@ input,
 span {
     font-size: 0.5rem;
     transition: all .3s ease 0s;
+    border-radius: 0.5rem;
 }
 
 *:focus {

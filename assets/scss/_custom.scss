@@ -2,6 +2,7 @@
 @media #{$xs-layout} {
     .custom-policy { 
         box-shadow: -8px 0px 8px -8px rgb(0 0 0 / 18%);
+        border-radius: 1rem;
     }
     .policy-grid {
         display: grid;
