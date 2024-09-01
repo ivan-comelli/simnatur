@@ -1,6 +1,6 @@
 <template>
-    <div class="blog-area pb-55">
-        <div class="container-fluid">
+    <div class="blog-area pb-55 container-fluid">
+        <div class="adjust-row">
             <SectionTitleWithSubTitle title="NUESTROS ARTICULOS" classes="section-title mb-55" />
             <div class="row">
                 <div v-for="(blog, index) in blogData.slice(0, 3)" :key="index">
