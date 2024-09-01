@@ -2,7 +2,7 @@
     <div class="product-area pb-90 section-padding-1">
       <div class="container-fluid">
         <SectionTitleWithSubTitle 
-          classes="section-title-2 mb-60" 
+          classes="section-title-2 mb-60 mobil-side-text" 
           title="Nuevos Productos" 
           subTitle="Tenemos en cuenta las necesidades de tu mascota y las tratamos con la mejor calidad y naturalidad" 
         />
