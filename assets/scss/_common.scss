@@ -126,6 +126,10 @@ span {
     transition: all .3s ease 0s;
 }
 
+img {
+    max-width: 100%;
+}
+
 *:focus {
     outline: none !important;
     box-shadow: none;
