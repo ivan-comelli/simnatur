@@ -18,8 +18,7 @@
 	padding-left: 15px;
 }
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-	padding-right: 5em;
-	padding-left: 5em;
+	padding: 0 clamp(80px, 231.5789px + -26.3158vw, 100px);
 }
 .g-0 {
     &.row > * {
@@ -1470,8 +1469,7 @@ textarea:focus {
 
 
 .custom-col-5 {
-    flex: 0 0 25em;
-    max-width: 35%;
+    flex: 0 0 8rem;
     padding-right: 15px;
     padding-left: 15px;
     position: relative;
