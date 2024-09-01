@@ -17,7 +17,10 @@
 	padding-right: 15px;
 	padding-left: 15px;
 }
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+.container-fluid {
+    padding: 0 1rem;
+}
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
 	padding: 0 clamp(80px, 231.5789px + -26.3158vw, 100px);
 }
 .g-0 {
