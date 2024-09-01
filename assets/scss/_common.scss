@@ -43,10 +43,10 @@ html, body {
     margin: 0;
     padding: 0;
 }
-body {
+html {
     background-color: $white;
     line-height: 24px;
-    font-size: 14px;
+    font-size: clamp(1.563rem, 2vw + 1rem, 2.25rem);
     font-weight: 400;
     font-family: $poppins;
     color: $black;
@@ -124,10 +124,6 @@ img,
 input,
 span {
     transition: all .3s ease 0s;
-}
-
-img {
-    max-width: 125%;
 }
 
 *:focus {
