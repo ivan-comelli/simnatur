@@ -1386,25 +1386,7 @@ textarea:focus {
 .custom-row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-right: -15px;
-    margin-left: -15px;
-    @media #{$xl-layout} {
-        margin-right: -15px;
-        margin-left: -15px;
-    }
-    @media #{$lg-layout} {
-        margin-right: -15px;
-        margin-left: -15px;
-    }
-    @media #{$md-layout} {
-        margin-right: -15px;
-        margin-left: -15px;
-    }
-    @media #{$xs-layout} {
-        margin-right: -15px;
-        margin-left: -15px;
-    }
+    justify-content: center;   
 }
 
 .custom-row-2 {
