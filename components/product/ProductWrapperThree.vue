@@ -1,5 +1,5 @@
 <template>
-    <div class="product-area pb-90 section-padding-1">
+    <div class="product-area pb-90">
       <div class="container-fluid">
         <SectionTitleWithSubTitle 
           classes="section-title-2 mb-60 mobil-side-text" 
