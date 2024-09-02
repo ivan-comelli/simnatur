@@ -662,7 +662,8 @@
             justify-content: center;
             width: 100%;
             button {
-                display: inline-block;
+                display: flex;
+                justify-content: center;
                 line-height: 1;
                 width: 42px;
                 height: 42px;

@@ -122,6 +122,10 @@ button {
     }
 }
 
+label {
+    font-size: 0.5rem;
+}
+
 a,
 button,
 img,
@@ -130,6 +134,7 @@ span {
     font-size: 0.5rem;
     transition: all .3s ease 0s;
     border-radius: .5rem !important;
+    max-width: 100%;
 }
 
 *:focus {
