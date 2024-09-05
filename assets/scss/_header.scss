@@ -47,7 +47,7 @@
 }
 .logo {
     img {
-        max-width: 7re !important;
+        max-width: 7rem !important;
     }
     @media #{$md-layout, $xs-layout}{
         margin-top: 0px;
