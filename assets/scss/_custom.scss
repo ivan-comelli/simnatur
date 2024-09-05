@@ -1,9 +1,11 @@
 // write your custom scss/css here
 @media #{$xs-layout} {
     .custom-policy { 
-        box-shadow: -8px 0px 8px -8px rgb(0 0 0 / 18%);
+        box-shadow: -8px 0px 8px -8px #0000002e;
         border-radius: 1rem;
         width: 100% !important;
+        background: linear-gradient(90deg, rgba(238,236,254,1) 0%, rgba(255,255,255,0.6194852941176471) 35%, rgba(255,255,255,0) 100%);
+        padding: 0.5rem 1rem;
 
     }
     .policy-grid {
