@@ -6,12 +6,12 @@ const JWT_SECRET = 'tu_secreto_jwt';
 const signup = async (req, res) => {
   const { name, password, email } = req.body;
   try {
-    const existingUser = await User.findOne({ where: { name } });
+    const existingUser = await User.findOne({ where: { username: name } });
     if (existingUser) {
       return res.status(400).json({ error: 'El usuario ya existe.' });
     }
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = await User.create({ name, password: hashedPassword, email });
+    const newUser = await User.create({ username: name, password: hashedPassword, email });
     const { password: _, ...user } = newUser.toJSON();
     res.status(201).json(user);
   } catch (error) {
