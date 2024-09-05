@@ -1,7 +1,7 @@
 <template>
     <div class="support-area pt-100 pb-90">
         <div class="container">
-            <div class="row mtn-30">
+            <div class="row mtn-30 gradient-mobil">
                 <div class="col-4 custom-policy" v-for="(policy, index) in policies" :key="index">
                     <div class="support-wrap-2 support-shape text-center">
                         <div class="support-content-2 policy-grid">
