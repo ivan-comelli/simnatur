@@ -27,6 +27,8 @@
   <script>
   import { mapGetters, mapActions } from 'vuex';
   import EmblaCarousel from 'embla-carousel'
+  import { Autoplay } from 'embla-carousel-autoplay';
+
 
   export default {
     data() {
@@ -51,9 +53,12 @@
     },
     mounted() {
       const emblaRef = this.$refs.emblaRef
-      const options = { skipSnaps: true }
+      const options = { skipSnaps: true, loop: true }
+      const plugins =  [
+        Autoplay({ delay: 3000, stopOnInteraction: true })
+      ]
 
-      this.emblaApi = EmblaCarousel(emblaRef, options)
+      this.emblaApi = EmblaCarousel(emblaRef, options, plugins)
     },
     methods: {
       ...mapActions('products', ['fetchProducts']),
