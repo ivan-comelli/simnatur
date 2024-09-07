@@ -10,15 +10,24 @@
           <div>
             <div ref="emblaRef" class="embla">
               <div class="embla__container">
-                <div class="embla__slide" v-for="(color, i) in colors" :key="i" :style="{ backgroundColor: color }">
-                  Slide {{ i }}
+                <div class="embla__slide" v-for="(product, index) in products.slice(0, 10)" :key="product.id" :style="{ backgroundColor: color }">
+                  <ProductGridItemTwo :product="product" />
                 </div>
               </div>
             </div>
             <button @click="scrollPrev">Prev</button>
             <button @click="scrollNext">Next</button>
+            <div class="embla__dots">
+              <button
+                v-for="(slide, index) in products.slice(0, 10)"
+                :key="index"
+                @click="scrollTo(index)"
+                :class="{ 'is-selected': selectedIndex === index }"
+                class="embla__dot"
+              ></button>
+            </div>
           </div>
-          <div class="custom-col-5" v-for="(product, index) in products.slice(0, 10)" :key="product.id">
+          <div class="custom-col-5" v-for="(product, index) in products.slice(0, 10)" :key="product.id" :style="{display: none}">
             <ProductGridItemTwo :product="product" />
           </div>
         </div>
@@ -45,12 +54,6 @@
     computed: {
       ...mapGetters('products', ['getProducts']),
       
-      colors() {
-        return Array.from({ length: 20 }, (_, i) => {
-          const hue = (i * 137.508) % 360;
-          return `hsl(${hue}, 80%, 80%)`;
-        });
-      },
       products() {
         return this.getProducts;
       }
@@ -66,7 +69,7 @@
     },
     methods: {
       ...mapActions('products', ['fetchProducts']),
-      
+
       scrollPrev() {
         this.emblaApi?.scrollPrev()
       },

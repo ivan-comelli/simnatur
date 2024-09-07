@@ -78,3 +78,54 @@
     padding: 0 clamp(1px, -178.1px + 19.9vw, 200px) !important;
     width: 100%;
 }
+
+.embla {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .embla__viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .embla__container {
+    display: flex;
+    user-select: none;
+  }
+  
+  .embla__slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .embla__slide img {
+    width: 100%;
+    height: auto;
+  }
+  
+  button {
+    margin: 5px;
+  }
+  
+  .embla__dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .embla__dot {
+    border: none;
+    background-color: #ccc;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .embla__dot.is-selected {
+    background-color: #000;
+  }
