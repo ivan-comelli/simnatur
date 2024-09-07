@@ -52,10 +52,7 @@
     mounted() {
       const emblaRef = this.$refs.emblaRef
       const options = { skipSnaps: true, loop: true }
-      const plugins =  [
-        Autoplay({ delay: 3000, stopOnInteraction: true })
-      ]
-
+      const plugins =  [Autoplay()]
       this.emblaApi = EmblaCarousel(emblaRef, options, plugins)
     },
     methods: {
