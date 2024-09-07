@@ -50,11 +50,13 @@
            text-align: left;
         }
     }
+    
+}
+@media only screen and (max-width: 1024px) {
     .collage-grid { 
         display: block !important;
     }
 }
-
 .collage-grid {
     display: grid;
     grid-template-columns: 67.3% auto;
