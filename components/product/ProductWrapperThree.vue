@@ -51,7 +51,7 @@
     },
     mounted() {
       const emblaRef = this.$refs.emblaRef
-      const options = { skipSnaps: true }
+      const options = { skipSnaps: true, loop: true }
 
       this.emblaApi = EmblaCarousel(emblaRef, options)
     },
