@@ -6,15 +6,17 @@
           title="Nuevos Productos" 
           subTitle="Tenemos en cuenta las necesidades de tu mascota y las tratamos con la mejor calidad y naturalidad" 
         />
-        <div ref="emblaRef" class="embla">
-          <div class="embla__container custom-row adjust-row" v-if="products && products.length">
-            <div class="embla__slide custom-col-5" v-for="(product, index) in products.slice(0, 10)" :key="product.id" :style="{ backgroundColor: color }">
-              <ProductGridItemTwo :product="product" />
+        <div class="adjust-row">
+          <div ref="emblaRef" class="embla">
+            <div class="embla__container custom-row" v-if="products && products.length">
+              <div class="embla__slide custom-col-5" v-for="(product, index) in products.slice(0, 10)" :key="product.id" :style="{ backgroundColor: color }">
+                <ProductGridItemTwo :product="product" />
+              </div>
             </div>
+            <button @click="scrollPrev">Prev</button>
+            <button @click="scrollNext">Next</button>
           </div>
-          <button @click="scrollPrev">Prev</button>
-          <button @click="scrollNext">Next</button>
-        </div>
+       </div>
       </div>
       <QuickView />
     </div>
@@ -54,7 +56,7 @@
         Autoplay({ delay: 3000, stopOnInteraction: true })
       ]
 
-      this.emblaApi = EmblaCarousel(emblaRef, options, plugins)
+      this.emblaApi = EmblaCarousel(emblaRef, options)
     },
     methods: {
       ...mapActions('products', ['fetchProducts']),
