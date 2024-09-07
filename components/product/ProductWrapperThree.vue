@@ -52,8 +52,7 @@
     mounted() {
       const emblaRef = this.$refs.emblaRef
       const options = { skipSnaps: true, loop: true }
-      const plugins =  [Autoplay()]
-      this.emblaApi = EmblaCarousel(emblaRef, options, plugins)
+      this.emblaApi = EmblaCarousel(emblaRef, options, [Autoplay()])
     },
     methods: {
       ...mapActions('products', ['fetchProducts']),
