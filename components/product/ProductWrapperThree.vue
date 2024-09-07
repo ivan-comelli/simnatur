@@ -25,7 +25,7 @@
   <script>
   import { mapGetters, mapActions } from 'vuex';
   import EmblaCarousel from 'embla-carousel'
-  import { Autoplay } from 'embla-carousel-autoplay';
+  import Autoplay from 'embla-carousel-autoplay';
 
 
   export default {
