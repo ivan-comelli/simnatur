@@ -9,7 +9,7 @@
         <div class="adjust-row">
           <div ref="emblaRef" class="embla">
             <div class="embla__container custom-row" v-if="products && products.length">
-              <div class="embla__slide custom-col-5" v-for="(product, index) in products.slice(0, 10)" :key="product.id" :style="{ backgroundColor: color }">
+              <div class="embla__slide custom-col-5" v-for="(product, index) in products.slice(0, 10)" :key="product.id">
                 <ProductGridItemTwo :product="product" />
               </div>
             </div>
@@ -51,10 +51,7 @@
     },
     mounted() {
       const emblaRef = this.$refs.emblaRef
-      const options = { skipSnaps: true, loop: true }
-      const plugins =  [
-        Autoplay({ delay: 3000, stopOnInteraction: true })
-      ]
+      const options = { skipSnaps: true }
 
       this.emblaApi = EmblaCarousel(emblaRef, options)
     },
