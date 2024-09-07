@@ -6,18 +6,14 @@
           title="Nuevos Productos" 
           subTitle="Tenemos en cuenta las necesidades de tu mascota y las tratamos con la mejor calidad y naturalidad" 
         />
-        <div class="custom-row adjust-row" v-if="products && products.length">
-          <div>
-            <div ref="emblaRef" class="embla">
-              <div class="embla__container">
-                <div class="embla__slide custom-col-5" v-for="(product, index) in products.slice(0, 10)" :key="product.id" :style="{ backgroundColor: color }">
-                  <ProductGridItemTwo :product="product" />
-                </div>
-              </div>
+        <div ref="emblaRef" class="embla">
+          <div class="embla__container custom-row adjust-row" v-if="products && products.length">
+            <div class="embla__slide custom-col-5" v-for="(product, index) in products.slice(0, 10)" :key="product.id" :style="{ backgroundColor: color }">
+              <ProductGridItemTwo :product="product" />
             </div>
-            <button @click="scrollPrev">Prev</button>
-            <button @click="scrollNext">Next</button>
           </div>
+          <button @click="scrollPrev">Prev</button>
+          <button @click="scrollNext">Next</button>
         </div>
       </div>
       <QuickView />
