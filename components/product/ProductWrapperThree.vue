@@ -17,6 +17,7 @@
             <button @click="scrollNext">Next</button>
           </div>
        </div>
+       <n-link to="/shop">Ir a la Tienda para ver mas...</n-link>
       </div>
       <QuickView />
     </div>
