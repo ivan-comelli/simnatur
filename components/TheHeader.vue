@@ -12,12 +12,12 @@
                 </n-link>
               </div>
             </div>
-            <div class="col-lg-8 d-none d-lg-block">
+            <div class="col-lg-6 d-none d-lg-block">
               <div class="main-menu">
                 
               </div>
             </div>
-            <div class="col-lg-2 col-md-6 col-8">
+            <div class="col-lg-4 col-md-6 col-8">
                 <div class="header-right-wrap">
                     <client-only>
                         <div v-if="userStatus" class="same-style account-setting d-none d-lg-block">
