@@ -467,7 +467,6 @@
                 transform: rotateX(0deg);
             }
             @media #{$xs-layout} {
-                right: -48px;
                 overflow-y: auto;
                 top: 100%;
                 margin-top: 14px;

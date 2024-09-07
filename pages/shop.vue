@@ -47,10 +47,6 @@
                             <pagination class="pro-pagination-style shop-pagination mt-30" v-model="currentPage" :per-page="perPage" :records="filterItems.length" @paginate="paginateClickCallback" :page-count="getPaginateCount" />
                         </div>
                     </div>
-
-                    <div class="col-lg-3">
-                        <ShopSidebar classes="mr-30" />
-                    </div>
                 </div>
             </div>
         </div>
