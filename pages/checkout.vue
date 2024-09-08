@@ -7,63 +7,58 @@
             <div class="container">
                 <div class="row" v-if="products.length > 0">
                     <div class="col-lg-7">
-                        <div class="billing-info-wrap">
-                            <h3>Detalles de Compra</h3>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="billing-info mb-20">
-                                        <label>Nombre</label>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="billing-info mb-20">
-                                        <label>Apellido</label>
-                                        <input type="text">
-                                    </div>
-                                </div>               
-                                <div class="col-lg-12">
-                                    <div class="billing-info mb-20">
-                                        <label>Direccion</label>
-                                        <input class="billing-address" placeholder="Nombre de calle y numero" type="text">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="billing-info mb-20">
-                                        <label>Ciudad</label>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="billing-info mb-20">
-                                        <label>Provincia</label>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="billing-info mb-20">
-                                        <label>Codigo Postal</label>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="billing-info mb-20">
-                                        <label>Telefono</label>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="billing-info mb-20">
-                                        <label>Correo Electronico</label>
-                                        <input type="text">
-                                    </div>
-                                </div>
+                        <div class="panel panel-default single-my-account">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><span>1 .</span> <a data-bs-toggle="collapse" href="#my-account-1">Tu Informacion Personal</a></h3>
                             </div>
-                            <div class="additional-info-wrap">
-                                <h4>Informacion Adicional</h4>
-                                <div class="additional-info">
-                                    <label>Nota</label>
-                                    <textarea placeholder="Notas sobre tu orden, EJ. Nota importante para el delivery. " name="message"></textarea>
+                            <div id="my-account-1" class="panel-collapse collapse show" data-bs-parent="#faq">
+                                <div class="panel-body">
+                                    <div class="myaccount-info-wrapper">
+                                        <div class="account-info-wrapper">
+                                            <h4>Mi Informacion de Cuenta</h4>
+                                            <h5>Tus Detalles Personales</h5>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info">
+                                                    <label>Nombre</label>
+                                                    <input v-model="name" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info">
+                                                    <label>Apellido</label>
+                                                    <input v-model="lastName" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12">
+                                                <div class="billing-info">
+                                                    <label>Correo Electronico</label>
+                                                    <input v-model="email" type="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info">
+                                                    <label>Telefono</label>
+                                                    <input v-model="telefone" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="billing-info">
+                                                    <label>DNI</label>
+                                                    <input v-model="document" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="billing-back-btn">
+                                            <div class="billing-back">
+                                                <a href="#"><i class="fa fa-arrow-up"></i> Atras</a>
+                                            </div>
+                                            <div class="billing-btn">
+                                                <button type="submit">Continuar</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
