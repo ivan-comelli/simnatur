@@ -3,7 +3,7 @@
         <TheHeader />
 
         <div class="cart-main-area pt-90 pb-100">
-            <div :class="window.innerWidth < 920 ? 'conteiner-fluid' : 'container'">
+            <div :class="innerWidth < 920 ? 'conteiner-fluid' : 'container'">
                 <div class="row">
                     <div class="col-12" v-if="products.length > 0">
                         <h3 class="cart-page-title">Tu Carrito</h3>
@@ -98,10 +98,16 @@
         },
         data() {
             return {
-                singleQuantity: 1
+                singleQuantity: 1,
+                innerWidth: window.innerWidth
             }
         },
-
+        mounted() {
+            window.addEventListener('resize', this.updateInnerWidth);
+        },
+        beforeDestroy() {
+            window.removeEventListener('resize', this.updateInnerWidth);
+        },
         computed: {
             products() {
                 return this.$store.getters.getCart
@@ -113,6 +119,9 @@
         },
 
         methods: {
+            updateInnerWidth() {
+                this.innerWidth = window.innerWidth;
+            },
             incrementProduct(product) {
                 const prod = { ...product, cartQuantity: 1 }
                 if (product.cartQuantity < product.quantity) {
