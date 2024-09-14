@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-12" v-if="products.length > 0">
                         <h3 class="cart-page-title">Tu Carrito</h3>
-                        <div class="table-content table-responsive cart-table-content">
+                        <div class="table-content cart-table-content">
                             <table>
                                 <thead>
                                     <tr>
