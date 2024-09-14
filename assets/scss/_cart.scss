@@ -70,6 +70,7 @@ h3.cart-page-title {
                     display: inline-block;
                     padding: 0;
                     position: relative;
+                    margin-top: .2rem;
                     width: clamp(2.175rem, -0.1786rem + 3.5714vw, 2.5rem);
                     .qtybutton {
                         color: $dark;
@@ -132,7 +133,7 @@ h3.cart-page-title {
             td {
                 color: $dark;
                 font-size: .4rem;
-                padding: 1rem 0 1rem 1rem;
+                padding: 1rem 0 1rem .3rem;
                 text-align: center;
             }
         }
