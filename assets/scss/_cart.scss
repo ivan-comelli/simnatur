@@ -17,38 +17,34 @@ h3.cart-page-title {
 .cart-table-content {
     table {
         border: 1px solid #ebebeb;
-        white-space: nowrap;
+        white-space: normal;
+        width: 100%;
         thead > tr {
             background-color: #f9f9f9;
             border: 1px solid #ebebeb;
             th {
                 border-top: medium none;
                 color: $dark;
-                font-size: 14px;
+                font-size: .3rem;
                 font-weight: 500;
-                padding: 21px 45px 22px;
+                padding: 0 0.2rem 0;
                 text-align: center;
                 text-transform: uppercase;
                 vertical-align: middle; 
                 white-space: nowrap;
-                @media #{$lg-layout}{
-                    padding: 21px 35px 22px;
-                }
-                @media #{$xs-layout}{
-                    padding: 21px 20px 22px;
-                }
             }
         }
         tbody > tr {
             border-bottom: 1px solid #ebebeb;
             td.product-thumbnail {
-                width: 150px;
+                min-width: 2rem;
+                max-width: 3rem;
             }
             td.product-name {
-                width: 435px;
+                min-width: 6rem;
                 a {
                     color: $dark;
-                    font-size: 15px;
+                    font-size: .4rem;
                     font-weight: 500;
                     &:hover {
                         color: $theme-color;
@@ -56,7 +52,7 @@ h3.cart-page-title {
                 }
             }
             td.product-price-cart {
-                width: 435px;
+                max-width: 4rem;
                 span {
                     font-weight: 500;
                     color: $dark;
@@ -70,25 +66,23 @@ h3.cart-page-title {
                 color: $dark;
             }
             td.product-quantity {
-                width: 435px;
                 .cart-plus-minus {
                     display: inline-block;
-                    height: 40px;
                     padding: 0;
                     position: relative;
-                    width: 110px;
+                    width: clamp(2.175rem, -0.1786rem + 3.5714vw, 2.5rem);
                     .qtybutton {
                         color: $dark;
                         cursor: pointer;
                         float: inherit;
-                        font-size: 16px;
+                        font-size: .4rem;
                         margin: 0;
                         position: absolute;
                         transition: all 0.3s ease 0s;
                         width: 20px;
                         text-align: center;
                         top: 0;
-                        height: 40px;
+                        height: 1rem;
                     }
                     .dec.qtybutton {
                         border-right: 1px solid #e5e5e5;
@@ -101,8 +95,8 @@ h3.cart-page-title {
                     input.cart-plus-minus-box {
                         color: $dark;
                         float: left;
-                        font-size: 14px;
-                        height: 40px;
+                        font-size: .4rem;
+                        height: 1rem;
                         margin: 0;
                         width: 110px;
                         background-color: transparent;
@@ -113,10 +107,9 @@ h3.cart-page-title {
                 }
             }
             td.product-remove {
-                width: 100px;
                 button {
                     color: #666;
-                    font-size: 17px;
+                    font-size: .4rem;
                     margin: 0 13px;
                     &:hover {
                         color: $theme-color;
