@@ -3,7 +3,7 @@
         <TheHeader />
 
         <div class="cart-main-area pt-90 pb-100">
-            <div class="container">
+            <div :class="window.innerWidth < 920 ? 'conteiner-fluid' : 'container'">
                 <div class="row">
                     <div class="col-12" v-if="products.length > 0">
                         <h3 class="cart-page-title">Tu Carrito</h3>
