@@ -166,6 +166,21 @@
             Breadcrumb: () => import("@/components/Breadcrumb"),
             TheFooter: () => import("@/components/TheFooter"),
         },
+        data() {
+            return {
+                name: "",
+                lastName: "",
+                email: "",
+                phone: "",
+                document: "",
+                birthday: "",
+                addressBook: {
+                    detail: "",
+                    street: "",
+                    city: ""
+                }
+            }
+        },
         computed: {
             preference() {
                 return this.$store.getters.getPreference
@@ -176,6 +191,9 @@
 
             total() {
                 return this.$store.getters.getTotal
+            },
+            user() {
+                return this.$store.getters.auth.getUser
             },
         },
         methods: {

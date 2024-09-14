@@ -1465,6 +1465,7 @@ textarea:focus {
     position: relative;
     width: 100%;
     min-height: 1px;
+    box-shadow: 0px 0px 60px -5px rgba(0,0,0,0.1);
     @media #{$xl-layout} {
         padding-right: 15px;
         padding-left: 15px;
@@ -1472,12 +1473,12 @@ textarea:focus {
     @media #{$lg-layout} {
         padding-right: 15px;
         padding-left: 15px;
-        flex: 0 0 33.333%;
+        flex: 0 0 34.5%;
     }
     @media #{$md-layout} {
         padding-right: 15px;
         padding-left: 15px;
-        flex: 0 0 33.333%;
+        flex: 0 0 34.5%;
     }
     @media #{$xs-layout} {
         padding-right: 15px;
