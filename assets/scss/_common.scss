@@ -1484,10 +1484,10 @@ textarea:focus {
     @media #{$xs-layout} {
         padding-right: 15px;
         padding-left: 15px;
-        flex: 0 0 50%;
+        flex: 0 0 75%;
     }
     @media #{$sm-layout} {
-        flex: 0 0 50%;
+        flex: 0 0 75%;
 
     }
 }
