@@ -1,7 +1,9 @@
 <template>
     <div class="cart-page-wrapper">
         <TheHeader />
-
+        <div class="banner"> 
+            PROMO
+        </div>
         <div class="cart-main-area pt-90 pb-100">
             <div :class="innerWidth < 992 ? 'container-fluid' : 'container'">
                 <div class="row">
@@ -12,9 +14,9 @@
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        <th>Producto</th>
+                                        <th style="text-align: left;">Producto</th>
                                         <th v-if="innerWidth > 767">Unitario</th>
-                                        <th>Cantidad</th>
+                                        <th>CNT</th>
                                         <th>Subtotal</th>
                                         <th></th>
                                     </tr>
@@ -98,29 +100,31 @@
         },
         data() {
             return {
-                singleQuantity: 1,
-                innerWidth: window.innerWidth
+                singleQuantity: 1
             }
         },
         mounted() {
-            window.addEventListener('resize', this.updateInnerWidth);
+            this.$store.dispatch('updateWindowWidth');
+            window.addEventListener('resize', this.handleResize);
         },
         beforeDestroy() {
-            window.removeEventListener('resize', this.updateInnerWidth);
+            window.removeEventListener('resize', this.handleResize);
         },
         computed: {
             products() {
                 return this.$store.getters.getCart
             },
-
+            innerWidth() {
+                return this.$store.getters.getWindowsWidth
+            },
             total() {
                 return this.$store.getters.getTotal
             },
         },
 
         methods: {
-            updateInnerWidth() {
-                this.innerWidth = window.innerWidth;
+            handleResize() {
+                this.$store.dispatch('updateWindowWidth');
             },
             incrementProduct(product) {
                 const prod = { ...product, cartQuantity: 1 }

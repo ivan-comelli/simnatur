@@ -17,10 +17,12 @@ export const state = () => ({
     wishlist: [],
     compare: [],
     preference: null,
-    statusModal: false
+    statusModal: false,
+    windowWidth: typeof window !== 'undefined' ? window.innerWidth : 0
 })
 
 export const getters = {
+    getWindowsWidth: state => state.windowWidth,
     getCart: state => state.cart,
     cartItemCount: state => state.cart.length,
     getWishlist: state => state.wishlist,
@@ -40,6 +42,9 @@ export const getters = {
 }
 
 export const mutations =  {
+    SET_WINDOWS_WIDTH(state, width) {
+      state.windowWidth = width;
+    },
     SET_CART(state, payload) {
       state.cart = payload;
     },
@@ -94,6 +99,10 @@ export const mutations =  {
 }
 
 export const actions = {
+    updateWindowWidth({ commit }) {
+      const width = window.innerWidth;
+      commit('SET_WINDOWS_WIDTH', width);
+    },
     addToCartItem({ state, commit }, payload) {
       return new Promise(async (resolve, reject) => {
         try {
