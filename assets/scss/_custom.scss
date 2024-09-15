@@ -1,12 +1,12 @@
 // write your custom scss/css here
 @media #{$xs-layout} {
     .gradient-mobil {
-        box-shadow: -8px 0px 8px -8px #0000002e;
-        background: linear-gradient(300deg, #d0d0d000, #ebebeb, #ffffff00);
-        background-size: 180% 180%;
-        animation: gradient-animation 6s ease infinite;
-        border-radius: .5rem;
-        overflow: hidden;
+      box-shadow: 10px 0px 20px -13px rgba(0, 0, 0, 0.1803921569);
+      background: linear-gradient(300deg, rgba(208, 208, 208, 0), #f8f8f8, rgba(255, 255, 255, 0));
+      background-size: 180% 180%;
+      animation: gradient-animation 3s ease infinite;
+      border-radius: 0.5rem;
+      overflow: hidden;
     }
     @keyframes gradient-animation {
       0% {
