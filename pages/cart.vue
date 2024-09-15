@@ -3,17 +3,17 @@
         <TheHeader />
 
         <div class="cart-main-area pt-90 pb-100">
-            <div :class="innerWidth < 992 ? 'conteiner-fluid' : 'container'">
+            <div :class="innerWidth < 992 ? 'container-fluid' : 'container'">
                 <div class="row">
-                    <div class="col-12" v-if="products.length > 0">
-                        <h3 class="cart-page-title">Tu Carrito</h3>
+                    <div class="col-lg-10 col-md-10" v-if="products.length > 0">
+                        <h3 class="cart-page-title"></h3>
                         <div class="table-content cart-table-content">
                             <table>
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        <th>Nombre Producto</th>
-                                        <th>Precio unitario</th>
+                                        <th>Producto</th>
+                                        <th>Unitario</th>
                                         <th>Cantidad</th>
                                         <th>Subtotal</th>
                                         <th></th>
@@ -61,13 +61,13 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-8 col-md-12">
+                            <div class="col-12">
                                 <div class="grand-total">
                                     <div class="title-wrap">
-                                        <h4 class="cart-bottom-title section-bg-gary-cart">Cart Total</h4>
+                                        <h4 class="cart-bottom-title section-bg-gary-cart">Tu Carrito</h4>
                                     </div>
-                                    <h5>Total products <span>${{ total.toFixed(2) }}</span></h5>
-                                    <h4 class="grand-total-title">Grand Total  <span>${{ total.toFixed(2) }}</span></h4>
+                                    <h5>Total de Productos <span>${{ total.toFixed(2) }}</span></h5>
+                                    <h4 class="grand-total-title">Total a Pagar<span>${{ total.toFixed(2) }}</span></h4>
                                     <n-link to="/checkout">Proceder con el Pago</n-link>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                             <div class="icon">
                                 <i class="pe-7s-cart"></i>
                             </div>
-                            <h4>No items found in cart</h4>
+                            <h4>No hay productos en el carrito</h4>
                             <n-link to="/shop" class="empty-cart__button">Comprar Ahora</n-link>
                         </div>
                     </div>

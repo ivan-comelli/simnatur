@@ -37,8 +37,16 @@ h3.cart-page-title {
         tbody > tr {
             border-bottom: 1px solid #ebebeb;
             td.product-thumbnail {
-                min-width: 2rem;
-                max-width: 3rem;
+                min-width: 3rem;
+                max-width: 4rem;
+                a {
+                    img {
+                        border-radius: 0.6rem !important;
+                        object-fit: cover;
+                        height: 3rem;
+                        width: 3rem;
+                    }
+                }
             }
             td.product-name {
                 a {
@@ -61,10 +69,33 @@ h3.cart-page-title {
                 }
             }
             td.product-subtotal {
+                min-width: 2.5rem;
                 font-weight: 500;
                 color: $dark;
             }
             td.product-quantity {
+                @media #{$xs-layout} {
+                    .cart-plus-minus {
+                        display: flex !important;
+                        flex-direction: column;
+                        border: 1px solid #e5e5e5;
+                        align-items: center;
+                        width: 1.5rem !important;
+                        .dec.qtybutton {
+                            order: 3;
+                        }
+                        .qtybutton {
+                            border: none !important;
+                            position: relative !important;
+                        }
+                        input.cart-plus-minus-box {
+                            border: none !important;
+                            height: 0.6rem !important;
+                            order: 2;
+                        }
+                    }
+
+                }
                 .cart-plus-minus {
                     display: inline-block;
                     padding: 0;
@@ -142,10 +173,9 @@ h3.cart-page-title {
 .cart-shiping-update-wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 30px 0px 55px;
+    padding: 0.5rem 0 1rem;
     @media #{$xs-layout} {
-        display: block;
-        padding: 30px 0px 15px;
+
     }
     .cart-shiping-update > a,
     .cart-shiping-update > button,
@@ -155,18 +185,18 @@ h3.cart-page-title {
         border-radius: 50px;
         color: #363f4d;
         display: inline-block;
-        font-size: 14px;
+        font-size: 0.4rem;
         font-weight: 500;
         line-height: 1;
         padding: 18px 63px 17px;
         text-transform: uppercase;
         @media #{$md-layout} {
             padding: 18px 25px 17px;
-            font-size: 13px;
+            font-size: 0.3rem;
         }
         @media #{$xs-layout} {
             padding: 18px 40px 17px;
-            margin: 0 0 15px;
+            margin: 0 0 0.4rem;
         }
         &:hover {
             background-color: $theme-color;
@@ -325,7 +355,7 @@ h3.cart-page-title {
             height: 1px;
             left: 0;
             position: absolute;
-            top: 10px;
+            top: 0.6rem;
             transition: all 0.4s ease 0s;
             width: 100%;
             z-index: 1;
