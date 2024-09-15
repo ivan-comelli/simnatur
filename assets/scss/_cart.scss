@@ -50,6 +50,7 @@ h3.cart-page-title {
             }
             td.product-name {
                 text-align: left;
+                min-width: 6rem;
                 a {
                     color: $dark;
                     font-weight: 500;

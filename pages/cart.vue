@@ -2,9 +2,9 @@
     <div class="cart-page-wrapper">
         <TheHeader />
         <div class="banner"> 
-            PROMO
+            
         </div>
-        <div class="cart-main-area pt-90 pb-100">
+        <div class="cart-main-area pb-100">
             <div :class="innerWidth < 992 ? 'container-fluid' : 'container'">
                 <div class="row">
                     <div class="col-lg-10 col-md-10" v-if="products.length > 0">
