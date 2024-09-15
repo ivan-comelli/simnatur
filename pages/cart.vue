@@ -13,7 +13,7 @@
                                     <tr>
                                         <th></th>
                                         <th>Producto</th>
-                                        <th>Unitario</th>
+                                        <th v-if="innerWidth > 767">Unitario</th>
                                         <th>Cantidad</th>
                                         <th>Subtotal</th>
                                         <th></th>
@@ -29,7 +29,7 @@
                                         <td class="product-name">
                                             <n-link :to="`/product/${slugify(product.title)}`">{{ product.title }}</n-link>
                                         </td>
-                                        <td class="product-price-cart">
+                                        <td v-if="innerWidth > 767" class="product-price-cart">
                                             <span class="amount">${{ discountedPrice(product).toFixed(2) }}</span>
                                             <del class="old">${{ product.price.toFixed(2) }}</del>
                                         </td>

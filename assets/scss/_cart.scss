@@ -81,16 +81,23 @@ h3.cart-page-title {
                         border: 1px solid #e5e5e5;
                         align-items: center;
                         width: 1.5rem !important;
+                        border-radius: .2rem;
                         .dec.qtybutton {
+                            border-right: none !important;
+                            border-top: 1px solid #e5e5e5 !important;
                             order: 3;
                         }
+                        .inc.qtybutton {
+                            border-left: none !important;
+                            border-bottom: 1px solid #e5e5e5 !important;
+                        }
                         .qtybutton {
-                            border: none !important;
                             position: relative !important;
+                            width: 100% !important;
                         }
                         input.cart-plus-minus-box {
                             border: none !important;
-                            height: 0.6rem !important;
+                            height: 0.8rem !important;
                             order: 2;
                         }
                     }
@@ -163,8 +170,8 @@ h3.cart-page-title {
             td {
                 color: $dark;
                 font-size: .4rem;
-                padding: 1rem 0 1rem .3rem;
-                text-align: center;
+                padding: 1rem 0 1rem .8rem;
+                text-align: left;
             }
         }
     }
