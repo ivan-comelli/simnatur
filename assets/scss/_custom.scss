@@ -2,11 +2,23 @@
 @media #{$xs-layout} {
     .gradient-mobil {
         box-shadow: -8px 0px 8px -8px #0000002e;
-        background: linear-gradient(90deg, rgba(238,236,254,1) 0%, rgba(255,255,255,0.6194852941176471) 70%, rgba(255,255,255,0) 100%);
+        background: linear-gradient(300deg, #d0d0d000, #ebebeb, #ffffff00);
+        background-size: 180% 180%;
+        animation: gradient-animation 6s ease infinite;
         border-radius: .5rem;
         overflow: hidden;
     }
-
+    @keyframes gradient-animation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
     .custom-policy { 
         width: 100% !important;
         padding: 0.5rem 1rem;
