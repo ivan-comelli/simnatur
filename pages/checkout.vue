@@ -151,7 +151,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="place-order col-6">
+                    <div class="place-order col-lg-6 col-12">
                         <div id="paymentBrick_container"></div>
                     </div>
                 </div>

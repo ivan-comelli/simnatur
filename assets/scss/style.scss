@@ -1,7 +1,7 @@
-@import "~bootstrap/scss/bootstrap";
+@import 'variables';
+@import "../../node_modules/bootstrap/scss/bootstrap";
 @import "../css/icons.min.css";
 
-@import 'variables';
 @import 'common';
 @import 'header';
 @import 'slider';

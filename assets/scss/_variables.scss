@@ -35,3 +35,28 @@ $md-layout: 'only screen and (min-width: 768px) and (max-width: 991px)';
 $sm-layout: 'only screen and (min-width: 576px) and (max-width: 767px)';
 $xxs-layout: 'only screen and (min-width: 360px) and (max-width: 479px)';
 $xs-layout: 'only screen and (max-width: 767px)';
+
+
+$accordion-padding-y:                     0.4rem;
+$accordion-padding-x:                     1rem;
+
+$accordion-border-width:                  0.2rem;
+$accordion-border-color:                  rgba(0, 0, 0, 0.125); 
+$accordion-border-radius:                 0.2rem;
+$accordion-inner-border-radius:           $accordion-border-radius - $accordion-border-width; 
+
+$accordion-body-padding-y:                $accordion-padding-y;
+$accordion-body-padding-x:                $accordion-padding-x;
+
+$accordion-button-padding-y:              $accordion-padding-y;
+$accordion-button-padding-x:              $accordion-padding-x;
+$bs-accordion-border-width:               0.02rem;
+
+
+$accordion-icon-width:                    .6rem;
+
+
+$bs-btn-font-size:                        .4rem;
+
+
+

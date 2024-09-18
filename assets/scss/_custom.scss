@@ -1,9 +1,9 @@
 // write your custom scss/css here
 @media #{$xs-layout} {
     .gradient-mobil {
-      background: linear-gradient(300deg, rgb(255 255 255), #f1f1f1, rgb(255 255 255));
-      background-size: 180% 180%;
-      animation: gradient-animation 3s ease infinite;
+      background: linear-gradient(300deg, rgb(255 255 255), #fafafa, rgb(255 255 255));
+      background-size: 180%;
+      animation: gradient-animation 2s ease infinite;
       border-radius: 0.5rem;
       overflow: hidden;
     }
@@ -117,10 +117,6 @@
     height: auto;
   }
   
-  button {
-    margin: 5px;
-  }
-  
   .embla__dots {
     display: flex;
     justify-content: center;
@@ -149,4 +145,7 @@
     background: #b949ff3d;
     font-size: .4rem;
     height: 3rem;
+  }
+  .accordion-button { 
+    font-size: initial;
   }
