@@ -1,8 +1,7 @@
 // write your custom scss/css here
 @media #{$xs-layout} {
     .gradient-mobil {
-      box-shadow: 10px 0px 20px -13px rgba(0, 0, 0, 0.1803921569);
-      background: linear-gradient(300deg, rgba(208, 208, 208, 0), #f8f8f8, rgba(255, 255, 255, 0));
+      background: linear-gradient(300deg, rgb(255 255 255), #f1f1f1, rgb(255 255 255));
       background-size: 180% 180%;
       animation: gradient-animation 3s ease infinite;
       border-radius: 0.5rem;
@@ -22,6 +21,7 @@
     .custom-policy { 
         width: 100% !important;
         padding: 0.5rem 1rem;
+        border-bottom: solid .05rem #e8e8e8;
     }
     .policy-grid {
         display: grid;
@@ -96,7 +96,7 @@
     width: 100%;
     border: solid .3rem #ffffff;
     border-radius: 0.6rem;
-    box-shadow: 0px 0px 200px -50px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 40px 40px -55px rgba(0, 0, 0, 0.25), 0px -40px 40px -55px rgba(0, 0, 0, 0.25);
   }
   
   .embla__viewport {

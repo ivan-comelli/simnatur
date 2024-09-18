@@ -6,95 +6,144 @@
         <div class="checkout-area pt-95 pb-100">
             <div class="container">
                 <div class="row" v-if="products.length > 0">
-                    <div id="faq" class="col-lg-7 panel-group">
-                        <div class="panel panel-default single-my-account">
-                            <div class="panel-heading my-account-title">
-                                <h3 class="panel-title"><span>1 .</span> <a data-bs-toggle="collapse" href="#my-account-1">Tu Informacion Personal</a></h3>
-                            </div>
-                            <div id="my-account-1" class="panel-collapse collapse show" data-bs-parent="#faq">
-                                <div class="panel-body">
+                    <div id="faq" class="accordion col">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#my-account-1" aria-expanded="true" aria-controls="my-account-1">
+                                    1. Tu Información Personal
+                                </button>
+                            </h2>
+                            <div id="my-account-1" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faq">
+                                <div class="accordion-body">
                                     <div class="myaccount-info-wrapper">
                                         <div class="account-info-wrapper">
-                                            <h4>Mi Informacion de Cuenta</h4>
+                                            <h4>Mi Información de Cuenta</h4>
                                             <h5>Tus Detalles Personales</h5>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="billing-info">
                                                     <label>Nombre</label>
-                                                    <input v-model="name" type="text">
+                                                    <input v-model="name" type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="billing-info">
                                                     <label>Apellido</label>
-                                                    <input v-model="lastName" type="text">
+                                                    <input v-model="lastName" type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-md-12">
                                                 <div class="billing-info">
-                                                    <label>Correo Electronico</label>
-                                                    <input v-model="email" type="email">
+                                                    <label>Correo Electrónico</label>
+                                                    <input v-model="email" type="email" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="billing-info">
-                                                    <label>Telefono</label>
-                                                    <input v-model="telefone" type="text">
+                                                    <label>Teléfono</label>
+                                                    <input v-model="telefone" type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="billing-info">
                                                     <label>DNI</label>
-                                                    <input v-model="document" type="text">
+                                                    <input v-model="document" type="text" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="billing-back-btn">
                                             <div class="billing-back">
-                                                <a href="#"><i class="fa fa-arrow-up"></i> Atras</a>
+                                                <a href="#"><i class="fa fa-arrow-up"></i> Atrás</a>
                                             </div>
                                             <div class="billing-btn">
-                                                <button type="submit">Continuar</button>
+                                                <button type="submit" class="btn btn-primary">Continuar</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel panel-default single-my-account">
-                                <div class="panel-heading my-account-title">
-                                    <h3 class="panel-title"><span>3 .</span> <a data-bs-toggle="collapse" href="#my-account-3">Modify your address book entries   </a></h3>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#my-account-2" aria-expanded="false" aria-controls="my-account-2">
+                                    2. Tu Orden
+                                </button>
+                            </h2>
+                            <div id="my-account-2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    <div class="your-order-area">
+                                        <div class="your-order-wrap gray-bg-4">
+                                            <div class="your-order-product-info">
+                                                <div class="your-order-top">
+                                                    <ul class="list-group list-group-horizontal">
+                                                        <li class="list-group-item">Producto</li>
+                                                        <li class="list-group-item">Total</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="your-order-middle">
+                                                    <ul class="list-group">
+                                                        <li v-for="(product, index) in products" :key="index" class="list-group-item">
+                                                            <span class="order-middle-left">{{ product.title }} X {{ product.cartQuantity }}</span>
+                                                            <span class="order-price">${{ product.total.toFixed(2) }}</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="your-order-bottom">
+                                                    <ul class="list-group list-group-horizontal">
+                                                        <li class="list-group-item">Envío</li>
+                                                        <li class="list-group-item">Envío Gratis</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="your-order-total">
+                                                    <ul class="list-group list-group-horizontal">
+                                                        <li class="list-group-item">Total</li>
+                                                        <li class="list-group-item">${{ total.toFixed(2) }}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div id="my-account-3" class="panel-collapse collapse" data-bs-parent="#faq">
-                                    <div class="panel-body">
-                                        <div class="myaccount-info-wrapper">
-                                            <div class="account-info-wrapper">
-                                                <h4>Address Book Entries</h4>
-                                            </div>
-                                            <div class="entries-wrapper">
-                                                <div class="row">
-                                                    <div class="col-md-6 d-flex align-items-center justify-content-center">
-                                                        <div class="entries-info text-center">
-                                                            <p>Keith L. Castro </p>
-                                                            <p>  559 Pratt Avenue </p>
-                                                            <p> Orchards, WA 98662 </p>
-                                                        </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#my-account-3" aria-expanded="false" aria-controls="my-account-3">
+                                    3. Verifica dónde recibir tu compra
+                                </button>
+                            </h2>
+                            <div id="my-account-3" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    <div class="myaccount-info-wrapper">
+                                        <div class="account-info-wrapper">
+                                            <h4>Address Book Entries</h4>
+                                        </div>
+                                        <div class="entries-wrapper">
+                                            <div class="row">
+                                                <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                                    <div class="entries-info text-center">
+                                                        <p>Keith L. Castro</p>
+                                                        <p>559 Pratt Avenue</p>
+                                                        <p>Orchards, WA 98662</p>
                                                     </div>
-                                                    <div class="col-md-6 d-flex align-items-center justify-content-center">
-                                                        <div class="entries-edit-delete text-center">
-                                                            <button class="edit">Edit</button>
-                                                            <button>Delete</button>
-                                                        </div>
+                                                </div>
+                                                <div class="col-md-6 d-flex align-items-center justify-content-center">
+                                                    <div class="entries-edit-delete text-center">
+                                                        <button class="btn btn-secondary">Edit</button>
+                                                        <button class="btn btn-danger">Delete</button>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="billing-back-btn">
-                                                <div class="billing-back">
-                                                    <a href="#"><i class="fa fa-arrow-up"></i> back</a>
-                                                </div>
-                                                <div class="billing-btn">
-                                                    <button type="submit">Continue</button>
-                                                </div>
+                                        </div>
+                                        <div class="billing-back-btn">
+                                            <div class="billing-back">
+                                                <a href="#"><i class="fa fa-arrow-up"></i> Atrás</a>
+                                            </div>
+                                            <div class="billing-btn">
+                                                <button type="submit" class="btn btn-primary">Continuar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -102,42 +151,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5">
-                        <div class="your-order-area">
-                            <h3>Tu Orden</h3>
-                            <div class="your-order-wrap gray-bg-4">
-                                <div class="your-order-product-info">
-                                    <div class="your-order-top">
-                                        <ul>
-                                            <li>Producto</li>
-                                            <li>Total</li>
-                                        </ul>
-                                    </div>
-                                    <div class="your-order-middle">
-                                        <ul>
-                                            <li v-for="(product, index) in products" :key="index">
-                                                <span class="order-middle-left">{{ product.title }}  X  {{ product.cartQuantity }}</span> <span class="order-price">${{ product.total.toFixed(2) }}</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="your-order-bottom">
-                                        <ul>
-                                            <li class="your-order-shipping">Envio</li>
-                                            <li>Envio Gratis</li>
-                                        </ul>
-                                    </div>
-                                    <div class="your-order-total">
-                                        <ul>
-                                            <li class="order-total">Total</li>
-                                            <li>${{ total.toFixed(2) }}</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="place-order mt-25">
-                                <div id="paymentBrick_container"></div>
-                            </div>
-                        </div>
+                    <div class="place-order col-6">
+                        <div id="paymentBrick_container"></div>
                     </div>
                 </div>
                 <div class="row" v-else>
