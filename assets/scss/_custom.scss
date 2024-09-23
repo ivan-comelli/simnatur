@@ -97,55 +97,151 @@
     border: solid .3rem #ffffff;
     border-radius: 0.6rem;
     box-shadow: 0px 40px 40px -55px rgba(0, 0, 0, 0.25), 0px -40px 40px -55px rgba(0, 0, 0, 0.25);
+}
+
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__container {
+  user-select: none;
+}
+
+.embla__slide {
+  position: relative;
+}
+
+.embla__slide img {
+  width: 100%;
+  height: auto;
+}
+
+.embla__dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.embla__dot {
+  border: none;
+  background-color: #ccc;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.embla__dot.is-selected {
+  background-color: #000;
+}
+
+.mp-checkout-bricks__payment-form {
+  padding: 1rem;
+}
+
+.banner {
+  background: #b949ff3d;
+  font-size: .4rem;
+  height: 3rem;
+}
+.accordion-button { 
+  font-size: initial;
+}
+
+.accordion-body {
+  padding: 1rem 1.5rem;
+}
+
+.myaccount-info-wrapper {
+  display: grid;
+  grid-template-columns: 0.0361fr 0.0585fr 0.0953fr 0.1536fr 0.1565fr 0.0921fr 0.4079fr;
+  grid-template-rows: 1.499fr 0.928fr 0.573fr;
+
+  div:nth-child(1) {
+    grid-area: 1/1/1/5;
   }
-  
-  .embla__viewport {
-    overflow: hidden;
-    width: 100%;
+  div:nth-child(2) {
+    grid-area: 1/6/1/8;
   }
-  
-  .embla__container {
-    user-select: none;
+  div:nth-child(3) {
+    grid-area: 2/1/2/8;
   }
-  
-  .embla__slide {
-    position: relative;
+  div:nth-child(4) {
+    grid-area: 3/1/3/6;
   }
-  
-  .embla__slide img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .embla__dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  
-  .embla__dot {
-    border: none;
-    background-color: #ccc;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-  }
-  
-  .embla__dot.is-selected {
-    background-color: #000;
+  div:nth-child(5) {
+    grid-area: 3/6/3/8;
   }
 
-  .mp-checkout-bricks__payment-form {
-    padding: 0 !important;
+}
+
+.test-golden-ratio {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;   /* Ancho completo del contenedor */
+    height: 100%;  /* Altura completa del contenedor */
+    background: linear-gradient(
+      to right,
+      transparent 0%,     /* Inicio en 0% */
+      black 0%,           /* Línea en 0% */
+      black 1%,           /* Grosor de la línea */
+      transparent 1%,
+
+      transparent 4.5%,    /* Espacio hasta la segunda línea */
+      black 4.5%,          /* Segunda línea en 4.5% */
+      black 5.5%,          /* Grosor de la segunda línea */
+      transparent 5.5%,
+
+      transparent 11.8%,    /* Espacio hasta la tercera línea */
+      black 11.8%,          /* Tercera línea en 11.8% */
+      black 12.8%,          /* Grosor de la tercera línea */
+      transparent 12.8%,
+
+      transparent 19.1%,    /* Espacio hasta la cuarta línea */
+      black 19.1%,          /* Cuarta línea en 19.1% */
+      black 20.1%,          /* Grosor de la cuarta línea */
+      transparent 20.1%,
+
+      transparent 30.9%,    /* Espacio hasta la quinta línea */
+      black 30.9%,          /* Quinta línea en 30.9% */
+      black 31.9%,          /* Grosor de la quinta línea */
+      transparent 31.9%,
+
+      transparent 50%,      /* Espacio hasta la sexta línea */
+      black 50%,            /* Línea en 50% */
+      black 51%,            /* Grosor de la línea */
+      transparent 51%,
+
+      transparent 69.1%,    /* Espacio hasta la séptima línea */
+      black 69.1%,          /* Séptima línea en 69.1% */
+      black 70.1%,          /* Grosor de la séptima línea */
+      transparent 70.1%,
+
+      transparent 80.9%,    /* Espacio hasta la octava línea */
+      black 80.9%,          /* Octava línea en 80.9% */
+      black 81.9%,          /* Grosor de la octava línea */
+      transparent 81.9%,
+
+      transparent 88.2%,    /* Espacio hasta la novena línea */
+      black 88.2%,          /* Novena línea en 88.2% */
+      black 89.2%,          /* Grosor de la novena línea */
+      transparent 89.2%,
+
+      transparent 95.5%,    /* Espacio hasta la décima línea */
+      black 95.5%,          /* Décima línea en 95.5% */
+      black 96.5%,          /* Grosor de la décima línea */
+      transparent 96.5%,
+
+      transparent 100%,      /* Espacio hasta el 100% */
+      black 99%            /* Línea final en 100% */
+    );
   }
 
-  .banner {
-    background: #b949ff3d;
-    font-size: .4rem;
-    height: 3rem;
-  }
-  .accordion-button { 
-    font-size: initial;
-  }
+}

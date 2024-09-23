@@ -2,7 +2,7 @@
     <div class="home-page-wrapper">
         <TheHeader />
         <HeroSlider />
-        <ServicePolicy />
+        <ServicePolicy class="test-golden-ratio"/>
         <Modal />
         <ProductWrapper :isSectionTitle=true />
         <BlogWrapper />

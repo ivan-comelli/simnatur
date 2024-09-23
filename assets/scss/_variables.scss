@@ -36,6 +36,10 @@ $sm-layout: 'only screen and (min-width: 576px) and (max-width: 767px)';
 $xxs-layout: 'only screen and (min-width: 360px) and (max-width: 479px)';
 $xs-layout: 'only screen and (max-width: 767px)';
 
+$gap-sm:    4.5%;
+$gap-md: 11.8%;
+$gap-lg: 19.1%;
+$gap-xl: 30.9%;
 
 $accordion-padding-y:                     0.4rem;
 $accordion-padding-x:                     1rem;
@@ -50,13 +54,33 @@ $accordion-body-padding-x:                $accordion-padding-x;
 
 $accordion-button-padding-y:              $accordion-padding-y;
 $accordion-button-padding-x:              $accordion-padding-x;
-$bs-accordion-border-width:               0.02rem;
+$accordion-border-width:               0.02rem;
 
 
 $accordion-icon-width:                    .6rem;
 
 
-$bs-btn-font-size:                        .4rem;
+$btn-font-size:                        .4rem;
 
+$accordion-active-bg: linear-gradient(to right, #4CB8C4 0%, #3CD3AD  51%, #4CB8C4  100%);
 
+         
+.btn-grad {
+    background-image: linear-gradient(to right, #4CB8C4 0%, #3CD3AD  51%, #4CB8C4  100%);
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white !important;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  }
 
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+ 

@@ -3,62 +3,42 @@
         <TheHeader />
         
         <!-- checkout section start -->
-        <div class="checkout-area pt-95 pb-100">
+        <div class="checkout-area pt-95 pb-100 magicpattern">
             <div class="container">
                 <div class="row" v-if="products.length > 0">
                     <div id="faq" class="accordion col">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#my-account-1" aria-expanded="true" aria-controls="my-account-1">
+                                <button class="accordion-button btn-grad" type="button" data-bs-toggle="collapse" data-bs-target="#my-account-1" aria-expanded="true" aria-controls="my-account-1">
                                     1. Tu Información Personal
                                 </button>
                             </h2>
                             <div id="my-account-1" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faq">
                                 <div class="accordion-body">
                                     <div class="myaccount-info-wrapper">
-                                        <div class="account-info-wrapper">
-                                            <h4>Mi Información de Cuenta</h4>
-                                            <h5>Tus Detalles Personales</h5>
+                                        <div class="billing-info">
+                                            <label>Nombre</label>
+                                            <input v-model="name" type="text" class="form-control">
                                         </div>
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="billing-info">
-                                                    <label>Nombre</label>
-                                                    <input v-model="name" type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="billing-info">
-                                                    <label>Apellido</label>
-                                                    <input v-model="lastName" type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12 col-md-12">
-                                                <div class="billing-info">
-                                                    <label>Correo Electrónico</label>
-                                                    <input v-model="email" type="email" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="billing-info">
-                                                    <label>Teléfono</label>
-                                                    <input v-model="telefone" type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6">
-                                                <div class="billing-info">
-                                                    <label>DNI</label>
-                                                    <input v-model="document" type="text" class="form-control">
-                                                </div>
-                                            </div>
+                                    
+                                        <div class="billing-info">
+                                            <label>Apellido</label>
+                                            <input v-model="lastName" type="text" class="form-control">
                                         </div>
-                                        <div class="billing-back-btn">
-                                            <div class="billing-back">
-                                                <a href="#"><i class="fa fa-arrow-up"></i> Atrás</a>
-                                            </div>
-                                            <div class="billing-btn">
-                                                <button type="submit" class="btn btn-primary">Continuar</button>
-                                            </div>
+                                    
+                                        <div class="billing-info">
+                                            <label>Correo Electrónico</label>
+                                            <input v-model="email" type="email" class="form-control">
+                                        </div>
+                                    
+                                        <div class="billing-info">
+                                            <label>Teléfono</label>
+                                            <input v-model="telefone" type="text" class="form-control">
+                                        </div>
+                                    
+                                        <div class="billing-info">
+                                            <label>DNI</label>
+                                            <input v-model="document" type="text" class="form-control">
                                         </div>
                                     </div>
                                 </div>
