@@ -245,3 +245,20 @@
   }
 
 }
+
+.checkout-area {
+  .row {
+    margin-bottom: .4rem;
+  }
+  .container {
+    background-color: white;
+  }
+  #tab-checkout {
+    position: sticky;
+    top: 3rem;
+    font-size: .4rem;
+  }
+  .tab-content {
+     width: 100%;
+  }
+}

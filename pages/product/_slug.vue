@@ -2,7 +2,7 @@
     <div class="product-details-page-wrapper">
         <TheHeader />
         <ProductDetailsWrapper :product="product" />
-        <ProductDetailsDescriptionReview />
+        <ProductDetailsDescriptionReview :product="product" />
         <TheFooter />
     </div>
 </template>

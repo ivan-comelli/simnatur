@@ -14,10 +14,10 @@
                         </div>
                         <div class="footer-list">
                             <ul>
-                                <li><n-link to="/about">Tienda</n-link></li>
-                                <li><n-link to="/shop">Articulos</n-link></li>
-                                <li><n-link to="/contact">Contacto</n-link></li>
-                                <li><n-link to="/contact">¿Que es Simnatur?</n-link></li>
+                                <li><n-link to="">Tienda</n-link></li>
+                                <li><n-link to="">Articulos</n-link></li>
+                                <li><n-link to="">Contacto</n-link></li>
+                                <li><n-link to="">¿Que es Simnatur?</n-link></li>
                             </ul>
                         </div>
                     </div>
@@ -29,10 +29,10 @@
                         </div>
                         <div class="footer-list">
                             <ul>
-                                <li><n-link to="/about">Devoluciones</n-link></li>
-                                <li><n-link to="/about">Seguridad</n-link></li>
-                                <li><n-link to="/about">Envios</n-link></li>
-                                <li><n-link to="/about">FAQs</n-link></li>
+                                <li><n-link to="">Devoluciones</n-link></li>
+                                <li><n-link to="">Seguridad</n-link></li>
+                                <li><n-link to="">Envios</n-link></li>
+                                <li><n-link to="">FAQs</n-link></li>
                             </ul>
                         </div>
                     </div>

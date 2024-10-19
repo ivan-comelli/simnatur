@@ -284,6 +284,7 @@
         line-height: 28px;
         color: $dark;
         margin: 0;
+        margin-bottom: 1rem;
     }
     .pro-details-quality {
         display: flex;
@@ -401,8 +402,9 @@
             margin-right: 5px;
         }
         ul {
+            display: flex;
             li {
-                display: inline-block;
+                display: flex;
                 margin-right: 5px;
                 a{
                     color: #676767;

@@ -6,10 +6,10 @@
                 <GlobalImage class="hover-img" :src="product.images[1]" :alt="product.title" />
             </n-link>
             <div class="product-badges">
-                <span class="product-label pink" v-if="product.new">New</span>
+                <span class="product-label pink" v-if="product.new">Nuevo</span>
                 <span class="product-label purple" v-if="product.discount">-{{ product.discount }}%</span>
             </div>
-            <div class="product-action" v-if="layout === 'twoColumn' || layout === 'threeColumn'">
+            <!--div class="product-action" v-if="layout === 'twoColumn' || layout === 'threeColumn'">
                 <div class="pro-same-action pro-wishlist">
                     <button class="btn" title="Wishlist" @click="addToWishlist(product)"> 
                         <i class="pe-7s-like"></i>
@@ -17,11 +17,11 @@
                 </div>
                 <div class="pro-same-action pro-cart">
                     <n-link :to="`/product/${slugify(product.title)}`" class="btn" v-if="product.variation">
-                        select option
+                        Elegi una Opcion
                     </n-link>
                     <button class="btn" title="Add To Cart" @click="addToCart(product)" v-else>
                         <i class="pe-7s-cart"></i> 
-                        Add to cart
+                        Agregar al Carrito
                     </button>
                 </div>
                 <div class="pro-same-action pro-quickview">
@@ -29,61 +29,26 @@
                         <i class="pe-7s-look"></i>
                     </button>
                 </div>
-            </div>
+            </div-->
         </div>
         <div class="product-content text-center">
             <h3>
                 <n-link :to="`/product/${slugify(product.title)}`">{{ product.title }}</n-link>
             </h3>
-            <div class="product-rating" v-if="product.rating == 5">
-                <i class="fa fa-star-o yellow"></i>
-                <i class="fa fa-star-o yellow"></i>
-                <i class="fa fa-star-o yellow"></i>
-                <i class="fa fa-star-o yellow"></i>
-                <i class="fa fa-star-o yellow"></i>
-            </div>
-            <div class="product-rating" v-if="product.rating == 4">
-                <i class="fa fa-star-o yellow"></i>
-                <i class="fa fa-star-o yellow"></i>
-                <i class="fa fa-star-o yellow"></i>
-                <i class="fa fa-star-o yellow"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
-            <div class="product-rating" v-if="product.rating == 3">
-                <i class="fa fa-star-o yellow"></i>
-                <i class="fa fa-star-o yellow"></i>
-                <i class="fa fa-star-o yellow"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
-            <div class="product-rating" v-if="product.rating == 2">
-                <i class="fa fa-star-o yellow"></i>
-                <i class="fa fa-star-o yellow"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
-            <div class="product-rating" v-if="product.rating == 1">
-                <i class="fa fa-star-o yellow"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-            </div>
             <div class="product-price">
                 <span>${{ discountedPrice(product).toFixed(2) }}</span>
                 <span class="old" v-if="product.discount > 0">${{ product.price.toFixed(2) }}</span>
             </div>
             <div class="product-content__list-view" v-if="layout === 'list'">
                 <p>{{ product.description }}</p>
-                <div class="pro-action d-flex align-items-center" >
+                <!--div class="pro-action d-flex align-items-center" >
                     <div class="pro-cart btn-hover">
                         <n-link :to="`/product/${slugify(product.title)}`" class="btn" v-if="product.variation">
-                            select option
+                            Elegi una Opcion
                         </n-link>
                         <button class="btn" title="Add To Cart" @click="addToCart(product)" v-else>
                             <i class="pe-7s-cart"></i> 
-                            Add to cart
+                            Agregar al Carrito
                         </button>
                     </div>
                     <div class="pro-wishlist">
@@ -91,12 +56,7 @@
                             <i class="fa fa-heart-o"></i>
                         </button>
                     </div>
-                    <div class="pro-compare">
-                        <button @click="addToCompare(product)">
-                            <i class="pe-7s-shuffle"></i>
-                        </button>
-                    </div>
-                </div>
+                </div -->
             </div>
         </div>
     </div>
