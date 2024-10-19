@@ -206,7 +206,7 @@
 
         head() {
             return {
-                title: "Shop list standard"
+                title: "Catalogo"
             }
         }
     };

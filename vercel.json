@@ -7,5 +7,9 @@
           "serverFiles": ["server/**"]
         }
       }
-    ]
+    ],
+    "routeRules": {
+      "/**": { "static": true },
+      "/api/**": { "static": false, "cache": false }
+    } 
 }
