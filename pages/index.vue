@@ -182,7 +182,9 @@
                     .replace(/-+$/, ""); // Trim - from end of text
             }
         },
-
+        async fetch() {
+            await this.fetchProducts();
+        },
         watch: {
             $route(){
                 this.updateProductData()
