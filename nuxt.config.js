@@ -27,6 +27,10 @@ module.exports = {
     serverMiddleware: [
         { path: '/api', handler: '~/server/index.js' }
     ],
+    routeRules: {
+        "/**": { "static": true },
+        "/api/**": { "static": false, "cache": false }
+    },
     components: [
         '~/components/GlobalImage.vue',
         // Aquí puedes agregar otros componentes globales si es necesario
