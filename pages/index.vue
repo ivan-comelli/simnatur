@@ -101,6 +101,7 @@
         },
 
         methods: {
+            ...mapActions('products', ['fetchProducts']),
             paginateClickCallback(page) {
                 this.currentPage = Number(page);
             },
