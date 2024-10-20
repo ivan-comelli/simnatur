@@ -1,6 +1,7 @@
 <template>
-    <div class="shop-page-wrapper">        
-        <div class="login-register-area pt-100 pb-100">
+    <div class="shop-page-wrapper">    
+        <TheHeader/>    
+        <div class="login-register-area pt-100 pb-100 magicpattern">
             <div class="container">
                 <div class="login-register-tab-list nav">
                     <button @click="comA('Login')" :class="{ active: isActive === 'Login' }" >
@@ -49,7 +50,7 @@
         },
         head() {
             return {
-                title: "Login / Register"
+                title: "Acceso"
             }
         }
     };

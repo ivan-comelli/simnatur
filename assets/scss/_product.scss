@@ -151,10 +151,15 @@
     .product-content {
         margin: 20px 0 0;
         h3 {
-            font-size: 16px;
+            font-size: .5rem;
             margin: 0;
             a {
+                font-size: .5rem;
                 transition: none;
+
+                @media #{$xs-layout}{
+                    font-size: .7rem;
+                }
             }
         }
         .product-rating {
@@ -234,11 +239,11 @@
         align-items: center;
         margin: 15px 0 26px;
         span {
-            font-size: 24px;
+            font-size: .6rem;
             color: #fe5252;
             &.old {
                 color: $dark;
-                font-size: 18px;
+                font-size: .5rem;
                 text-decoration: line-through;
                 margin-left: 20px;
             }

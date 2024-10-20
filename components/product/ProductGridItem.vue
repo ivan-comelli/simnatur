@@ -40,7 +40,7 @@
                 <span class="old" v-if="product.discount > 0">${{ product.price.toFixed(2) }}</span>
             </div>
             <div class="product-content__list-view" v-if="layout === 'list'">
-                <p>{{ product.description }}</p>
+                <div :style="{ fontSize: '.4rem' }" v-html="product.description"></div>
                 <!--div class="pro-action d-flex align-items-center" >
                     <div class="pro-cart btn-hover">
                         <n-link :to="`/product/${slugify(product.title)}`" class="btn" v-if="product.variation">

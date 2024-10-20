@@ -23,6 +23,7 @@
         "embla-carousel-autoplay": "^8.2.1",
         "express": "^4.19.2",
         "fs": "^0.0.1-security",
+        "he": "^1.2.0",
         "jsonwebtoken": "^9.0.2",
         "mercadopago": "^2.0.10",
         "mysql2": "^3.10.1",
