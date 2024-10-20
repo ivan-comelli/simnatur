@@ -5,8 +5,10 @@
             <input type="password" v-model="password" name="user-password" placeholder="Contraseña" required>
             <div class="button-box">
                 <div class="login-toggle-btn">
-                    <input type="checkbox" v-model="rememberMe">
-                    <label>Recordame</label>
+                    <div :style="{marginLeft: '0.2rem'}">
+                        <input type="checkbox" v-model="rememberMe">
+                        <label>Recordame</label>
+                    </div>
                     <a href="#">Olvidaste tu contraseña?</a>
                 </div>
                 <button type="submit">Entrar</button>

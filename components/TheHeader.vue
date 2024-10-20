@@ -5,12 +5,12 @@
         :class="{'is-sticky': isSticky}">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-4 col-md-3 col-2 left-empty">
+            <div class="col left-empty">
               <div class="main-menu">
               </div>
             </div>
             <!-- div class="header-left col-lg-2 col-md-6 col-4"-->
-            <div class="header-left col">
+            <div class="header-left col-3">
               <div class="logo">
                 <n-link to="/">
                   <GlobalImage src="/img/logo/logo.png" alt="logo" />
@@ -18,7 +18,7 @@
               </div>
             </div>
             
-            <div class="col-lg-4 col-md-3 col-2">
+            <div class="col">
                 <div class="header-right-wrap">
                     <client-only>
                         <div v-if="userStatus" class="same-style account-setting d-none d-lg-block">

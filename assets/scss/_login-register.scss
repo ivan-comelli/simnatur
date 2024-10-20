@@ -66,16 +66,19 @@
         }
         .button-box {
             .login-toggle-btn {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
                 padding: 10px 0 19px;
                 label {
                     color: #242424;
-                    font-size: 15px;
+                    font-size: 0.5rem;
                     font-weight: 400;
                 }
                 a {
                     color: #242424;
                     float: right;
-                    font-size: 15px;
+                    font-size: 0.5rem;
                     transition: all 0.3s ease 0s;
                     &:hover {
                         color: $theme-color;
@@ -87,7 +90,7 @@
                 border: medium none;
                 color: $dark;
                 cursor: pointer;
-                font-size: 14px;
+                font-size: 0.5rem;
                 font-weight: 500;
                 line-height: 1;
                 padding: 11px 30px;
@@ -103,6 +106,7 @@
 }
 
 .login-register-area {
+    min-height: 85vh;
     @media #{$xs-layout} {
         &.pb-100 {
             padding-bottom: 60px;

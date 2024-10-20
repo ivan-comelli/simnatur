@@ -12,14 +12,14 @@
                         <div class="product-anotherinfo-wrapper">
                             <ul>
                                 <li class="row">
-                                    <span class="col-4">Componente</span>
-                                    <span class="col-2">Concentracion</span>
-                                    <span class="col-6">Descripcion</span>
+                                    <h4 class="col">Componente</h4>
+                                    <h4 class="col-2">Peso</h4>
+                                    <h4 class="col-6">Descripcion</h4>
                                 </li>
                                 <li class="row" v-for="(value, key) in product.additional" :key="key">
-                                    <span class="col-4">{{ key }}</span>
+                                    <strong class="col">{{ key }}</strong>
                                     <span class="col-2">{{ value.concentration }}</span>
-                                    <span class="col-6">{{ value.description }}</span>
+                                    <p class="col-6">{{ value.description }}</p>
                                 </li>
                             </ul>
                         </div>
