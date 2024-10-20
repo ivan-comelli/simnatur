@@ -151,10 +151,9 @@
     .product-content {
         margin: 20px 0 0;
         h3 {
-            font-size: .5rem;
             margin: 0;
             a {
-                font-size: .5rem;
+                font-size: .6rem;
                 transition: none;
 
                 @media #{$xs-layout}{

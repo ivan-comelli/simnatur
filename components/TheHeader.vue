@@ -5,7 +5,7 @@
         :class="{'is-sticky': isSticky}">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-4 col-md-3 col-2">
+            <div class="col-lg-4 col-md-3 col-2 left-empty">
               <div class="main-menu">
               </div>
             </div>

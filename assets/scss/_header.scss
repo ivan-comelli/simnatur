@@ -1,4 +1,13 @@
 /*----- 2. Header style ----*/
+@media #{$xs-layout}{
+    .left-empty {
+        width: 0;
+    }
+    .header-left {
+        justify-content: flex-start !important;
+    }    
+}
+
 .header-area {
     position: relative;
 }

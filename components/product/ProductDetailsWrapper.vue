@@ -35,7 +35,7 @@
                             <span>${{ discountedPrice(product).toFixed(2) }}</span>
                             <span class="old" v-if="product.discount > 0">${{ product.price.toFixed(2) }}</span>
                         </div>
-                        <p>{{ product.description }}</p>
+                        <div :style="{ fontSize: '.4rem' }" v-html="product.description"></div>
                         
                         <!-- div class="pro-details-quality">
                             <div class="cart-plus-minus">
