@@ -51,7 +51,7 @@
                             <div class="icon">
                                 <i class="pe-7s-like"></i>
                             </div>
-                            <h4>No items found in wishlist</h4>
+                            <h4>No hay productos en Favoritos</h4>
                             <n-link to="/shop" class="empty-cart__button">Add Item</n-link>
                         </div>
                     </div>

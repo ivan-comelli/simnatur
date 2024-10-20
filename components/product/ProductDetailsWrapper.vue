@@ -11,7 +11,7 @@
                             </div>
                             <swiper :options="swiperOptionTop" ref="swiperTop">
                                 <div class="large-img swiper-slide" v-for="(image, index) in product.images" :key="index">
-                                    <GlobalImage class="img-fluid" :src="image" :alt="product.title" />
+                                    <GlobalImage class="img-fluid " :src="image" :alt="product.title" />
                                 </div>
                                 <div class="quickview-nav swiper-button-prev">
                                     <i class="pe-7s-angle-left"></i>
@@ -22,7 +22,7 @@
                             </swiper>
                             <swiper class="mt-2" :options="swiperOptionThumbs" ref="swiperThumbs">
                                 <div class="thumb-img swiper-slide" v-for="(image, index) in product.images" :key="index">
-                                    <GlobalImage class="img-fluid" :src="image" :alt="product.title" />
+                                    <GlobalImage class="img-fluid " :src="image" :alt="product.title" />
                                 </div>
                             </swiper>
                         </div>

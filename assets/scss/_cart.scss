@@ -4,6 +4,8 @@
 .cart-main-area {
     min-height: 85vh;
     font-size: 0.4rem;
+    display: flex;
+    align-items: center;
 
     @media #{$xs-layout}{
         &.pb-100 {

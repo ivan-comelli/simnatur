@@ -1,5 +1,9 @@
 // write your custom scss/css here
 @media #{$xs-layout} {
+    .format {
+      object-fit: contain !important;
+      height: auto !important;
+    }
     .gradient-mobil {
       background: linear-gradient(300deg, rgb(255 255 255), #fafafa, rgb(255 255 255));
       background-size: 180%;
@@ -269,4 +273,9 @@
 
 strong {
   font-size: .35rem;
+}
+
+.format {
+  object-fit: cover;
+  height: 8rem;
 }

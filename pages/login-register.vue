@@ -12,7 +12,7 @@
                     </button>
                 </div>
                 <div class="row">
-                    <div class="col-lg-7 col-12 ms-auto me-auto">
+                    <div class="col-lg-10 col-12 ms-auto me-auto">
                         <component :is="isActive" />
                     </div>
                 </div>

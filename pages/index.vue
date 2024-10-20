@@ -16,16 +16,16 @@
                                         <option value="high2low">Precio - Alto a Bajo</option>
                                     </select>
                                 </div>
-                                <p>Mostrando {{perPage * currentPage - perPage + 1}} al {{perPage * currentPage > filterItems.length ? filterItems.length : perPage * currentPage}} de {{filterItems.length}} resultados</p>
+                                <p>{{filterItems.length}} resultados</p>
                             </div>
-                            <div class="shop-tab">
-                                <button @click="layout = 'twoColumn'" :class="{ active : layout === 'twoColumn' }">
+                            <div class="shop-tab ml-10">
+                                <button  :class="{ active : layout === 'twoColumn' }">
                                     <i class="fa fa-th-large"></i>
                                 </button>
-                                <button @click="layout = 'threeColumn'" :class="{ active : layout === 'threeColumn' }">
+                                <button  :class="{ active : layout === 'threeColumn' }">
                                     <i class="fa fa-th"></i>
                                 </button>
-                                <button @click="layout = 'list'" :class="{ active : layout === 'list' }">
+                                <button  :class="{ active : layout === 'list' }">
                                     <i class="fa fa-list-ul"></i>
                                 </button>
                             </div>

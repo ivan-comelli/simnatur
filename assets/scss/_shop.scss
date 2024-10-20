@@ -42,10 +42,10 @@
             color: #606060;
             margin: 0;
             @media #{$xs-layout}{
-                margin: 10px 0;
+                margin: 10px 0 10px 10px;
             }
             @media #{$sm-layout}{
-                margin: 0px;
+                margin: 0px 0 0 10px;
             }
         }
     }

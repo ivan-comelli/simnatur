@@ -77,7 +77,7 @@
                             <div class="icon">
                                 <i class="pe-7s-cart"></i>
                             </div>
-                            <h4>No hay productos en el carrito</h4>
+                            <h4>No hay productos en el Carrito</h4>
                             <n-link to="/shop" class="empty-cart__button">Comprar Ahora</n-link>
                         </div>
                     </div>
