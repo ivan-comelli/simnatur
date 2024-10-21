@@ -35,9 +35,9 @@
                             <span>${{ discountedPrice(product).toFixed(2) }}</span>
                             <span class="old" v-if="product.discount > 0">${{ product.price.toFixed(2) }}</span>
                         </div>
-                        <div :style="{ fontSize: '.4rem' }" v-html="product.description"></div>
+                        <div v-html="product.description"></div>
                         
-                        <!-- div class="pro-details-quality">
+                        <div class="pro-details-quality">
                             <div class="cart-plus-minus">
                                 <button @click="decreaseQuantity()" class="dec qtybutton">-</button>
                                 <input class="cart-plus-minus-box" type="text" :value="singleQuantity" readonly>
@@ -49,7 +49,7 @@
                             <div class="pro-details-wishlist">
                                 <button @click="addToWishlist(product)" title="wishlist"><i class="fa fa-heart-o"></i></button>
                             </div>
-                        </div -->
+                        </div>
                         <div class="pro-details-meta">
                             <span class="label">Categorias:</span>
                             <ul>

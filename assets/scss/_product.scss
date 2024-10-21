@@ -153,11 +153,11 @@
         h3 {
             margin: 0;
             a {
-                font-size: .55rem;
+                font-size: 1rem;
                 transition: none;
 
                 @media #{$xs-layout}{
-                    font-size: .6rem;
+                    font-size: 1.2rem;
                 }
             }
         }
@@ -238,11 +238,11 @@
         align-items: center;
         margin: 15px 0 26px;
         span {
-            font-size: .6rem;
+            font-size: 1.2rem;
             color: #fe5252;
             &.old {
                 color: $dark;
-                font-size: .5rem;
+                font-size: 1rem;
                 text-decoration: line-through;
                 margin-left: 20px;
             }
@@ -400,7 +400,7 @@
         margin: 0 0 10px;
         .label {
             color: $dark;
-            font-size: 0.5rem;
+            font-size: 0.7rem;
             font-weight: 500;
             margin-bottom: 0;
             margin-right: 5px;
@@ -412,7 +412,7 @@
                 margin-right: 5px;
                 a{
                     color: #676767;
-                    font-size: 0.5rem;
+                    font-size: 0.7rem;
                     @media #{$xs-layout}{
                         font-size: 14px;
                     }

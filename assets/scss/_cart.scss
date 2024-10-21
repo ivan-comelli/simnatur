@@ -3,7 +3,7 @@
 
 .cart-main-area {
     min-height: 85vh;
-    font-size: 0.4rem;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
 
@@ -40,14 +40,14 @@ h3.cart-page-title {
         tbody > tr {
             border-bottom: 1px solid #ebebeb;
             td.product-thumbnail {
-                min-width: 3rem;
-                max-width: 4rem;
+                min-width: 4rem;
+                max-width: 8rem;
                 a {
                     img {
                         border-radius: 0.2rem !important;
                         object-fit: cover;
-                        height: 3rem;
-                        width: 3rem;
+                        height: 7rem;
+                        width: 100%;
                     }
                 }
             }
@@ -84,7 +84,7 @@ h3.cart-page-title {
                         flex-direction: column;
                         border: 1px solid #e5e5e5;
                         align-items: center;
-                        width: 1.5rem !important;
+                        width: 2.5rem !important;
                         border-radius: .2rem;
                         .dec.qtybutton {
                             border-right: none !important;
@@ -112,7 +112,7 @@ h3.cart-page-title {
                     padding: 0;
                     position: relative;
                     margin-top: .2rem;
-                    width: clamp(2.175rem, -0.1786rem + 3.5714vw, 2.5rem);
+                    width: clamp(4.175rem, -0.1786rem + 3.5714vw, 4.5rem);
                     .qtybutton {
                         color: $dark;
                         cursor: pointer;
@@ -123,7 +123,7 @@ h3.cart-page-title {
                         width: 20px;
                         text-align: center;
                         top: 0;
-                        height: 1rem;
+                        height: 2rem;
                     }
                     .dec.qtybutton {
                         border-right: 1px solid #e5e5e5;
@@ -136,7 +136,7 @@ h3.cart-page-title {
                     input.cart-plus-minus-box {
                         color: $dark;
                         float: left;
-                        height: 1rem;
+                        height: 2rem;
                         margin: 0;
                         width: 110px;
                         background-color: transparent;

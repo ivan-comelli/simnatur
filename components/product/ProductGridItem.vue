@@ -9,7 +9,7 @@
                 <span class="product-label pink" v-if="product.new">Nuevo</span>
                 <span class="product-label purple" v-if="product.discount">-{{ product.discount }}%</span>
             </div>
-            <!--div class="product-action" v-if="layout === 'twoColumn' || layout === 'threeColumn'">
+            <div class="product-action" v-if="layout === 'twoColumn' || layout === 'threeColumn'">
                 <div class="pro-same-action pro-wishlist">
                     <button class="btn" title="Wishlist" @click="addToWishlist(product)"> 
                         <i class="pe-7s-like"></i>
@@ -29,7 +29,7 @@
                         <i class="pe-7s-look"></i>
                     </button>
                 </div>
-            </div-->
+            </div>
         </div>
         <div class="product-content text-center">
             <h3>
@@ -40,8 +40,8 @@
                 <span class="old" v-if="product.discount > 0">${{ product.price.toFixed(2) }}</span>
             </div>
             <div class="product-content__list-view" v-if="layout === 'list'">
-                <div :style="{ fontSize: '.4rem' }" v-html="product.description"></div>
-                <!--div class="pro-action d-flex align-items-center" >
+                <div v-html="product.description"></div>
+                <div class="pro-action d-flex align-items-center" >
                     <div class="pro-cart btn-hover">
                         <n-link :to="`/product/${slugify(product.title)}`" class="btn" v-if="product.variation">
                             Elegi una Opcion
@@ -56,7 +56,7 @@
                             <i class="fa fa-heart-o"></i>
                         </button>
                     </div>
-                </div -->
+                </div>
             </div>
         </div>
     </div>

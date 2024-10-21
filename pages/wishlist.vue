@@ -52,7 +52,7 @@
                                 <i class="pe-7s-like"></i>
                             </div>
                             <h4>No hay productos en Favoritos</h4>
-                            <n-link to="/shop" class="empty-cart__button">Add Item</n-link>
+                            <n-link to="/" class="empty-cart__button">Agregar</n-link>
                         </div>
                     </div>
                 </div>

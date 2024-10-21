@@ -1,7 +1,7 @@
 <template>
     <div class="cart-page-wrapper">
         <TheHeader />
-        <div class="cart-main-area pb-100 magicpattern">
+        <div class="cart-main-area pb-100">
             <div :class="innerWidth < 992 ? 'container-fluid' : 'container'">
                 <div class="row">
                     <div class="col-lg-10 col-md-10" :style="{ background: 'white' }" v-if="products.length > 0">
@@ -78,7 +78,7 @@
                                 <i class="pe-7s-cart"></i>
                             </div>
                             <h4>No hay productos en el Carrito</h4>
-                            <n-link to="/shop" class="empty-cart__button">Comprar Ahora</n-link>
+                            <n-link to="/" class="empty-cart__button">Comprar Ahora</n-link>
                         </div>
                     </div>
                 </div>

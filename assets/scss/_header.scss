@@ -58,13 +58,9 @@
 }
 .logo {
     img {
-        max-width: 5rem !important;
+        max-width: clamp(180px, 141.5385px + 5.1282vw, 240px) !important;
     }
-    @media #{$xs-layout} {
-        img {
-            max-width: 7rem !important;
-        }
-    }
+    
     @media #{$md-layout, $xs-layout}{
         margin-top: 0px;
     }
@@ -525,9 +521,7 @@
                             font-size: 13px;
                             margin: 5px 0 8px;
                         }
-                        span {
-                            font-size: 14px;
-                        }
+
                     }
                     .shopping-cart-delete {
                         button {
@@ -542,8 +536,11 @@
             }
             .shopping-cart-total {
                 h4 {
-                    font-size: 0.45rem;
-                    margin: 0.8rem 0 0.6rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 1rem;
+                    margin: 1.5rem 0 0.6rem;
                     font-weight: 500;
                     span {
                         float: right;
@@ -556,7 +553,7 @@
                     margin-top: 20px;
                     padding: 16px 40px 17px;
                     font-weight: 500;
-                    font-size: 14px;
+                    font-size: 1rem;
                     display: block;
                 }
             }
