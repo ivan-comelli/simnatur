@@ -11,10 +11,10 @@
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        <th style="text-align: left;">Producto</th>
-                                        <th v-if="innerWidth > 767">Unitario</th>
-                                        <th>CNT</th>
-                                        <th>Subtotal</th>
+                                        <th><h5 class="left">Producto</h5></th>
+                                        <th v-if="innerWidth > 767"><h5>Unitario</h5></th>
+                                        <th><h5>CNT</h5></th>
+                                        <th><h5>Subtotal</h5></th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -62,11 +62,8 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="grand-total">
-                                    <div class="title-wrap">
-                                        <h4 class="cart-bottom-title section-bg-gary-cart">Tu Carrito</h4>
-                                    </div>
-                                    <h5>Total de Productos <span>${{ total.toFixed(2) }}</span></h5>
-                                    <h4 class="grand-total-title">Total a Pagar<span>${{ total.toFixed(2) }}</span></h4>
+                                    <h5>Total de Productos <h6>${{ total.toFixed(2) }}</h6></h5>
+                                    <h4 class="grand-total-title">Total a Pagar<h3>${{ total.toFixed(2) }}</h3></h4>
                                     <n-link to="/checkout">Proceder con el Pago</n-link>
                                 </div>
                             </div>
