@@ -27,13 +27,12 @@ h3.cart-page-title {
             th {
                 .left {
                     text-align: left;
-                    padding-left: 1rem;
                 }
                 h5 {
                     margin: 0;
                     border-top: medium none;
                     color: $dark;
-                    padding:1rem 0 1rem 0;
+                    padding:1rem 0 1rem 1rem;
                     text-align: center;
                     text-transform: uppercase;
                     vertical-align: middle; 
@@ -218,9 +217,9 @@ h3.cart-page-title {
         border: medium none;
         cursor: pointer;
         transition: all 0.3s ease 0s;
-        @media #{$md-layout} {
-            margin-right: 15px;
-        }
+    }
+    .cart-clear > button {
+        text-align: left;
     }
 }
 
