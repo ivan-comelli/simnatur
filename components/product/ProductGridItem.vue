@@ -47,7 +47,7 @@
                             Elegi una Opcion
                         </n-link>
                         <button class="btn-grad" title="Add To Cart" @click="addToCart(product)" v-else>
-                            <i class="pe-7s-cart" :style="{marginRight: '1rem'}"></i> 
+                            <i class="pe-7s-cart"></i> 
                             Agregar al Carrito
                         </button>
                     </div>

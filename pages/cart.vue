@@ -11,10 +11,10 @@
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        <th><h5 class="left">Producto</h5></th>
-                                        <th v-if="innerWidth > 767"><h5>Unitario</h5></th>
-                                        <th><h5>CNT</h5></th>
-                                        <th><h5>Subtotal</h5></th>
+                                        <th><h6 class="left">Producto</h6></th>
+                                        <th v-if="innerWidth > 767"><h6>Unitario</h6></th>
+                                        <th><h6>CNT</h6></th>
+                                        <th><h6>Subtotal</h6></th>
                                         <th></th>
                                     </tr>
                                 </thead>

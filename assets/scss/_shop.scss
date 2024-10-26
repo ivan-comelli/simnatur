@@ -154,6 +154,15 @@
                 &__list-view {
                     .pro-action {
                         margin-top: 0.6rem;
+                        button {
+                            display: flex;
+                            align-items: center;
+                            .pe-7s-cart {
+                                margin-right: 1rem;
+                                font-size: 1.5rem;
+                                margin-bottom: 0.3rem;
+                            }
+                        }
                         .btn {
                             font-size: 0.833rem;
                             font-weight: 500;
