@@ -22,12 +22,16 @@ import TheHeader from '../../components/TheHeader.vue';
             return this.getProducts.find(product => this.slugify(product.title) == this.slug);
         },
     },
+    async fetch() {
+        await this.fetchProducts();
+    },
     head() {
         return {
             title: this.product.title
         };
     },
     methods: {
+        ...mapActions('products', ['fetchProducts']),
         slugify(text) {
             return text
                 .toString()

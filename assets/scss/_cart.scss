@@ -197,7 +197,6 @@ h3.cart-page-title {
     .cart-clear > a {
         font-weight: 700;
         background-image: linear-gradient(to right, #f9f9f9 0%, #f9f9f9 51%, #ffffff 100%);
-        text-align: center;
         text-transform: uppercase;
         transition: 0.5s;
         background-size: 200% auto;
@@ -217,9 +216,6 @@ h3.cart-page-title {
         border: medium none;
         cursor: pointer;
         transition: all 0.3s ease 0s;
-    }
-    .cart-clear > button {
-        text-align: left;
     }
 }
 

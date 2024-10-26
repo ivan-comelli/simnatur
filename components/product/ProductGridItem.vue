@@ -71,9 +71,9 @@
                 const prod = {...product, cartQuantity: 1}
                 // for notification
                 if (this.$store.state.cart.find(el => product.id === el.id)) {
-                    this.$notify({ title: 'Already added to cart update with one' })
+                    this.$notify({ title: 'Ya hay uno, le sumamos 1 mas' })
                 } else {
-                    this.$notify({ title: 'Add to cart successfully!'})
+                    this.$notify({ title: 'Agregado al Carrito!'})
                 }
 
                 this.$store.dispatch('addToCartItem', prod)
@@ -85,13 +85,14 @@
 
             addToWishlist(product) {
                 // for notification
-                if (this.$store.state.wishlist.find(el => product.id === el.id)) {
-                    this.$notify({ title: 'Already added to wishlist!' })
-                } else {
-                    this.$notify({ title: 'Add to wishlist successfully!'})
-                }
-
-                this.$store.dispatch('addToWishlist', product)
+                this.$notify({ title: 'No esta disponible por el momento' })
+                //if (this.$store.state.wishlist.find(el => product.id === el.id)) {
+                //    this.$notify({ title: 'Already added to wishlist!' })
+                //} else {
+                //    this.$notify({ title: 'Add to wishlist successfully!'})
+                //}
+//
+                //this.$store.dispatch('addToWishlist', product)
             },
 
             addToCompare(product) {

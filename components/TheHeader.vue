@@ -33,7 +33,7 @@
                             <n-link class="session-entry" to="/login-register">Entra a la Cuenta</n-link>
                         </div>
                         <div v-if="userStatus" class="same-style header-wishlist">
-                            <n-link to="/wishlist">
+                            <n-link to="">
                                 <i class="pe-7s-like"></i>
                             </n-link>
                             <span class="count-style">{{ wishlistItemCount }}</span>
