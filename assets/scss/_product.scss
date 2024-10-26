@@ -153,12 +153,8 @@
         h3 {
             margin: 0;
             a {
-                font-size: 1rem;
+                font-size: inherit;
                 transition: none;
-
-                @media #{$xs-layout}{
-                    font-size: 1.2rem;
-                }
             }
         }
         .product-rating {
@@ -172,26 +168,25 @@
             }
         }
         .product-price {
-            span {
-                font-size: 15px;
-                color: $black;
-                font-weight: 500;
+            h6 {
+                color: $red;
                 position: relative;
                 transition: none;
                 &::before {
                     position: absolute;
                     content: "";
-                    right: -0.4rem;
-                    top: 0.25rem;
-                    width: .2rem;
-                    height: 0.05rem;
-                    background-color: $black;
+                    right: -0.85rem;
+                    top: 0.6rem;
+                    width: .5rem;
+                    height: 0.15rem;
+                    background-color: $dark;
                 }
                 &:last-child:before {
                     display: none;
                 }
                 &.old {
-                    color: #8e8e8e;
+                    color: $grey;
+                    font-size: calc(1em * 0.8);
                     margin-left: 15px;
                     text-decoration: line-through;
                 }
@@ -904,7 +899,6 @@
             transition: all 0.4s ease 0s;
             .product-title {
                 h3 {
-                    font-size: 18px;
                     margin: 0;
                     line-height: 1;
                 }

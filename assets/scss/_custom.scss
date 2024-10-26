@@ -69,10 +69,6 @@
     .collage-grid { 
         display: block !important;
     }
-    
-    strong {
-      font-size: .45rem !important;
-    }
 }
 @media only screen and (max-width: 1024px) {
 
@@ -272,7 +268,7 @@
 }
 
 strong {
-  font-size: .8rem;
+  color: $dark;
 }
 
 .format {

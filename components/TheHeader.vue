@@ -1,16 +1,13 @@
 <template>
     <div>
-      <header 
-        class="header-area header-padding-1 sticky-bar header-res-padding clearfix" 
+      <header
+        class="header-area sticky-bar clearfix" 
         :class="{'is-sticky': isSticky}">
         <div class="container-fluid">
           <div class="row">
             <div class="col left-empty">
-              <div class="main-menu">
-              </div>
             </div>
-            <!-- div class="header-left col-lg-2 col-md-6 col-4"-->
-            <div class="header-left col-3">
+            <div class="header-center col-3">
               <div class="logo">
                 <n-link to="/">
                   <GlobalImage src="/img/logo/logo.png" alt="logo" />
@@ -21,8 +18,8 @@
             <div class="col">
                 <div class="header-right-wrap">
                     <client-only>
-                        <div v-if="userStatus" class="same-style account-setting d-none d-lg-block">
-                            <button class="account-setting-active" @click="isOpenAccountSettings = !isOpenAccountSettings">
+                        <div v-if="userStatus" class="same-style">
+                            <!--button class="account-setting-active" @click="isOpenAccountSettings = !isOpenAccountSettings">
                                 <i class="pe-7s-user-female"></i>
                             </button>
                             <div class="account-dropdown" :class="{ active:isOpenAccountSettings }">
@@ -30,7 +27,7 @@
                                 <li><n-link to="/my-account">Mi Perfil</n-link></li>
                                 <li><n-link to="" @click.native="handleLogout">Cerrar Sesion</n-link></li>
                                 </ul>
-                            </div>
+                            </div-->
                         </div>
                         <div v-else>
                             <n-link class="session-entry" to="/login-register">Entra a la Cuenta</n-link>

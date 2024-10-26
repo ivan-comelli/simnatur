@@ -9,7 +9,7 @@ $josefin: 'Josefin Sans', sans-serif;
 // text Colors ---------------
 $white: #ffffff;
 $black: #000000;
-$grey: #f6f7f8;
+$grey: #7d8995;
 $red: #f00;
 $green: #f6f7f8;
 $dark: #333333;
@@ -40,47 +40,24 @@ $gap-sm:    4.5%;
 $gap-md: 11.8%;
 $gap-lg: 19.1%;
 $gap-xl: 30.9%;
-
-$accordion-padding-y:                     0.4rem;
-$accordion-padding-x:                     1rem;
-
-$accordion-border-width:                  0.2rem;
-$accordion-border-color:                  rgba(0, 0, 0, 0.125); 
-$accordion-border-radius:                 0.2rem;
-$accordion-inner-border-radius:           $accordion-border-radius - $accordion-border-width; 
-
-$accordion-body-padding-y:                $accordion-padding-y;
-$accordion-body-padding-x:                $accordion-padding-x;
-
-$accordion-button-padding-y:              $accordion-padding-y;
-$accordion-button-padding-x:              $accordion-padding-x;
-$accordion-border-width:               0.02rem;
-
-
-$accordion-icon-width:                    .6rem;
-
-
-$btn-font-size:                        .4rem;
-
-$accordion-active-bg: linear-gradient(to right, #4CB8C4 0%, #3CD3AD  51%, #4CB8C4  100%);
-
+         
          
 .btn-grad {
-    background-image: linear-gradient(to right, #4CB8C4 0%, #3CD3AD  51%, #4CB8C4  100%);
-    padding: 15px 45px;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white !important;            
-    box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
-    display: block;
-  }
+  background-image: linear-gradient(to right, #232526 0%, #414345  51%, #232526  100%);
+  padding: 1rem 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  font-weight: 500;
+  display: block;
+}
 
-  .btn-grad:hover {
-    background-position: right center; /* change the direction of the change here */
-    color: #fff;
-    text-decoration: none;
-  }
- 
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}

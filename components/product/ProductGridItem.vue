@@ -36,18 +36,18 @@
                 <n-link :to="`/product/${slugify(product.title)}`">{{ product.title }}</n-link>
             </h3>
             <div class="product-price">
-                <span>${{ discountedPrice(product).toFixed(2) }}</span>
-                <span class="old" v-if="product.discount > 0">${{ product.price.toFixed(2) }}</span>
+                <h6>${{ discountedPrice(product).toFixed(2) }}</h6>
+                <h6 class="old" v-if="product.discount > 0">${{ product.price.toFixed(2) }}</h6>
             </div>
             <div class="product-content__list-view" v-if="layout === 'list'">
                 <div v-html="product.description"></div>
                 <div class="pro-action d-flex align-items-center" >
-                    <div class="pro-cart btn-hover">
-                        <n-link :to="`/product/${slugify(product.title)}`" class="btn" v-if="product.variation">
+                    <div class="pro-cart">
+                        <n-link :to="`/product/${slugify(product.title)}`" class="btn-grad" v-if="product.variation">
                             Elegi una Opcion
                         </n-link>
-                        <button class="btn" title="Add To Cart" @click="addToCart(product)" v-else>
-                            <i class="pe-7s-cart"></i> 
+                        <button class="btn-grad" title="Add To Cart" @click="addToCart(product)" v-else>
+                            <i class="pe-7s-cart" :style="{marginRight: '1rem'}"></i> 
                             Agregar al Carrito
                         </button>
                     </div>
