@@ -1,4 +1,6 @@
 /*----- 19. Product details page  ---*/
+
+
 .product-details-img {
     position: relative;
     @media #{$lg-layout, $md-layout, $xs-layout} {
@@ -68,6 +70,39 @@
 }
 
 .description-review-bottom {
+    table {
+        border: 1px solid #ebebeb;
+        white-space: normal;
+        width: 100%;
+        thead > tr {
+            background-color: #f9f9f9;
+            border: 1px solid #ebebeb;
+            th {
+                .left {
+                    text-align: left;
+                }
+                h6 {
+                    margin: 0;
+                    border-top: medium none;
+                    color: $dark;
+                    padding:1rem 0 1rem 1rem;
+                    text-align: center;
+                    text-transform: uppercase;
+                    vertical-align: middle; 
+                    white-space: nowrap;
+                }
+            }
+        }
+        tbody > tr {
+            border-bottom: 1px solid #ebebeb;
+            
+            td {
+                color: $dark;
+                padding: 1rem 0 1rem 1rem;
+                text-align: left;
+            }
+        }
+    }
     padding: 33px 0 0;
     .product-description-wrapper {
         p {

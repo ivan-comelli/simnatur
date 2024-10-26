@@ -32,8 +32,8 @@
                     <div class="product-details-content ml-70">
                         <h2>{{ product.title }}</h2>
                         <div class="product-details-price">
-                            <span>${{ discountedPrice(product).toFixed(2) }}</span>
-                            <span class="old" v-if="product.discount > 0">${{ product.price.toFixed(2) }}</span>
+                            <h6>${{ discountedPrice(product).toFixed(2) }}</h6>
+                            <h6 class="old" v-if="product.discount > 0">${{ product.price.toFixed(2) }}</h6>
                         </div>
                         <div v-html="product.description"></div>
                         

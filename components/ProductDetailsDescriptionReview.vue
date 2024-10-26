@@ -10,18 +10,22 @@
                     </div -->
                     <div class="tab-pane">
                         <div class="product-anotherinfo-wrapper">
-                            <ul>
-                                <li class="row">
-                                    <h4 class="col">Componente</h4>
-                                    <h4 class="col-2">Peso</h4>
-                                    <h4 class="col-6">Descripcion</h4>
-                                </li>
-                                <li class="row" v-for="(value, key) in product.additional" :key="key">
-                                    <strong class="col">{{ key }}</strong>
-                                    <span class="col-2">{{ value.concentration }}</span>
-                                    <p class="col-6">{{ value.description }}</p>
-                                </li>
-                            </ul>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="name"><h6 class="left">Componente</h6></th>
+                                        <th class="weight"><h6>Peso</h6></th>
+                                        <th><h6>Descripción</h6></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="(value, key) in product.additional" :key="key">
+                                        <td><strong>{{ key }}</strong></td>
+                                        <td>{{ value.concentration }}</td>
+                                        <td>{{ value.description }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
