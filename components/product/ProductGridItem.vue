@@ -39,9 +39,9 @@
                 <h6>${{ discountedPrice(product).toFixed(2) }}</h6>
                 <h6 class="old" v-if="product.discount > 0">${{ product.price.toFixed(2) }}</h6>
             </div>
-            <div class="product-content__list-view" v-if="layout === 'list'">
-                <div v-html="product.description"></div>
-                <div class="pro-action d-flex align-items-center" >
+            <div v-html="product.description" class="product-content__list-view description" v-if="layout === 'list'">
+            </div>
+            <div class="pro-action d-flex align-items-center" >
                     <div class="pro-cart">
                         <n-link :to="`/product/${slugify(product.title)}`" class="btn-grad" v-if="product.variation">
                             Elegi una Opcion
@@ -57,7 +57,6 @@
                         </button>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 </template>

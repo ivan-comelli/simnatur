@@ -54,7 +54,7 @@
                             <span class="label">Categorias:</span>
                             <ul>
                                 <li v-for="(category, index) in product.category" :key="index">
-                                    <n-link :to="`/shop?category=${slugify(category)}`">{{ category }},</n-link>
+                                    <n-link to="">{{ category }},</n-link>
                                 </li>
                             </ul>
                         </div>
@@ -62,7 +62,7 @@
                             <span class="label">Etiquetas:</span>
                             <ul>
                                 <li v-for="(tag, index) in product.tag" :key="index">
-                                    <n-link :to="`/shop?tag=${slugify(tag)}`">{{ tag }},</n-link>
+                                    <n-link to="">{{ tag }},</n-link>
                                 </li>
                             </ul>
                         </div>

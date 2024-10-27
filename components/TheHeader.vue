@@ -32,6 +32,11 @@
                         <div v-else>
                             <n-link class="session-entry" to="/login-register">Entra a la Cuenta</n-link>
                         </div>
+                        
+                        <div v-if="userStatus" class="same-style header-logout">
+                            <n-link to="">
+                            </n-link>
+                        </div>
                         <div v-if="userStatus" class="same-style header-wishlist">
                             <n-link to="">
                                 <i class="pe-7s-like"></i>
@@ -58,7 +63,7 @@
   
   <script>
   import { mapActions, mapGetters } from 'vuex';
-  
+
   export default {
     components: {
       Navigation: () => import('@/components/Navigation'),

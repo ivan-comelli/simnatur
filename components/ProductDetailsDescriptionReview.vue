@@ -9,6 +9,7 @@
                         </div>
                     </div -->
                     <div class="tab-pane">
+                        <h2>CARACTERISTICAS</h2>
                         <div class="product-anotherinfo-wrapper">
                             <table>
                                 <thead>

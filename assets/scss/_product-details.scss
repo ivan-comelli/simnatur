@@ -70,6 +70,13 @@
 }
 
 .description-review-bottom {
+    padding: 33px 0 0;
+    border-top: solid 0.2rem #555555;
+
+    h2 {
+        margin: 0 0 2rem 0.2rem;
+    }
+
     table {
         border: 1px solid #ebebeb;
         white-space: normal;
@@ -77,16 +84,19 @@
         thead > tr {
             background-color: #f9f9f9;
             border: 1px solid #ebebeb;
+            .name {
+                min-width: 10rem;
+            }
+            .weight {
+                min-width: 6rem;
+            }
             th {
-                .left {
-                    text-align: left;
-                }
                 h6 {
                     margin: 0;
                     border-top: medium none;
                     color: $dark;
                     padding:1rem 0 1rem 1rem;
-                    text-align: center;
+                    text-align: left;
                     text-transform: uppercase;
                     vertical-align: middle; 
                     white-space: nowrap;
@@ -103,7 +113,7 @@
             }
         }
     }
-    padding: 33px 0 0;
+
     .product-description-wrapper {
         p {
             margin: 0 0 8px;

@@ -28,7 +28,7 @@ module.exports = {
         { path: '/api', handler: '~/server/index.js' }
     ],
     routeRules: {
-        "/**": { "static": true },
+        "/**": { "static": false },
         "/api/**": { "static": false, "cache": false }
     },
     components: [
@@ -100,8 +100,7 @@ module.exports = {
     components: true,
 
     // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-    buildModules: [
-    ],
+    buildModules: [],
 
     // Modules (https://go.nuxtjs.dev/config-modules)
     modules: [
@@ -120,7 +119,7 @@ module.exports = {
         extractCSS: true,
         extend (config, { isDev, isClient }) {
             config.module.rules.push({
-                test: /\.(png|jpe?g|gif|svg|webp)$/,
+                test: /\.(png|jpe?g|gif|webp)$/,
                 loader: 'file-loader',
                 options: {
                     name: '[path][name].[hash:8].[ext]'
